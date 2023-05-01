@@ -19,23 +19,13 @@ class NetworkManager {
     
     private init () {}
     
-    func fetchImage(from url: String?, completion: @escaping(Result<Data, NetworkError>) -> Void) {
-        guard let url = URL(string: url ?? "") else {
-            completion(.failure(.invalidURL))
-            return
-        }
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: url) else {
-                completion(.failure(.noData))
-                return
-            }
-            DispatchQueue.main.async {
-                completion(.success(imageData))
-            }
-        }
+    func fetchImage(from url: String) throws -> Data {
+        guard let imageUrl = URL(string: url) else { throw NetworkError.invalidURL}
+        guard let imageData = try? Data(contentsOf: imageUrl) else { throw NetworkError.noData }
+        return imageData
     }
     
-    func fetchLeagueList(completion: @escaping(Result<LeagueList, NetworkError>) -> Void) {
+    func fetchLeaguesList() async throws -> LeaguesList {
         var request = URLRequest(
             url: URL(string: "https://v3.football.api-sports.io/leagues")!,
             timeoutInterval: 10.0)
@@ -43,20 +33,11 @@ class NetworkManager {
         request.addValue("v3.football.api-sports.io", forHTTPHeaderField: "x-rapidapi-host")
         request.httpMethod = "GET"
 
-        URLSession.shared.dataTask(with: request) { data, _, error in
-            guard let data = data else {
-                completion(.failure(.noData))
-                return
-            }
-            do {
-                let response = try JSONDecoder().decode(LeagueList.self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(response))
-                }
-            } catch {
-                completion(.failure(.decodingError))
-            }
-        }.resume()
+        let (data, _) = try await URLSession.shared.data(for: request)
+        guard let leaguesList = try? JSONDecoder().decode(LeaguesList.self, from: data) else {
+            throw NetworkError.decodingError
+        }
+        return leaguesList
     }
 }
 

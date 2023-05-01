@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct LeagueListView: View {
-    
-    @State var leagueList: [LeagueModel] = []
-
+    @StateObject private var viewModel = LeagueListViewModel()
     var body: some View {
-        
-        VStack {
-            Text("Select competition")
-                .font(.title)
-                .fontWeight(.bold)
+        NavigationView {
+            ScrollView {
+                ForEach(viewModel.leaguesList, id: \.league.id) { leagueInfo in
+                    Text (leagueInfo.league.name)
+                }
+            }
+            .navigationTitle("Select competition")
         }
     }
 }
@@ -27,18 +27,3 @@ struct LeagueListView_Previews: PreviewProvider {
     }
 }
 
-
-extension LeagueListView {
-
-    func fetchLeagueList() {
-        NetworkManager.shared.fetchLeagueList { result in
-            switch result {
-            case .success(let leagues):
-                leagueList = leagues.response
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-
-}

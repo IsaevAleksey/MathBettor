@@ -10,10 +10,12 @@ import SwiftUI
 struct HelloView: View {
     
     var body: some View {
-        VStack(spacing: 5.0) {
-            Text("Здесь будет предупреждение о разумном подходе")
-                .multilineTextAlignment(.center)
-            Button("OK") {}
+        NavigationStack {
+            VStack(spacing: 5.0) {
+                Text("Здесь будет предупреждение о разумном подходе")
+                    .multilineTextAlignment(.center)
+                NavigationLink("OK") { LeagueListView() }
+            }
         }
     }
 }
