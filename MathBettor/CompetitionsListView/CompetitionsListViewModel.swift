@@ -7,10 +7,8 @@
 
 import SwiftUI
 
-class CompetitionsListViewModel {
-    var currentCompetitionsList: [CompetitionInfo] {
-        competitionsList.response
-    }
+class CompetitionsListViewModel: ObservableObject {
+    @Published var currentCompetitionsList: [CompetitionInfo] = []
     
     var imageData: Data {
         var imageData = Data()
@@ -25,20 +23,13 @@ class CompetitionsListViewModel {
         return imageData
     }
     
-    var competitionsList: CompetitionsList
-
-    
-    init(competitionsList: CompetitionsList) {
-        self.competitionsList = competitionsList
+    @MainActor func fetchCompetitionsList() async {
+        do {
+            let leaguesList = try await NetworkManager.shared.fetchLeaguesList()
+            self.currentCompetitionsList = leaguesList.response
+        }
+        catch {
+            print(error)
+        }
     }
-    
-//    func fetchLeaguesList() async {
-//        do {
-//            let leaguesList = try await NetworkManager.shared.fetchLeaguesList()
-//            self.competitionsList = leaguesList
-//        }
-//        catch {
-//            print(error)
-//        }
-//    }
 }

@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct CompetitionView: View {
+    var viewModel: CompetitionViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            CompetitionImage(
+                imageData: viewModel.imageData,
+                imageSize: CGSize(width: 150, height: 150),
+                cornerRadius: 30,
+            shadowIsOn: true)
+            Text(viewModel.currentCompetitionsList[0].league.name)
+                .font(.largeTitle)
+            Spacer()
+        }
     }
 }
 
 struct CompetitionView_Previews: PreviewProvider {
     static var previews: some View {
-        CompetitionView()
+        CompetitionView(viewModel: CompetitionViewModel(competitionsList: CompetitionsList.fetchPsevdoLeaguesList()))
     }
 }

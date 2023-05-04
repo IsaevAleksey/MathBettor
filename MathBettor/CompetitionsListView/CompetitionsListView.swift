@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CompetitionsListView: View {
-    var viewModel: CompetitionsListViewModel
+    @StateObject var viewModel: CompetitionsListViewModel
     var body: some View {
         NavigationView {
             ScrollView {
@@ -17,20 +17,18 @@ struct CompetitionsListView: View {
                 }
             }
             .navigationTitle("Select competition")
-//            .toolbar {
-//                Button("StringProtocol") {
-//                    Task {
-//                        await viewModel.fetchLeaguesList()
-//                    }
-//                }
-//            }
+        }
+        .onAppear {
+            Task {
+                await viewModel.fetchCompetitionsList()
+            }
         }
     }
 }
 
 struct LeagueListView_Previews: PreviewProvider {
     static var previews: some View {
-        CompetitionsListView(viewModel: CompetitionsListViewModel(competitionsList: CompetitionsList.fetchPsevdoLeaguesList()))
+        CompetitionsListView(viewModel: CompetitionsListViewModel())
     }
 }
 

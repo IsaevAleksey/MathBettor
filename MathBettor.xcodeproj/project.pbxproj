@@ -17,7 +17,7 @@
 		939A5DC729F6ED1C005DDA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 939A5DC629F6ED1C005DDA83 /* Assets.xcassets */; };
 		939A5DCA29F6ED1C005DDA83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 939A5DC929F6ED1C005DDA83 /* Preview Assets.xcassets */; };
 		939A5DD129F6ED62005DDA83 /* CompetitionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A5DD029F6ED62005DDA83 /* CompetitionsListView.swift */; };
-		939A5DD329F6EE72005DDA83 /* CompetitionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A5DD229F6EE72005DDA83 /* CompetitionInfo.swift */; };
+		939A5DD329F6EE72005DDA83 /* CompetitionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A5DD229F6EE72005DDA83 /* CompetitionsList.swift */; };
 		939A5DD529F6EEC5005DDA83 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A5DD429F6EEC5005DDA83 /* NetworkManager.swift */; };
 		93EAFA5629FFFC10006315F7 /* HelloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EAFA5529FFFC10006315F7 /* HelloView.swift */; };
 /* End PBXBuildFile section */
@@ -34,7 +34,7 @@
 		939A5DC629F6ED1C005DDA83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		939A5DC929F6ED1C005DDA83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		939A5DD029F6ED62005DDA83 /* CompetitionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsListView.swift; sourceTree = "<group>"; };
-		939A5DD229F6EE72005DDA83 /* CompetitionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionInfo.swift; sourceTree = "<group>"; };
+		939A5DD229F6EE72005DDA83 /* CompetitionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsList.swift; sourceTree = "<group>"; };
 		939A5DD429F6EEC5005DDA83 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		93EAFA5529FFFC10006315F7 /* HelloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,7 +53,7 @@
 		930AB2A12A02D36200BFF3FA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				939A5DD229F6EE72005DDA83 /* CompetitionInfo.swift */,
+				939A5DD229F6EE72005DDA83 /* CompetitionsList.swift */,
 				930AB2AA2A04181400BFF3FA /* Fixture.swift */,
 				930AB2AC2A04185C00BFF3FA /* Prediction.swift */,
 			);
@@ -193,7 +193,7 @@
 				93EAFA5629FFFC10006315F7 /* HelloView.swift in Sources */,
 				930AB2AD2A04185C00BFF3FA /* Prediction.swift in Sources */,
 				930AB2A02A001D0400BFF3FA /* CompetitionsListViewModel.swift in Sources */,
-				939A5DD329F6EE72005DDA83 /* CompetitionInfo.swift in Sources */,
+				939A5DD329F6EE72005DDA83 /* CompetitionsList.swift in Sources */,
 				939A5DD129F6ED62005DDA83 /* CompetitionsListView.swift in Sources */,
 				930AB2A92A0414F500BFF3FA /* CompetitionViewModel.swift in Sources */,
 				930AB2AB2A04181400BFF3FA /* Fixture.swift in Sources */,

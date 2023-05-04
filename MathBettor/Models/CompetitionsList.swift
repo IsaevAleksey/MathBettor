@@ -1,5 +1,5 @@
 //
-//  CompetitionInfo.swift
+//  CompetitionsList.swift
 //  MathBettor
 //
 //  Created by Алексей Исаев on 24.04.2023.
@@ -8,17 +8,7 @@
 import Foundation
 
 struct CompetitionsList: Decodable {
-    var response: [CompetitionInfo]
-    
-//    mutating func fetchLeaguesList() async -> CompetitionsList {
-//        do {
-//            let competitionsList = try await NetworkManager.shared.fetchLeaguesList()
-//            self.response = competitionsList.response
-//        }
-//        catch {
-//            print(error)
-//        }
-//    }
+    let response: [CompetitionInfo]
 }
 
 struct CompetitionInfo: Decodable {
@@ -49,5 +39,10 @@ extension CompetitionsList {
     }
 }
 
+extension CompetitionInfo {
+    static func fetchPsevdoCompetitionInfo() -> CompetitionInfo {
+        CompetitionInfo(league: League(id: 1, name: "liga1", logo: "logo1"), country: Country(name: "Strana1", flag: "net flaga"), seasons: [Season(year: 2022, current: true)])
+    }
+}
 
 
