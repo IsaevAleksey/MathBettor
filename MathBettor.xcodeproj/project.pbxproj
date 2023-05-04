@@ -7,24 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		930AB2A02A001D0400BFF3FA /* LeagueListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB29F2A001D0400BFF3FA /* LeagueListViewModel.swift */; };
+		930AB2A02A001D0400BFF3FA /* CompetitionsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB29F2A001D0400BFF3FA /* CompetitionsListViewModel.swift */; };
+		930AB2A42A02F90200BFF3FA /* CompetitionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB2A32A02F90200BFF3FA /* CompetitionImage.swift */; };
+		930AB2A62A0414B900BFF3FA /* CompetitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB2A52A0414B900BFF3FA /* CompetitionView.swift */; };
+		930AB2A92A0414F500BFF3FA /* CompetitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB2A82A0414F500BFF3FA /* CompetitionViewModel.swift */; };
+		930AB2AB2A04181400BFF3FA /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB2AA2A04181400BFF3FA /* Fixture.swift */; };
+		930AB2AD2A04185C00BFF3FA /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB2AC2A04185C00BFF3FA /* Prediction.swift */; };
 		939A5DC329F6ED1A005DDA83 /* MathBettorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A5DC229F6ED1A005DDA83 /* MathBettorApp.swift */; };
 		939A5DC729F6ED1C005DDA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 939A5DC629F6ED1C005DDA83 /* Assets.xcassets */; };
 		939A5DCA29F6ED1C005DDA83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 939A5DC929F6ED1C005DDA83 /* Preview Assets.xcassets */; };
-		939A5DD129F6ED62005DDA83 /* LeagueListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A5DD029F6ED62005DDA83 /* LeagueListView.swift */; };
-		939A5DD329F6EE72005DDA83 /* LeagueInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A5DD229F6EE72005DDA83 /* LeagueInfo.swift */; };
+		939A5DD129F6ED62005DDA83 /* CompetitionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A5DD029F6ED62005DDA83 /* CompetitionsListView.swift */; };
+		939A5DD329F6EE72005DDA83 /* CompetitionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A5DD229F6EE72005DDA83 /* CompetitionInfo.swift */; };
 		939A5DD529F6EEC5005DDA83 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A5DD429F6EEC5005DDA83 /* NetworkManager.swift */; };
 		93EAFA5629FFFC10006315F7 /* HelloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EAFA5529FFFC10006315F7 /* HelloView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		930AB29F2A001D0400BFF3FA /* LeagueListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueListViewModel.swift; sourceTree = "<group>"; };
+		930AB29F2A001D0400BFF3FA /* CompetitionsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsListViewModel.swift; sourceTree = "<group>"; };
+		930AB2A32A02F90200BFF3FA /* CompetitionImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionImage.swift; sourceTree = "<group>"; };
+		930AB2A52A0414B900BFF3FA /* CompetitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionView.swift; sourceTree = "<group>"; };
+		930AB2A82A0414F500BFF3FA /* CompetitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionViewModel.swift; sourceTree = "<group>"; };
+		930AB2AA2A04181400BFF3FA /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
+		930AB2AC2A04185C00BFF3FA /* Prediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
 		939A5DBF29F6ED1A005DDA83 /* MathBettor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathBettor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		939A5DC229F6ED1A005DDA83 /* MathBettorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathBettorApp.swift; sourceTree = "<group>"; };
 		939A5DC629F6ED1C005DDA83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		939A5DC929F6ED1C005DDA83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		939A5DD029F6ED62005DDA83 /* LeagueListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueListView.swift; sourceTree = "<group>"; };
-		939A5DD229F6EE72005DDA83 /* LeagueInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueInfo.swift; sourceTree = "<group>"; };
+		939A5DD029F6ED62005DDA83 /* CompetitionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsListView.swift; sourceTree = "<group>"; };
+		939A5DD229F6EE72005DDA83 /* CompetitionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionInfo.swift; sourceTree = "<group>"; };
 		939A5DD429F6EEC5005DDA83 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		93EAFA5529FFFC10006315F7 /* HelloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -40,6 +50,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930AB2A12A02D36200BFF3FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				939A5DD229F6EE72005DDA83 /* CompetitionInfo.swift */,
+				930AB2AA2A04181400BFF3FA /* Fixture.swift */,
+				930AB2AC2A04185C00BFF3FA /* Prediction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		930AB2A22A02F81200BFF3FA /* CompetitionsListView */ = {
+			isa = PBXGroup;
+			children = (
+				939A5DD029F6ED62005DDA83 /* CompetitionsListView.swift */,
+				930AB29F2A001D0400BFF3FA /* CompetitionsListViewModel.swift */,
+			);
+			path = CompetitionsListView;
+			sourceTree = "<group>";
+		};
+		930AB2A72A0414BF00BFF3FA /* CompetitionView */ = {
+			isa = PBXGroup;
+			children = (
+				930AB2A52A0414B900BFF3FA /* CompetitionView.swift */,
+				930AB2A82A0414F500BFF3FA /* CompetitionViewModel.swift */,
+				930AB2A32A02F90200BFF3FA /* CompetitionImage.swift */,
+			);
+			path = CompetitionView;
+			sourceTree = "<group>";
+		};
 		939A5DB629F6ED1A005DDA83 = {
 			isa = PBXGroup;
 			children = (
@@ -61,9 +100,9 @@
 			children = (
 				939A5DC229F6ED1A005DDA83 /* MathBettorApp.swift */,
 				93EAFA5529FFFC10006315F7 /* HelloView.swift */,
-				939A5DD029F6ED62005DDA83 /* LeagueListView.swift */,
-				930AB29F2A001D0400BFF3FA /* LeagueListViewModel.swift */,
-				939A5DD229F6EE72005DDA83 /* LeagueInfo.swift */,
+				930AB2A22A02F81200BFF3FA /* CompetitionsListView */,
+				930AB2A72A0414BF00BFF3FA /* CompetitionView */,
+				930AB2A12A02D36200BFF3FA /* Models */,
 				939A5DD429F6EEC5005DDA83 /* NetworkManager.swift */,
 				939A5DC629F6ED1C005DDA83 /* Assets.xcassets */,
 				939A5DC829F6ED1C005DDA83 /* Preview Content */,
@@ -152,9 +191,14 @@
 				939A5DC329F6ED1A005DDA83 /* MathBettorApp.swift in Sources */,
 				939A5DD529F6EEC5005DDA83 /* NetworkManager.swift in Sources */,
 				93EAFA5629FFFC10006315F7 /* HelloView.swift in Sources */,
-				930AB2A02A001D0400BFF3FA /* LeagueListViewModel.swift in Sources */,
-				939A5DD329F6EE72005DDA83 /* LeagueInfo.swift in Sources */,
-				939A5DD129F6ED62005DDA83 /* LeagueListView.swift in Sources */,
+				930AB2AD2A04185C00BFF3FA /* Prediction.swift in Sources */,
+				930AB2A02A001D0400BFF3FA /* CompetitionsListViewModel.swift in Sources */,
+				939A5DD329F6EE72005DDA83 /* CompetitionInfo.swift in Sources */,
+				939A5DD129F6ED62005DDA83 /* CompetitionsListView.swift in Sources */,
+				930AB2A92A0414F500BFF3FA /* CompetitionViewModel.swift in Sources */,
+				930AB2AB2A04181400BFF3FA /* Fixture.swift in Sources */,
+				930AB2A62A0414B900BFF3FA /* CompetitionView.swift in Sources */,
+				930AB2A42A02F90200BFF3FA /* CompetitionImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

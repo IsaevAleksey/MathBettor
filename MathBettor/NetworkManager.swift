@@ -25,7 +25,7 @@ class NetworkManager {
         return imageData
     }
     
-    func fetchLeaguesList() async throws -> LeaguesList {
+    func fetchLeaguesList() async throws -> CompetitionsList {
         var request = URLRequest(
             url: URL(string: "https://v3.football.api-sports.io/leagues")!,
             timeoutInterval: 10.0)
@@ -34,10 +34,10 @@ class NetworkManager {
         request.httpMethod = "GET"
 
         let (data, _) = try await URLSession.shared.data(for: request)
-        guard let leaguesList = try? JSONDecoder().decode(LeaguesList.self, from: data) else {
+        guard let competitionsList = try? JSONDecoder().decode(CompetitionsList.self, from: data) else {
             throw NetworkError.decodingError
         }
-        return leaguesList
+        return competitionsList
     }
 }
 
