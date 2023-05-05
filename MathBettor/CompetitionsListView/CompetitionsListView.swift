@@ -11,11 +11,7 @@ struct CompetitionsListView: View {
     @StateObject var viewModel: CompetitionsListViewModel
     var body: some View {
         NavigationView {
-            ScrollView {
-                ForEach(viewModel.currentCompetitionsList, id: \.league.id) { competitionInfo in
-                    Text (competitionInfo.league.name)
-                }
-            }
+            List(viewModel.rows, id: \.competitionsID) { competitionViewModel in CompetitionRow(competitionName: competitionViewModel.name, competitionImageData: competitionViewModel.imageData) }
             .navigationTitle("Select competition")
         }
         .onAppear {

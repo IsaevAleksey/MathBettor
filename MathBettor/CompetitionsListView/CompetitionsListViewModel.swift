@@ -8,25 +8,13 @@
 import SwiftUI
 
 class CompetitionsListViewModel: ObservableObject {
-    @Published var currentCompetitionsList: [CompetitionInfo] = []
-    
-    var imageData: Data {
-        var imageData = Data()
-        for competition in currentCompetitionsList {
-            do {
-                imageData = try NetworkManager.shared.fetchImage(from: competition.league.logo)
-            }
-            catch {
-                print(error)
-            }
-        }
-        return imageData
-    }
+    @Published var rows: [CompetitionViewModel] = []
     
     @MainActor func fetchCompetitionsList() async {
         do {
-            let leaguesList = try await NetworkManager.shared.fetchLeaguesList()
-            self.currentCompetitionsList = leaguesList.response
+            let competitionsList = try await NetworkManager.shared.fetchLeaguesList().response
+            rows = competitionsList.map { CompetitionViewModel(competitionInfo: $0) }
+
         }
         catch {
             print(error)

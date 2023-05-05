@@ -8,29 +8,39 @@
 import SwiftUI
 
 class CompetitionViewModel {
-    var currentCompetitionsList: [CompetitionInfo] {
-        competitionsList.response
+
+    var name: String {
+        competitionInfo.league.name
+    }
+    
+    var competitionsID: Int {
+        competitionInfo.league.id
+    }
+    
+    var competitionsLogo: String {
+        competitionInfo.league.logo
     }
     
     var imageData: Data {
-        var imageData = Data()
-            do {
-                imageData = try NetworkManager.shared.fetchImage(from: currentCompetitionsList[0].league.logo)
-            }
-            catch {
-                print(error)
-            }
-        return imageData
+        get async {
+            var imageData = Data()
+                do {
+                    imageData = try await NetworkManager.shared.fetchImage(from: competitionsLogo)
+                }
+                catch {
+                    print(error)
+                }
+            return imageData
+        }
     }
-    
+
 //    var fixturesList: FixturesList {
 //
 //    }
     
-    private let competitionsList: CompetitionsList
+    private let competitionInfo: CompetitionInfo
 
-    
-    init(competitionsList: CompetitionsList) {
-        self.competitionsList = competitionsList
+    init(competitionInfo: CompetitionInfo) {
+        self.competitionInfo = competitionInfo
     }
 }

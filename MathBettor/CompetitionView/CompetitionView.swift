@@ -16,7 +16,7 @@ struct CompetitionView: View {
                 imageSize: CGSize(width: 150, height: 150),
                 cornerRadius: 30,
             shadowIsOn: true)
-            Text(viewModel.currentCompetitionsList[0].league.name)
+            Text(viewModel.name)
                 .font(.largeTitle)
             Spacer()
         }
@@ -25,6 +25,6 @@ struct CompetitionView: View {
 
 struct CompetitionView_Previews: PreviewProvider {
     static var previews: some View {
-        CompetitionView(viewModel: CompetitionViewModel(competitionsList: CompetitionsList.fetchPsevdoLeaguesList()))
+        CompetitionView(viewModel: CompetitionViewModel(competitionInfo: CompetitionInfo.fetchPsevdoCompetitionInfo()))
     }
 }
