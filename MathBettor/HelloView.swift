@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct HelloView: View {
+    @State private var showCompetitionsList = false
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack(spacing: 5.0) {
                 Text("Здесь будет предупреждение о разумном подходе")
                     .multilineTextAlignment(.center)
-                NavigationLink("OK") { CompetitionsListView(viewModel: CompetitionsListViewModel()) }
+                Button(action: {
+                    self.showCompetitionsList.toggle()
+                }) {
+                    Text("OK")
+                }
+                .fullScreenCover(isPresented: $showCompetitionsList) {
+                    CompetitionsListView(viewModel: CompetitionsListViewModel())
+                }
             }
         }
     }

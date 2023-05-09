@@ -20,20 +20,11 @@ class CompetitionViewModel {
     var competitionsLogo: String {
         competitionInfo.league.logo
     }
-    
-    var imageData: Data {
-        get async {
-            var imageData = Data()
-                do {
-                    imageData = try await NetworkManager.shared.fetchImage(from: competitionsLogo)
-                }
-                catch {
-                    print(error)
-                }
-            return imageData
-        }
-    }
 
+    var competitionCountry: String {
+        competitionInfo.country.name
+    }
+    
 //    var fixturesList: FixturesList {
 //
 //    }

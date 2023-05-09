@@ -78,6 +78,7 @@
 				930AB2A52A0414B900BFF3FA /* CompetitionView.swift */,
 				930AB2A82A0414F500BFF3FA /* CompetitionViewModel.swift */,
 				930AB2A32A02F90200BFF3FA /* CompetitionImage.swift */,
+				930AB2A12A02D36200BFF3FA /* Models */,
 			);
 			path = CompetitionView;
 			sourceTree = "<group>";
@@ -113,7 +114,6 @@
 				93EAFA5529FFFC10006315F7 /* HelloView.swift */,
 				930AB2A22A02F81200BFF3FA /* CompetitionsListView */,
 				930AB2A72A0414BF00BFF3FA /* CompetitionView */,
-				930AB2A12A02D36200BFF3FA /* Models */,
 				930AB2B02A0595F500BFF3FA /* Services */,
 				939A5DC629F6ED1C005DDA83 /* Assets.xcassets */,
 				939A5DC829F6ED1C005DDA83 /* Preview Content */,

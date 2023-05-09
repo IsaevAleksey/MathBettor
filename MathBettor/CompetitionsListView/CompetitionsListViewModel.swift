@@ -14,7 +14,6 @@ class CompetitionsListViewModel: ObservableObject {
         do {
             let competitionsList = try await NetworkManager.shared.fetchLeaguesList().response
             rows = competitionsList.map { CompetitionViewModel(competitionInfo: $0) }
-
         }
         catch {
             print(error)

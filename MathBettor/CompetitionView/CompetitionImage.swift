@@ -8,36 +8,27 @@
 import SwiftUI
 
 struct CompetitionImage: View {
-    let imageData: Data
+    let imageURL: String
     let imageSize: CGSize
     let cornerRadius: CGFloat
     let shadowIsOn: Bool
     
     
     var body: some View {
-        getImage(from: imageData)
-            .resizable()
-            .frame(width: imageSize.width, height: imageSize.height)
-            .cornerRadius(cornerRadius)
-            .shadow(radius: shadowIsOn ? 10 : 0)
-    }
-    
-    private func getImage(from data: Data) -> Image {
-        guard let image = UIImage(data: data) else {
-            return Image(systemName: "xmark.shield")
+        AsyncImage(url: URL(string: imageURL)) { Image in
+            Image
+                .resizable()
+                .frame(width: imageSize.width, height: imageSize.height)
+                .cornerRadius(cornerRadius)
+                .shadow(radius: shadowIsOn ? 10 : 0)
+        } placeholder: {
+            ProgressView()
         }
-        return Image(uiImage: image)
     }
-    
 }
 
 struct CompetitionImage_Previews: PreviewProvider {
     static var previews: some View {
-        CompetitionImage(
-            imageData: Data(),
-            imageSize: CGSize(width: 150, height: 150),
-            cornerRadius: 30,
-            shadowIsOn: true
-        )
+        CompetitionImage(imageURL: "", imageSize: CGSize(width: 150, height: 150), cornerRadius: 30, shadowIsOn: true)
     }
 }

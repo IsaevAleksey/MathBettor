@@ -11,8 +11,12 @@ struct CompetitionsListView: View {
     @StateObject var viewModel: CompetitionsListViewModel
     var body: some View {
         NavigationView {
-            List(viewModel.rows, id: \.competitionsID) { competitionViewModel in CompetitionRow(competitionName: competitionViewModel.name, competitionImageData: competitionViewModel.imageData) }
-            .navigationTitle("Select competition")
+            List(viewModel.rows, id: \.competitionsID) { competitionViewModel in
+                NavigationLink(destination: CompetitionView(viewModel: competitionViewModel)) {
+                CompetitionRow(competitionName: competitionViewModel.name, competitionImageURL: competitionViewModel.competitionsLogo)
+            } }
+                .navigationTitle("Select competition")
+//                .listStyle(.sidebar)
         }
         .onAppear {
             Task {

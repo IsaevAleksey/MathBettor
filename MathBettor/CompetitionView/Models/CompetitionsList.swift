@@ -33,6 +33,8 @@ struct Season: Decodable {
     let current: Bool
 }
 
+
+    // убрать
 extension CompetitionsList {
     static func fetchPsevdoLeaguesList() -> CompetitionsList {
         CompetitionsList(response: [CompetitionInfo(league: League(id: 1, name: "liga", logo: "logo"), country: Country(name: "strana", flag: "flag"), seasons: [Season(year: 2001, current: true)])])

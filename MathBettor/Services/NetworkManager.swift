@@ -19,11 +19,12 @@ class NetworkManager {
     
     private init () {}
     
-    func fetchImage(from url: String) async throws -> Data {
-        guard let imageUrl = URL(string: url) else { throw NetworkError.invalidURL}
-        guard let imageData = try? Data(contentsOf: imageUrl) else { throw NetworkError.noData }
-        return imageData
-    }
+    // скорее всего надо будет убрать, не пригодится
+//    func fetchImage(from url: String) async throws -> Data {
+//        guard let imageUrl = URL(string: url) else { throw NetworkError.invalidURL}
+//        guard let imageData = try? Data(contentsOf: imageUrl) else { throw NetworkError.noData }
+//        return imageData
+//    }
     
     func fetchLeaguesList() async throws -> CompetitionsList {
         var request = URLRequest(
