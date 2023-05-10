@@ -13,7 +13,8 @@ class CompetitionsListViewModel: ObservableObject {
     @MainActor func fetchCompetitionsList() async {
         do {
             let competitionsList = try await NetworkManager.shared.fetchLeaguesList().response
-            rows = competitionsList.map { CompetitionViewModel(competitionInfo: $0) }
+            let sortedCompetitionsList = competitionsList.sorted(by: {$0.country.name < $1.country.name})
+            rows = sortedCompetitionsList.map { CompetitionViewModel(competitionInfo: $0) }
         }
         catch {
             print(error)
