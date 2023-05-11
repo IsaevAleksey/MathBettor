@@ -12,17 +12,23 @@ struct CompetitionsListView: View {
     var body: some View {
         NavigationView {
             List(viewModel.rows, id: \.competitionsID) { competitionViewModel in
+                Section(header: Text(competitionViewModel.competitionCountry)) {
                     NavigationLink(destination: CompetitionView(viewModel: competitionViewModel)) {
-                    CompetitionRow(competitionName: competitionViewModel.name, competitionImageURL: competitionViewModel.competitionsLogo)
+                        CompetitionRow(competitionName: competitionViewModel.name, competitionImageURL: competitionViewModel.competitionsLogoURL)
                     }
                 }
-                .navigationTitle("Select competition")
-        }
-        .onAppear {
-            Task {
-                await viewModel.fetchCompetitionsList()
             }
+            .navigationTitle("Select competition")
+            .listStyle(.plain)
         }
+        .task {
+            await viewModel.fetchCompetitionsList()
+        }
+//        .onAppear {
+//            Task {
+//                await viewModel.fetchCompetitionsList()
+//            }
+//        }
     }
 }
 

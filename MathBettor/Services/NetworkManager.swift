@@ -40,28 +40,48 @@ class NetworkManager {
         }
         return competitionsList
     }
-}
+    
+    // "https://api-football-v1.p.rapidapi.com/v3/fixtures?league=39&season=2022"
+    
+    func fetchFixturesList(leagueID: Int, currentSeason: Int) async throws -> FixturesList {
+        var request = URLRequest(
+            url: URL(string: "https://v3.football.api-sports.io/fixtures?league=\(leagueID)&season=\(currentSeason)")!,
+            timeoutInterval: 10.0)
+        request.addValue("2d3297ddd732374c7f607d900b0d9c69", forHTTPHeaderField: "x-rapidapi-key")
+        request.addValue("v3.football.api-sports.io", forHTTPHeaderField: "x-rapidapi-host")
+        request.httpMethod = "GET"
 
-func fetchResponse<T: Decodable>(_ type: T.Type, completion: @escaping(Result<T, NetworkError>) -> Void) {
-    var request = URLRequest(
-        url: URL(string: "https://v3.football.api-sports.io/leagues")!,
-        timeoutInterval: 10.0)
-    request.addValue("2d3297ddd732374c7f607d900b0d9c69", forHTTPHeaderField: "x-rapidapi-key")
-    request.addValue("v3.football.api-sports.io", forHTTPHeaderField: "x-rapidapi-host")
-    request.httpMethod = "GET"
-
-    URLSession.shared.dataTask(with: request) { data, _, error in
-        guard let data = data else {
-            completion(.failure(.noData))
-            return
+        let (data, _) = try await URLSession.shared.data(for: request)
+        guard let fixturesList = try? JSONDecoder().decode(FixturesList.self, from: data) else {
+            throw NetworkError.decodingError
         }
-        do {
-            let type = try JSONDecoder().decode(T.self, from: data)
-            DispatchQueue.main.async {
-                completion(.success(type))
+        return fixturesList
+    }
+    
+    
+    func fetchResponse<T: Decodable>(_ type: T.Type, completion: @escaping(Result<T, NetworkError>) -> Void) {
+        var request = URLRequest(
+            url: URL(string: "https://v3.football.api-sports.io/leagues")!,
+            timeoutInterval: 10.0)
+        request.addValue("2d3297ddd732374c7f607d900b0d9c69", forHTTPHeaderField: "x-rapidapi-key")
+        request.addValue("v3.football.api-sports.io", forHTTPHeaderField: "x-rapidapi-host")
+        request.httpMethod = "GET"
+
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
             }
-        } catch {
-            completion(.failure(.decodingError))
-        }
-    }.resume()
+            do {
+                let type = try JSONDecoder().decode(T.self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(type))
+                }
+            } catch {
+                completion(.failure(.decodingError))
+            }
+        }.resume()
+    }
 }
+
+

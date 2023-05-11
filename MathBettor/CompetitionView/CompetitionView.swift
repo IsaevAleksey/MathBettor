@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct CompetitionView: View {
-    var viewModel: CompetitionViewModel
+    @StateObject var viewModel: CompetitionViewModel
     var body: some View {
         VStack {
-            CompetitionImage(imageURL: viewModel.competitionsLogo, imageSize: CGSize(width: 150, height: 150), cornerRadius: 10, shadowIsOn: true)
+            CompetitionImage(imageURL: viewModel.competitionsLogoURL, imageSize: CGSize(width: 100, height: 100), cornerRadius: 10, shadowIsOn: true)
+            Text(viewModel.competitionCountry)
             Text(viewModel.name)
                 .font(.largeTitle)
-            Spacer()
+//            Spacer()
+            List(viewModel.rows, id: \.fixtureID) { fixtureViewModel in
+                Section(header: Text(fixtureViewModel.fixtureDate)) {
+                    NavigationLink(destination: FixtureView(viewModel: fixtureViewModel)) {
+                        FixtureRow(homeTeamLogoURL: fixtureViewModel.homeTeamLogoURL, awayTeamLogoURL: fixtureViewModel.awayTeamLogoURL, homeTeamName: fixtureViewModel.homeTeamName, awayTeamName: fixtureViewModel.awayTeamName)
+                    }
+                }
+            }
+            .listStyle(.automatic)
+        }
+        .task {
+            await viewModel.fetchFixturesList(leagueID: viewModel.competitionsID, currentSeason: viewModel.currentSeason.year)
         }
     }
 }
