@@ -47,7 +47,7 @@ class CompetitionViewModel: ObservableObject {
         self.competitionInfo = competitionInfo
     }
     
-    func fetchFixturesList(leagueID: Int, currentSeason: Int) async {
+    @MainActor func fetchFixturesList(leagueID: Int, currentSeason: Int) async {
         do {
             let fixturesList = try await NetworkManager.shared.fetchFixturesList(leagueID: leagueID, currentSeason: currentSeason).response
             rows = fixturesList.map { FixtureViewModel(fixtureInfo: $0) }
@@ -55,6 +55,10 @@ class CompetitionViewModel: ObservableObject {
         catch {
             print(error)
         }
+    }
+    
+    func fetchStatistics() async {
+        
     }
     
     

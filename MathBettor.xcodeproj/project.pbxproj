@@ -12,7 +12,7 @@
 		930AB2A62A0414B900BFF3FA /* CompetitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB2A52A0414B900BFF3FA /* CompetitionView.swift */; };
 		930AB2A92A0414F500BFF3FA /* CompetitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB2A82A0414F500BFF3FA /* CompetitionViewModel.swift */; };
 		930AB2AB2A04181400BFF3FA /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB2AA2A04181400BFF3FA /* Fixture.swift */; };
-		930AB2AD2A04185C00BFF3FA /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB2AC2A04185C00BFF3FA /* Prediction.swift */; };
+		930AB2AD2A04185C00BFF3FA /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB2AC2A04185C00BFF3FA /* Statistics.swift */; };
 		930AB2AF2A043FA200BFF3FA /* CompetitionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB2AE2A043FA200BFF3FA /* CompetitionRow.swift */; };
 		938D6C3D2A0D60ED002854DC /* FixtureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C3C2A0D60ED002854DC /* FixtureView.swift */; };
 		938D6C402A0D613B002854DC /* FixtureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C3F2A0D613B002854DC /* FixtureViewModel.swift */; };
@@ -33,7 +33,7 @@
 		930AB2A52A0414B900BFF3FA /* CompetitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionView.swift; sourceTree = "<group>"; };
 		930AB2A82A0414F500BFF3FA /* CompetitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionViewModel.swift; sourceTree = "<group>"; };
 		930AB2AA2A04181400BFF3FA /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
-		930AB2AC2A04185C00BFF3FA /* Prediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
+		930AB2AC2A04185C00BFF3FA /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		930AB2AE2A043FA200BFF3FA /* CompetitionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionRow.swift; sourceTree = "<group>"; };
 		938D6C3C2A0D60ED002854DC /* FixtureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureView.swift; sourceTree = "<group>"; };
 		938D6C3F2A0D613B002854DC /* FixtureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureViewModel.swift; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 			children = (
 				939A5DD229F6EE72005DDA83 /* CompetitionsList.swift */,
 				930AB2AA2A04181400BFF3FA /* Fixture.swift */,
-				930AB2AC2A04185C00BFF3FA /* Prediction.swift */,
+				930AB2AC2A04185C00BFF3FA /* Statistics.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,7 +225,7 @@
 				93EAFA5629FFFC10006315F7 /* HelloView.swift in Sources */,
 				938D6C442A0D76BB002854DC /* TeamLogoImage.swift in Sources */,
 				938D6C422A0D7519002854DC /* FixtureRow.swift in Sources */,
-				930AB2AD2A04185C00BFF3FA /* Prediction.swift in Sources */,
+				930AB2AD2A04185C00BFF3FA /* Statistics.swift in Sources */,
 				930AB2A02A001D0400BFF3FA /* CompetitionsListViewModel.swift in Sources */,
 				939A5DD329F6EE72005DDA83 /* CompetitionsList.swift in Sources */,
 				930AB2AF2A043FA200BFF3FA /* CompetitionRow.swift in Sources */,

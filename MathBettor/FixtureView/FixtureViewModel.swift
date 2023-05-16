@@ -34,9 +34,11 @@ class FixtureViewModel {
     }
     
     private let fixtureInfo: FixtureInfo
+    private let statisticsInfo: StatisticsInfo
 
-    init(fixtureInfo: FixtureInfo) {
+    init(fixtureInfo: FixtureInfo, statisticsInfo: StatisticsInfo) {
         self.fixtureInfo = fixtureInfo
+        self.statisticsInfo = statisticsInfo
     }
 }
 
