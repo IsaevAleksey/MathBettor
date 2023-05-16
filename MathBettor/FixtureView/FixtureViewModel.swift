@@ -40,5 +40,14 @@ class FixtureViewModel {
         self.fixtureInfo = fixtureInfo
         self.statisticsInfo = statisticsInfo
     }
+    
+    func fetchStatistics(fixtureID: Int) async {
+        do {
+            let statistics = try await NetworkManager.shared.fetchStatistics(fixtureID: fixtureID).response
+        }
+        catch {
+            print(error)
+        }
+    }
 }
 

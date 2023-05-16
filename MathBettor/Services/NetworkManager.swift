@@ -58,7 +58,7 @@ class NetworkManager {
         return fixturesList
     }
     
-    func fetchPrediction(fixtureID: Int) async throws  -> Statistics {
+    func fetchStatistics(fixtureID: Int) async throws  -> Statistics {
         var request = URLRequest(
             url: URL(string: "https://v3.football.api-sports.io/predictions?fixture=\(fixtureID)")!,
             timeoutInterval: 10.0)

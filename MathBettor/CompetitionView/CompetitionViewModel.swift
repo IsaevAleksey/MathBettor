@@ -26,6 +26,7 @@ class CompetitionViewModel: ObservableObject {
     var competitionCountry: String {
         competitionInfo.country.name
     }
+    
     var currentSeason: Season {
         let currentSeason: Season
         let sortedSeasons = competitionInfo.seasons.sorted(by: {$0.year < $1.year})
@@ -57,10 +58,8 @@ class CompetitionViewModel: ObservableObject {
         }
     }
     
-    func fetchStatistics() async {
-        
-    }
-    
+
+
     
 //    func fetchFixturesList1() {
 //        NetworkManager.shared.fetchResponse(FixturesList.self) { [weak self] result in
