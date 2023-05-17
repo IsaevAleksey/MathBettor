@@ -49,7 +49,7 @@ struct Percent: Decodable {
 //}
 
 
-struct Comparison: Decodable{
+struct Comparison: Decodable {
     let form: TeamStats
     let att: TeamStats
     let def: TeamStats

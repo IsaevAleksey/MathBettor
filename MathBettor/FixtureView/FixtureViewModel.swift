@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-class FixtureViewModel {
+class FixtureViewModel: ObservableObject {
+    
+    var statisticsInfo: StatisticsInfo?
     
     var fixtureID: Int {
         fixtureInfo.fixture.id
@@ -34,16 +36,14 @@ class FixtureViewModel {
     }
     
     private let fixtureInfo: FixtureInfo
-    private let statisticsInfo: StatisticsInfo
 
-    init(fixtureInfo: FixtureInfo, statisticsInfo: StatisticsInfo) {
+    init(fixtureInfo: FixtureInfo) {
         self.fixtureInfo = fixtureInfo
-        self.statisticsInfo = statisticsInfo
     }
     
     func fetchStatistics(fixtureID: Int) async {
         do {
-            let statistics = try await NetworkManager.shared.fetchStatistics(fixtureID: fixtureID).response
+            statisticsInfo = try await NetworkManager.shared.fetchStatistics(fixtureID: fixtureID).response
         }
         catch {
             print(error)
