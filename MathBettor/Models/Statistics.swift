@@ -8,12 +8,11 @@
 import Foundation
 
 struct Statistics: Decodable {
-    let response: StatisticsInfo
+    let response: [StatisticsInfo]
 }
 
 struct StatisticsInfo: Decodable {
     let predictions: Prediction
-//    let teams: TeamsStats
     let comparison: Comparison
 }
 
@@ -27,27 +26,6 @@ struct Percent: Decodable {
     let draw: String
     let away: String
 }
-
-//struct TeamsStats: Decodable {
-//    let home: TeamStats
-//    let away: TeamStats
-//}
-//
-//struct TeamStats: Decodable {
-//    let last_5: LastFiveStats
-//    let league: LeagueStats
-//}
-
-//struct LastFiveStats: Decodable {
-//    let form: String
-//    let att: String
-//    let def: String
-//}
-//
-//struct LeagueStats: Decodable {
-//
-//}
-
 
 struct Comparison: Decodable {
     let form: TeamStats

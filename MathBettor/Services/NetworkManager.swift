@@ -40,12 +40,10 @@ class NetworkManager {
         }
         return competitionsList
     }
-    
-    // "https://api-football-v1.p.rapidapi.com/v3/fixtures?league=39&season=2022"
-    
-    func fetchFixturesList(leagueID: Int, currentSeason: Int) async throws -> FixturesList {
+        
+    func fetchFixturesList(leagueID: Int, currentSeason: Int, fromDate: String, toDate: String) async throws -> FixturesList {
         var request = URLRequest(
-            url: URL(string: "https://v3.football.api-sports.io/fixtures?league=\(leagueID)&season=\(currentSeason)")!,
+            url: URL(string: "https://v3.football.api-sports.io/fixtures?league=\(leagueID)&season=\(currentSeason)&from=\(fromDate)&to=\(toDate)")!,
             timeoutInterval: 10.0)
         request.addValue("2d3297ddd732374c7f607d900b0d9c69", forHTTPHeaderField: "x-rapidapi-key")
         request.addValue("v3.football.api-sports.io", forHTTPHeaderField: "x-rapidapi-host")

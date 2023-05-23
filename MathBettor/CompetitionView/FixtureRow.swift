@@ -17,11 +17,13 @@ struct FixtureRow: View {
         VStack {
             HStack {
                 TeamLogoImage(teamLogoURL: homeTeamLogoURL)
+                    .frame(width: 50, height: 50)
                 Text(homeTeamName)
                 Spacer()
             }
             HStack {
                 TeamLogoImage(teamLogoURL: awayTeamLogoURL)
+                    .frame(width: 50, height: 50)
                 Text(awayTeamName)
                 Spacer()
             }

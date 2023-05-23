@@ -22,7 +22,10 @@ struct CompetitionsListView: View {
             .listStyle(.plain)
         }
         .task {
-            await viewModel.fetchCompetitionsList()
+            if viewModel.rows.isEmpty {
+                await viewModel.fetchCompetitionsList()
+                print("загражается список лиг")
+            }
         }
 //        .onAppear {
 //            Task {

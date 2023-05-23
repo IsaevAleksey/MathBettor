@@ -10,6 +10,13 @@ import SwiftUI
 class CompetitionViewModel: ObservableObject {
     
     @Published var rows: [FixtureViewModel] = []
+    
+    let fromDate = Date()
+    
+    var toDate: Date {
+        let toDate = Date() + 60*60*24*15
+        return toDate
+    }
 
     var name: String {
         competitionInfo.league.name
@@ -30,17 +37,14 @@ class CompetitionViewModel: ObservableObject {
     var currentSeason: Season {
         let currentSeason: Season
         let sortedSeasons = competitionInfo.seasons.sorted(by: {$0.year < $1.year})
-        let foundSeason = sortedSeasons.filter {$0.current == true}
-        if foundSeason.isEmpty {
+        let trueSeason = sortedSeasons.filter {$0.current == true}
+        if trueSeason.isEmpty {
             currentSeason = sortedSeasons.last!
         } else {
-            currentSeason = foundSeason[0]
+            currentSeason = trueSeason[0]
         }
         return currentSeason
     }
-//    var fixturesInfo: FixtureInfo {
-//        
-//
     
     private let competitionInfo: CompetitionInfo
 
@@ -48,9 +52,9 @@ class CompetitionViewModel: ObservableObject {
         self.competitionInfo = competitionInfo
     }
     
-    @MainActor func fetchFixturesList(leagueID: Int, currentSeason: Int) async {
+    @MainActor func fetchFixturesList(leagueID: Int, currentSeason: Int, fromDate: String, toDate: String) async {
         do {
-            let fixturesList = try await NetworkManager.shared.fetchFixturesList(leagueID: leagueID, currentSeason: currentSeason).response
+            let fixturesList = try await NetworkManager.shared.fetchFixturesList(leagueID: leagueID, currentSeason: currentSeason, fromDate: fromDate, toDate: toDate).response
             rows = fixturesList.map { FixtureViewModel(fixtureInfo: $0) }
         }
         catch {
@@ -71,4 +75,12 @@ class CompetitionViewModel: ObservableObject {
 //            }
 //        }
 //    }
+}
+
+extension Date {
+    var toApiString: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: self)
+    }
 }

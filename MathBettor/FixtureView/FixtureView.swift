@@ -12,22 +12,35 @@ struct FixtureView: View {
     
     @StateObject var viewModel: FixtureViewModel
     
-    
     var body: some View {
         
-        VStack {
-            HStack {
-                TeamLogoImage(teamLogoURL: viewModel.homeTeamLogoURL)
-                TeamLogoImage(teamLogoURL: viewModel.awayTeamLogoURL)
+        VStack(spacing: 16.0) {
+            HStack(spacing: 100.0) {
+                VStack {
+                    TeamLogoImage(teamLogoURL: viewModel.homeTeamLogoURL)
+                        .frame(height: 50)
+                    Text(viewModel.homeTeamName)
+                }
+                VStack {
+                    TeamLogoImage(teamLogoURL: viewModel.awayTeamLogoURL)
+                        .frame(height: 50)
+                    Text(viewModel.awayTeamName)
+                }
             }
-            HStack {
-                Text(viewModel.homeTeamName)
-                Text(viewModel.awayTeamName)
-            }
-            Text(viewModel.statisticsInfo?.predictions.advice ?? "no advice")
+            Text(viewModel.fixtureDate)
+//            Text(viewModel.currendDate.toApiString)
+//            Text(viewModel.toDate.toApiString)
+
+            List(viewModel.statisticsViewModel, id: \.advice) { statisticsViewModel in
+                StatisticsView(viewModel: statisticsViewModel)
+                }
+//            Text(viewModel.statisticsInfo?.predictions.advice ?? "no advice")
         }
         .task {
-            await viewModel.fetchStatistics(fixtureID: viewModel.fixtureID)
+            if viewModel.statisticsViewModel.isEmpty {
+                await viewModel.fetchStatistics(fixtureID: viewModel.fixtureID)
+                print("загражаем прогноз")
+            }
         }
     }
 }
