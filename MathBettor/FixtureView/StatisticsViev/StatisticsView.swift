@@ -25,8 +25,13 @@ struct StatisticsView: View {
                 .bold()
                 .padding(.vertical)
             StatisticsRowView(parametr: "POISSON DISTRIBUTION", homeTeamParametrValue: viewModel.poisson_distribution.home, awayTeamParametrValue: viewModel.poisson_distribution.away)
-            Text(viewModel.advice)
-                .padding(.top)
+            Text("Advice: \(viewModel.advice)")
+                .padding(.vertical)
+            HStack(spacing: 30.0) {
+                CircularProgressBarView(value: viewModel.probabilityWinAndDraw.home)
+                CircularProgressBarView(value: viewModel.probabilityWinAndDraw.draw)
+                CircularProgressBarView(value: viewModel.probabilityWinAndDraw.away)
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CompetitionsListView: View {
     @StateObject var viewModel: CompetitionsListViewModel
+    
     var body: some View {
         NavigationView {
             List(viewModel.rows, id: \.competitionsID) { competitionViewModel in
@@ -27,11 +28,6 @@ struct CompetitionsListView: View {
                 print("загражается список лиг")
             }
         }
-//        .onAppear {
-//            Task {
-//                await viewModel.fetchCompetitionsList()
-//            }
-//        }
     }
 }
 
