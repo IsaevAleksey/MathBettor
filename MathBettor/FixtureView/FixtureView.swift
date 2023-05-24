@@ -28,12 +28,14 @@ struct FixtureView: View {
                 }
             }
             Text(viewModel.fixtureDate)
+                .padding(.bottom)
 //            Text(viewModel.currendDate.toApiString)
 //            Text(viewModel.toDate.toApiString)
 
             List(viewModel.statisticsViewModel, id: \.advice) { statisticsViewModel in
                 StatisticsView(viewModel: statisticsViewModel)
-                }
+            }
+            .listStyle(.inset)
 //            Text(viewModel.statisticsInfo?.predictions.advice ?? "no advice")
         }
         .task {

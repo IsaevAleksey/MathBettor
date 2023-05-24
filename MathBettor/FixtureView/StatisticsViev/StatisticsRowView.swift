@@ -13,31 +13,33 @@ struct StatisticsRowView: View {
     let homeTeamParametrValue: String
     let awayTeamParametrValue: String
 
+    var roundHomeParametrValue: Float {
+        let roundValue = roundf(NSString(string: homeTeamParametrValue).floatValue)
+        return roundValue
+    }
+    
+    var roundAwayParametrValue: Float {
+        let roundValue = roundf(NSString(string: awayTeamParametrValue).floatValue)
+        return roundValue
+    }
     
     var body: some View {
         VStack {
             Text(parametr)
-                .frame(width: 50)
                 HStack {
-                    Text("\(homeTeamParametrValue)")
-                    ProgressBarView(parametr: parametr, homeTeamParametrValue: homeTeamParametrValue, awayTeamParametrValue: awayTeamParametrValue, aligment: .trailing, color: Color(.systemBlue))
-                        .frame(width: 115)
-                    ProgressBarView(parametr: parametr, homeTeamParametrValue: homeTeamParametrValue, awayTeamParametrValue: awayTeamParametrValue, aligment: .leading, color: Color(.systemMint))
-                        .frame(width: 115)
-                    Text("\(awayTeamParametrValue)")
+                    Text("\(Int(roundHomeParametrValue))")
+                    ProgressBarView(parametrValue: roundHomeParametrValue, aligment: .trailing, color: Color(.systemBlue))
+//                        .frame(width: 115)
+                    ProgressBarView(parametrValue: roundAwayParametrValue, aligment: .leading, color: Color(.systemMint))
+//                        .frame(width: 115)
+                    Text("\(Int(roundAwayParametrValue))")
                 }
-
-
-
-                
-//            ProgressView("Downloading…", value: Float(homeTeamParametrValue), total: 100)
-
         }
     }
 }
 
 struct StatisticsRowView_Previews: PreviewProvider {
     static var previews: some View {
-        StatisticsRowView(parametr: "FORM", homeTeamParametrValue: "40", awayTeamParametrValue: "60")
+        StatisticsRowView(parametr: "TOTAL", homeTeamParametrValue: "90.933", awayTeamParametrValue: "60")
     }
 }

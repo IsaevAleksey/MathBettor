@@ -12,7 +12,22 @@ struct StatisticsView: View {
     @StateObject var viewModel: StatisticsViewModel
     
     var body: some View {
-        Text(viewModel.advice)
+        VStack {
+            Text("STATISTICS")
+                .bold()
+                .padding(.bottom)
+            StatisticsRowView(parametr: "FORM", homeTeamParametrValue: viewModel.form.home, awayTeamParametrValue: viewModel.form.away)
+            StatisticsRowView(parametr: "ATT", homeTeamParametrValue: viewModel.att.home, awayTeamParametrValue: viewModel.att.away)
+            StatisticsRowView(parametr: "DEF", homeTeamParametrValue: viewModel.def.home, awayTeamParametrValue: viewModel.def.away)
+            StatisticsRowView(parametr: "H2H", homeTeamParametrValue: viewModel.h2h.home, awayTeamParametrValue: viewModel.h2h.away)
+            StatisticsRowView(parametr: "TOTAL", homeTeamParametrValue: viewModel.total.home, awayTeamParametrValue: viewModel.total.away)
+            Text("PREDICTION")
+                .bold()
+                .padding(.vertical)
+            StatisticsRowView(parametr: "POISSON DISTRIBUTION", homeTeamParametrValue: viewModel.poisson_distribution.home, awayTeamParametrValue: viewModel.poisson_distribution.away)
+            Text(viewModel.advice)
+                .padding(.top)
+        }
     }
 }
 

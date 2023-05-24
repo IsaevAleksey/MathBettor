@@ -15,6 +15,7 @@
 		930AB2AD2A04185C00BFF3FA /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB2AC2A04185C00BFF3FA /* Statistics.swift */; };
 		930AB2AF2A043FA200BFF3FA /* CompetitionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB2AE2A043FA200BFF3FA /* CompetitionRow.swift */; };
 		932F0E3D2A1D3AFA0005F994 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E3C2A1D3AFA0005F994 /* ProgressBarView.swift */; };
+		932F0E3F2A1E87700005F994 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E3E2A1E87700005F994 /* CircularProgressBarView.swift */; };
 		938D6C3D2A0D60ED002854DC /* FixtureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C3C2A0D60ED002854DC /* FixtureView.swift */; };
 		938D6C402A0D613B002854DC /* FixtureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C3F2A0D613B002854DC /* FixtureViewModel.swift */; };
 		938D6C422A0D7519002854DC /* FixtureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C412A0D7519002854DC /* FixtureRow.swift */; };
@@ -40,6 +41,7 @@
 		930AB2AC2A04185C00BFF3FA /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		930AB2AE2A043FA200BFF3FA /* CompetitionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionRow.swift; sourceTree = "<group>"; };
 		932F0E3C2A1D3AFA0005F994 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		932F0E3E2A1E87700005F994 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
 		938D6C3C2A0D60ED002854DC /* FixtureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureView.swift; sourceTree = "<group>"; };
 		938D6C3F2A0D613B002854DC /* FixtureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureViewModel.swift; sourceTree = "<group>"; };
 		938D6C412A0D7519002854DC /* FixtureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureRow.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				938D6C452A18D66F002854DC /* StatisticsView.swift */,
 				938D6C4A2A1900A0002854DC /* StatisticsRowView.swift */,
 				932F0E3C2A1D3AFA0005F994 /* ProgressBarView.swift */,
+				932F0E3E2A1E87700005F994 /* CircularProgressBarView.swift */,
 				938D6C482A18D854002854DC /* StatisticsViewModel.swift */,
 			);
 			path = StatisticsViev;
@@ -246,6 +249,7 @@
 				93EAFA5629FFFC10006315F7 /* HelloView.swift in Sources */,
 				938D6C442A0D76BB002854DC /* TeamLogoImage.swift in Sources */,
 				938D6C422A0D7519002854DC /* FixtureRow.swift in Sources */,
+				932F0E3F2A1E87700005F994 /* CircularProgressBarView.swift in Sources */,
 				930AB2AD2A04185C00BFF3FA /* Statistics.swift in Sources */,
 				930AB2A02A001D0400BFF3FA /* CompetitionsListViewModel.swift in Sources */,
 				932F0E3D2A1D3AFA0005F994 /* ProgressBarView.swift in Sources */,

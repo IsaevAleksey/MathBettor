@@ -9,19 +9,15 @@ import SwiftUI
 
 struct ProgressBarView: View {
     
-    let parametr: String
-    let homeTeamParametrValue: String
-    let awayTeamParametrValue: String
+    let parametrValue: Float
     let aligment: Alignment
     let color: Color
     
     var body: some View {
-        
-        ProgressBar(value: (Float(homeTeamParametrValue) ?? 0) / 100, aligment: aligment, color: color)
+        ProgressBar(value: parametrValue / 100, aligment: aligment, color: color)
             .frame(height: 10)
     }
 }
-
 
 struct ProgressBar: View {
     
@@ -46,6 +42,6 @@ struct ProgressBar: View {
 
 struct ProgressBarView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressBarView(parametr: "FORM", homeTeamParametrValue: "40", awayTeamParametrValue: "60", aligment: .leading, color: Color(.systemBlue))
+        ProgressBarView(parametrValue: 50.0, aligment: .leading, color: Color(.systemBlue))
     }
 }
