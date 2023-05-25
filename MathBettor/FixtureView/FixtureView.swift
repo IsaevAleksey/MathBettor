@@ -32,10 +32,29 @@ struct FixtureView: View {
 //            Text(viewModel.currendDate.toApiString)
 //            Text(viewModel.toDate.toApiString)
 
-            List(viewModel.statisticsViewModel, id: \.advice) { statisticsViewModel in
-                StatisticsView(viewModel: statisticsViewModel)
+            TabView {
+                List(viewModel.statisticsViewModel, id: \.advice) { statisticsViewModel in
+                    StatisticsView(viewModel: statisticsViewModel)
+                }
+                    .listStyle(.inset)
+                    .tabItem {
+                        Image(systemName: "chart.xyaxis.line")
+                        Text("Statistics")
+                    }
+                List(viewModel.predictionTabViewModel, id: \.advice) { predictionTabViewModel in
+                    PredictionTabView(viewModel: predictionTabViewModel)
+                }
+                    .listStyle(.inset)
+                    .tabItem {
+                        Image(systemName: "text.bubble")
+                        Text("Prediction")
+                    }
+                ScorePredictionTabView()
+                    .tabItem {
+                        Image(systemName: "sportscourt")
+                        Text("Score Prediction")
+                    }
             }
-            .listStyle(.inset)
 //            Text(viewModel.statisticsInfo?.predictions.advice ?? "no advice")
         }
         .task {

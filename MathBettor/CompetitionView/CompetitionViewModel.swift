@@ -14,7 +14,7 @@ class CompetitionViewModel: ObservableObject {
     let fromDate = Date()
     
     var toDate: Date {
-        let toDate = Date() + 60*60*24*15
+        let toDate = Date() + 60*60*24*7
         return toDate
     }
 

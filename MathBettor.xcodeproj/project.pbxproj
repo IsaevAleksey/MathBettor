@@ -16,6 +16,10 @@
 		930AB2AF2A043FA200BFF3FA /* CompetitionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB2AE2A043FA200BFF3FA /* CompetitionRow.swift */; };
 		932F0E3D2A1D3AFA0005F994 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E3C2A1D3AFA0005F994 /* ProgressBarView.swift */; };
 		932F0E3F2A1E87700005F994 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E3E2A1E87700005F994 /* CircularProgressBarView.swift */; };
+		932F0E412A1FC3280005F994 /* PredictionTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E402A1FC3280005F994 /* PredictionTabView.swift */; };
+		932F0E442A1FC37C0005F994 /* PredictionTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E432A1FC37C0005F994 /* PredictionTabViewModel.swift */; };
+		932F0E462A1FD1830005F994 /* ScorePredictionTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E452A1FD1830005F994 /* ScorePredictionTabView.swift */; };
+		932F0E492A1FD1B40005F994 /* ScorePredictionTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E482A1FD1B40005F994 /* ScorePredictionTabViewModel.swift */; };
 		938D6C3D2A0D60ED002854DC /* FixtureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C3C2A0D60ED002854DC /* FixtureView.swift */; };
 		938D6C402A0D613B002854DC /* FixtureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C3F2A0D613B002854DC /* FixtureViewModel.swift */; };
 		938D6C422A0D7519002854DC /* FixtureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C412A0D7519002854DC /* FixtureRow.swift */; };
@@ -42,6 +46,10 @@
 		930AB2AE2A043FA200BFF3FA /* CompetitionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionRow.swift; sourceTree = "<group>"; };
 		932F0E3C2A1D3AFA0005F994 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		932F0E3E2A1E87700005F994 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
+		932F0E402A1FC3280005F994 /* PredictionTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionTabView.swift; sourceTree = "<group>"; };
+		932F0E432A1FC37C0005F994 /* PredictionTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionTabViewModel.swift; sourceTree = "<group>"; };
+		932F0E452A1FD1830005F994 /* ScorePredictionTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePredictionTabView.swift; sourceTree = "<group>"; };
+		932F0E482A1FD1B40005F994 /* ScorePredictionTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePredictionTabViewModel.swift; sourceTree = "<group>"; };
 		938D6C3C2A0D60ED002854DC /* FixtureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureView.swift; sourceTree = "<group>"; };
 		938D6C3F2A0D613B002854DC /* FixtureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureViewModel.swift; sourceTree = "<group>"; };
 		938D6C412A0D7519002854DC /* FixtureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureRow.swift; sourceTree = "<group>"; };
@@ -110,6 +118,25 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		932F0E422A1FC32D0005F994 /* PredictionTabView */ = {
+			isa = PBXGroup;
+			children = (
+				932F0E402A1FC3280005F994 /* PredictionTabView.swift */,
+				932F0E432A1FC37C0005F994 /* PredictionTabViewModel.swift */,
+				932F0E3E2A1E87700005F994 /* CircularProgressBarView.swift */,
+			);
+			path = PredictionTabView;
+			sourceTree = "<group>";
+		};
+		932F0E472A1FD1880005F994 /* ScorePredictionTabView */ = {
+			isa = PBXGroup;
+			children = (
+				932F0E452A1FD1830005F994 /* ScorePredictionTabView.swift */,
+				932F0E482A1FD1B40005F994 /* ScorePredictionTabViewModel.swift */,
+			);
+			path = ScorePredictionTabView;
+			sourceTree = "<group>";
+		};
 		938D6C3E2A0D60F4002854DC /* FixtureView */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,10 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				938D6C452A18D66F002854DC /* StatisticsView.swift */,
+				938D6C482A18D854002854DC /* StatisticsViewModel.swift */,
 				938D6C4A2A1900A0002854DC /* StatisticsRowView.swift */,
 				932F0E3C2A1D3AFA0005F994 /* ProgressBarView.swift */,
-				932F0E3E2A1E87700005F994 /* CircularProgressBarView.swift */,
-				938D6C482A18D854002854DC /* StatisticsViewModel.swift */,
 			);
 			path = StatisticsViev;
 			sourceTree = "<group>";
@@ -156,6 +182,8 @@
 				930AB2A22A02F81200BFF3FA /* CompetitionsListView */,
 				930AB2A72A0414BF00BFF3FA /* CompetitionView */,
 				938D6C3E2A0D60F4002854DC /* FixtureView */,
+				932F0E422A1FC32D0005F994 /* PredictionTabView */,
+				932F0E472A1FD1880005F994 /* ScorePredictionTabView */,
 				930AB2A12A02D36200BFF3FA /* Models */,
 				930AB2B02A0595F500BFF3FA /* Services */,
 				939A5DC629F6ED1C005DDA83 /* Assets.xcassets */,
@@ -243,11 +271,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				939A5DC329F6ED1A005DDA83 /* MathBettorApp.swift in Sources */,
+				932F0E412A1FC3280005F994 /* PredictionTabView.swift in Sources */,
 				939A5DD529F6EEC5005DDA83 /* NetworkManager.swift in Sources */,
 				938D6C402A0D613B002854DC /* FixtureViewModel.swift in Sources */,
 				938D6C4B2A1900A0002854DC /* StatisticsRowView.swift in Sources */,
 				93EAFA5629FFFC10006315F7 /* HelloView.swift in Sources */,
 				938D6C442A0D76BB002854DC /* TeamLogoImage.swift in Sources */,
+				932F0E442A1FC37C0005F994 /* PredictionTabViewModel.swift in Sources */,
 				938D6C422A0D7519002854DC /* FixtureRow.swift in Sources */,
 				932F0E3F2A1E87700005F994 /* CircularProgressBarView.swift in Sources */,
 				930AB2AD2A04185C00BFF3FA /* Statistics.swift in Sources */,
@@ -257,11 +287,13 @@
 				938D6C462A18D66F002854DC /* StatisticsView.swift in Sources */,
 				930AB2AF2A043FA200BFF3FA /* CompetitionRow.swift in Sources */,
 				939A5DD129F6ED62005DDA83 /* CompetitionsListView.swift in Sources */,
+				932F0E492A1FD1B40005F994 /* ScorePredictionTabViewModel.swift in Sources */,
 				930AB2A92A0414F500BFF3FA /* CompetitionViewModel.swift in Sources */,
 				938D6C3D2A0D60ED002854DC /* FixtureView.swift in Sources */,
 				930AB2AB2A04181400BFF3FA /* Fixture.swift in Sources */,
 				930AB2A62A0414B900BFF3FA /* CompetitionView.swift in Sources */,
 				930AB2A42A02F90200BFF3FA /* CompetitionImage.swift in Sources */,
+				932F0E462A1FD1830005F994 /* ScorePredictionTabView.swift in Sources */,
 				938D6C492A18D854002854DC /* StatisticsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

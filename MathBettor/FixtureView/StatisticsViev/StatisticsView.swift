@@ -21,17 +21,7 @@ struct StatisticsView: View {
             StatisticsRowView(parametr: "DEF", homeTeamParametrValue: viewModel.def.home, awayTeamParametrValue: viewModel.def.away)
             StatisticsRowView(parametr: "H2H", homeTeamParametrValue: viewModel.h2h.home, awayTeamParametrValue: viewModel.h2h.away)
             StatisticsRowView(parametr: "TOTAL", homeTeamParametrValue: viewModel.total.home, awayTeamParametrValue: viewModel.total.away)
-            Text("PREDICTION")
-                .bold()
-                .padding(.vertical)
             StatisticsRowView(parametr: "POISSON DISTRIBUTION", homeTeamParametrValue: viewModel.poisson_distribution.home, awayTeamParametrValue: viewModel.poisson_distribution.away)
-            Text("Advice: \(viewModel.advice)")
-                .padding(.vertical)
-            HStack(spacing: 30.0) {
-                CircularProgressBarView(value: viewModel.probabilityWinAndDraw.home)
-                CircularProgressBarView(value: viewModel.probabilityWinAndDraw.draw)
-                CircularProgressBarView(value: viewModel.probabilityWinAndDraw.away)
-            }
         }
     }
 }

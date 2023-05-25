@@ -21,6 +21,9 @@ struct CompetitionsListView: View {
             }
             .navigationTitle("Select competition")
             .listStyle(.plain)
+            
+            
+            
         }
         .task {
             if viewModel.rows.isEmpty {
