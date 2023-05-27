@@ -7,10 +7,6 @@
 
 import Foundation
 
-struct CountriesList: Decodable {
-    let response: [Country]
-}
-
 struct CompetitionsList: Decodable {
     let response: [CompetitionInfo]
 }

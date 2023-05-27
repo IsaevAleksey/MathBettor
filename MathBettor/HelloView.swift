@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HelloView: View {
-    @State private var showCountriesList = false
+    @State private var showCompetitionsList = false
     
     var body: some View {
         NavigationView {
@@ -16,12 +16,12 @@ struct HelloView: View {
                 Text("Здесь будет предупреждение о разумном подходе")
                     .multilineTextAlignment(.center)
                 Button(action: {
-                    self.showCountriesList.toggle()
+                    self.showCompetitionsList.toggle()
                 }) {
                     Text("OK")
                 }
-                .fullScreenCover(isPresented: $showCountriesList) {
-                    CountriesListView(viewModel: CountriesListViewModel())
+                .fullScreenCover(isPresented: $showCompetitionsList) {
+                    CompetitionsListView(viewModel: CompetitionsListViewModel())
                 }
             }
         }

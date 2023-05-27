@@ -11,17 +11,21 @@ struct CompetitionsListView: View {
     @StateObject var viewModel: CompetitionsListViewModel
     
     var body: some View {
-        List(viewModel.rows, id: \.competitionsID) { competitionViewModel in
-            NavigationLink(destination: CompetitionView(viewModel: competitionViewModel)) {
-                CompetitionRow(competitionName: competitionViewModel.name, competitionImageURL: competitionViewModel.competitionsLogoURL)
+        NavigationView {
+            List(viewModel.rows, id: \.competitionsID) { competitionViewModel in
+                Section(header: Text(competitionViewModel.competitionCountry)) {
+                    NavigationLink(destination: CompetitionView(viewModel: competitionViewModel)) {
+                        CompetitionRow(competitionName: competitionViewModel.name, competitionImageURL: competitionViewModel.competitionsLogoURL)
+                    }
+                }
             }
+            .navigationTitle("Select competition")
+            .listStyle(.plain)
         }
-        .navigationTitle(viewModel.countryName)
-        .listStyle(.plain)
         .task {
             if viewModel.rows.isEmpty {
-                await viewModel.fetchCompetitionsList(country: viewModel.countryName)
-                print("загружается список лиг")
+                await viewModel.fetchCompetitionsList()
+                print("загражается список лиг")
             }
         }
     }
@@ -29,7 +33,7 @@ struct CompetitionsListView: View {
 
 struct LeagueListView_Previews: PreviewProvider {
     static var previews: some View {
-        CompetitionsListView(viewModel: CompetitionsListViewModel(country: Country(name: "Neverland")))
+        CompetitionsListView(viewModel: CompetitionsListViewModel())
     }
 }
 

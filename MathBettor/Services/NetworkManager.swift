@@ -26,24 +26,9 @@ class NetworkManager {
 //        return imageData
 //    }
     
-    func fetchCountryList() async throws -> CountriesList {
+    func fetchCompetitionsList() async throws -> CompetitionsList {
         var request = URLRequest(
-            url: URL(string: "https://v3.football.api-sports.io/countries")!,
-            timeoutInterval: 10.0)
-        request.addValue("2d3297ddd732374c7f607d900b0d9c69", forHTTPHeaderField: "x-rapidapi-key")
-        request.addValue("v3.football.api-sports.io", forHTTPHeaderField: "x-rapidapi-host")
-        request.httpMethod = "GET"
-
-        let (data, _) = try await URLSession.shared.data(for: request)
-        guard let countriesList = try? JSONDecoder().decode(CountriesList.self, from: data) else {
-            throw NetworkError.decodingError
-        }
-        return countriesList
-    }
-    
-    func fetchCompetitionsList(country: String) async throws -> CompetitionsList {
-        var request = URLRequest(
-            url: URL(string: "https://v3.football.api-sports.io/leagues?country=\(country)")!,
+            url: URL(string: "https://v3.football.api-sports.io/leagues")!,
             timeoutInterval: 10.0)
         request.addValue("2d3297ddd732374c7f607d900b0d9c69", forHTTPHeaderField: "x-rapidapi-key")
         request.addValue("v3.football.api-sports.io", forHTTPHeaderField: "x-rapidapi-host")
@@ -80,9 +65,7 @@ class NetworkManager {
         request.httpMethod = "GET"
         
         let (data, _) = try await URLSession.shared.data(for: request)
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        guard let statistics = try? decoder.decode(Statistics.self, from: data) else {
+        guard let statistics = try? JSONDecoder().decode(Statistics.self, from: data) else {
             throw NetworkError.decodingError
         }
         return statistics

@@ -21,8 +21,6 @@
 		932F0E462A1FD1830005F994 /* ScorePredictionTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E452A1FD1830005F994 /* ScorePredictionTabView.swift */; };
 		932F0E492A1FD1B40005F994 /* ScorePredictionTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E482A1FD1B40005F994 /* ScorePredictionTabViewModel.swift */; };
 		935EE8B02A2203C2000D8157 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935EE8AF2A2203C2000D8157 /* ImageCacheManager.swift */; };
-		935EE8B92A222227000D8157 /* CountriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935EE8B82A222227000D8157 /* CountriesListViewModel.swift */; };
-		935EE8BB2A222254000D8157 /* CountriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935EE8BA2A222254000D8157 /* CountriesListView.swift */; };
 		938D6C3D2A0D60ED002854DC /* FixtureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C3C2A0D60ED002854DC /* FixtureView.swift */; };
 		938D6C402A0D613B002854DC /* FixtureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C3F2A0D613B002854DC /* FixtureViewModel.swift */; };
 		938D6C422A0D7519002854DC /* FixtureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C412A0D7519002854DC /* FixtureRow.swift */; };
@@ -54,8 +52,6 @@
 		932F0E452A1FD1830005F994 /* ScorePredictionTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePredictionTabView.swift; sourceTree = "<group>"; };
 		932F0E482A1FD1B40005F994 /* ScorePredictionTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePredictionTabViewModel.swift; sourceTree = "<group>"; };
 		935EE8AF2A2203C2000D8157 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
-		935EE8B82A222227000D8157 /* CountriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewModel.swift; sourceTree = "<group>"; };
-		935EE8BA2A222254000D8157 /* CountriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListView.swift; sourceTree = "<group>"; };
 		938D6C3C2A0D60ED002854DC /* FixtureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureView.swift; sourceTree = "<group>"; };
 		938D6C3F2A0D613B002854DC /* FixtureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureViewModel.swift; sourceTree = "<group>"; };
 		938D6C412A0D7519002854DC /* FixtureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureRow.swift; sourceTree = "<group>"; };
@@ -144,15 +140,6 @@
 			path = ScorePredictionTabView;
 			sourceTree = "<group>";
 		};
-		935EE8B32A221E7D000D8157 /* CountriesListView */ = {
-			isa = PBXGroup;
-			children = (
-				935EE8BA2A222254000D8157 /* CountriesListView.swift */,
-				935EE8B82A222227000D8157 /* CountriesListViewModel.swift */,
-			);
-			path = CountriesListView;
-			sourceTree = "<group>";
-		};
 		938D6C3E2A0D60F4002854DC /* FixtureView */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,7 +184,6 @@
 			children = (
 				939A5DC229F6ED1A005DDA83 /* MathBettorApp.swift */,
 				93EAFA5529FFFC10006315F7 /* HelloView.swift */,
-				935EE8B32A221E7D000D8157 /* CountriesListView */,
 				930AB2A22A02F81200BFF3FA /* CompetitionsListView */,
 				930AB2A72A0414BF00BFF3FA /* CompetitionView */,
 				938D6C3E2A0D60F4002854DC /* FixtureView */,
@@ -292,7 +278,6 @@
 				939A5DD529F6EEC5005DDA83 /* NetworkManager.swift in Sources */,
 				938D6C402A0D613B002854DC /* FixtureViewModel.swift in Sources */,
 				938D6C4B2A1900A0002854DC /* StatisticsRowView.swift in Sources */,
-				935EE8BB2A222254000D8157 /* CountriesListView.swift in Sources */,
 				93EAFA5629FFFC10006315F7 /* HelloView.swift in Sources */,
 				938D6C442A0D76BB002854DC /* TeamLogoImage.swift in Sources */,
 				932F0E442A1FC37C0005F994 /* PredictionTabViewModel.swift in Sources */,
@@ -301,7 +286,6 @@
 				930AB2AD2A04185C00BFF3FA /* Statistics.swift in Sources */,
 				930AB2A02A001D0400BFF3FA /* CompetitionsListViewModel.swift in Sources */,
 				932F0E3D2A1D3AFA0005F994 /* ProgressBarView.swift in Sources */,
-				935EE8B92A222227000D8157 /* CountriesListViewModel.swift in Sources */,
 				939A5DD329F6EE72005DDA83 /* CompetitionsList.swift in Sources */,
 				938D6C462A18D66F002854DC /* StatisticsView.swift in Sources */,
 				930AB2AF2A043FA200BFF3FA /* CompetitionRow.swift in Sources */,

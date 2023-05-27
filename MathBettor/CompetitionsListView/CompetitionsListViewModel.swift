@@ -10,20 +10,10 @@ import SwiftUI
 class CompetitionsListViewModel: ObservableObject {
     @Published var rows: [CompetitionViewModel] = []
     
-    var countryName: String {
-        country.name
-    }
-    
-    private let country: Country
-
-    init(country: Country) {
-        self.country = country
-    }
-    
-    @MainActor func fetchCompetitionsList(country: String) async {
+    @MainActor func fetchCompetitionsList() async {
         do {
-            let competitionsList = try await NetworkManager.shared.fetchCompetitionsList(country: country).response
-            let sortedCompetitionsList = competitionsList.sorted(by: {$0.league.id < $1.league.id})
+            let competitionsList = try await NetworkManager.shared.fetchCompetitionsList().response
+            let sortedCompetitionsList = competitionsList.sorted(by: {$0.country.name < $1.country.name})
             rows = sortedCompetitionsList.map {CompetitionViewModel(competitionInfo: $0) }
         }
         catch {
