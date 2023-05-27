@@ -8,12 +8,9 @@
 import SwiftUI
 
 struct FixtureView: View {
-//    @EnvironmentObject var statisticsInfo: FixtureViewModel
-    
     @StateObject var viewModel: FixtureViewModel
     
     var body: some View {
-        
         VStack(spacing: 16.0) {
             HStack(spacing: 100.0) {
                 VStack {
@@ -31,7 +28,6 @@ struct FixtureView: View {
                 .padding(.bottom)
 //            Text(viewModel.currendDate.toApiString)
 //            Text(viewModel.toDate.toApiString)
-
             TabView {
                 List(viewModel.statisticsViewModel, id: \.advice) { statisticsViewModel in
                     StatisticsView(viewModel: statisticsViewModel)
@@ -46,16 +42,15 @@ struct FixtureView: View {
                 }
                     .listStyle(.inset)
                     .tabItem {
-                        Image(systemName: "text.bubble")
+                        Image(systemName: "percent")
                         Text("Prediction")
                     }
                 ScorePredictionTabView()
                     .tabItem {
-                        Image(systemName: "sportscourt")
+                        Image(systemName: "soccerball")
                         Text("Score Prediction")
                     }
             }
-//            Text(viewModel.statisticsInfo?.predictions.advice ?? "no advice")
         }
         .task {
             if viewModel.statisticsViewModel.isEmpty {
@@ -68,8 +63,6 @@ struct FixtureView: View {
 
 struct FixtureView_Previews: PreviewProvider {
     static var previews: some View {
-        FixtureView(viewModel: FixtureViewModel(fixtureInfo: FixtureInfo.fetchPsevdoFixtureInfo()
-//                                                , statisticsInfo: StatisticsInfo(predictions: Prediction(advice: "sovet", percent: Percent(home: "30", draw: "20", away: "50")), comparison: Comparison(form: TeamStats(home: "team1", away: "team2"), att: TeamStats(home: "team1", away: "team2"), def: TeamStats(home: "team1", away: "team2"), poisson_distribution: TeamStats(home: "team1", away: "team2"), h2h: TeamStats(home: "team1", away: "team2"), total: TeamStats(home: "team1", away: "team2")))
-                                               ))
+        FixtureView(viewModel: FixtureViewModel(fixtureInfo: FixtureInfo.fetchPsevdoFixtureInfo()))
     }
 }

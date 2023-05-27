@@ -17,7 +17,6 @@ struct CompetitionRow: View {
                 .frame(width: 50, height: 50)
             Text(competitionName)
         }
-//        .frame(height: 50)
     }
 }
 

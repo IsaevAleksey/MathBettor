@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct CircularProgressBarView: View {
-    
-    var value: String
+    let value: String
     
     var body: some View {
         ZStack {
@@ -21,8 +20,7 @@ struct CircularProgressBarView: View {
 }
 
 struct CircularProgressBar: View {
-    
-    var value: String
+    let value: String
 
     var body: some View {
         ZStack {

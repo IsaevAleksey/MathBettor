@@ -31,7 +31,7 @@ struct Comparison: Decodable {
     let form: TeamStats
     let att: TeamStats
     let def: TeamStats
-    let poisson_distribution: TeamStats
+    let poissonDistribution: TeamStats
     let h2h: TeamStats
     let total: TeamStats
 }

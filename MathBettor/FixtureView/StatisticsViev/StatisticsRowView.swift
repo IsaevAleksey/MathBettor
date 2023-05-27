@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct StatisticsRowView: View {
-    
     let parametr: String
     let homeTeamParametrValue: String
     let awayTeamParametrValue: String
@@ -29,9 +28,7 @@ struct StatisticsRowView: View {
                 HStack {
                     Text("\(Int(roundHomeParametrValue))")
                     ProgressBarView(parametrValue: roundHomeParametrValue, aligment: .trailing, color: Color(.systemBlue))
-//                        .frame(width: 115)
                     ProgressBarView(parametrValue: roundAwayParametrValue, aligment: .leading, color: Color(.systemMint))
-//                        .frame(width: 115)
                     Text("\(Int(roundAwayParametrValue))")
                 }
         }

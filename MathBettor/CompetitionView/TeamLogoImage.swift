@@ -9,13 +9,10 @@ import SwiftUI
 
 struct TeamLogoImage: View {
     let teamLogoURL: String
-//    let imageSize: CGSize
-//    let cornerRadius: CGFloat
-//    let shadowIsOn: Bool
     
     var body: some View {
-        AsyncImage(url: URL(string: teamLogoURL)) { Image in
-            Image
+        AsyncImage(url: URL(string: teamLogoURL)) { image in
+            image
                 .resizable()
                 .frame(width: 50, height: 50)
                 .cornerRadius(10)

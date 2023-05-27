@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct PredictionTabView: View {
-    
     @StateObject var viewModel: PredictionTabViewModel
 
-    
-    
     var body: some View {
         VStack {
             Text("PREDICTION")

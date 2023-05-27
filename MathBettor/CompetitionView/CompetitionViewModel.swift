@@ -61,20 +61,6 @@ class CompetitionViewModel: ObservableObject {
             print(error)
         }
     }
-    
-
-
-    
-//    func fetchFixturesList1() {
-//        NetworkManager.shared.fetchResponse(FixturesList.self) { [weak self] result in
-//            switch result {
-//            case .success(let fixturesList):
-//                self?.rows = fixturesList.response
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
 }
 
 extension Date {

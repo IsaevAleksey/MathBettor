@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ProgressBarView: View {
-    
     let parametrValue: Float
     let aligment: Alignment
     let color: Color
@@ -20,10 +19,9 @@ struct ProgressBarView: View {
 }
 
 struct ProgressBar: View {
-    
-    var value: Float
-    var aligment: Alignment
-    var color: Color
+    let value: Float
+    let aligment: Alignment
+    let color: Color
     
     var body: some View {
         GeometryReader { geometry in

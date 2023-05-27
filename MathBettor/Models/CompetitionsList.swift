@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct CountriesList: Decodable {
+    let response: [Country]
+}
+
 struct CompetitionsList: Decodable {
     let response: [CompetitionInfo]
 }
@@ -25,7 +29,6 @@ struct League: Decodable {
 
 struct Country: Decodable {
     let name: String
-    let flag: String?
 }
 
 struct Season: Decodable {
@@ -37,13 +40,13 @@ struct Season: Decodable {
     // убрать
 extension CompetitionsList {
     static func fetchPsevdoLeaguesList() -> CompetitionsList {
-        CompetitionsList(response: [CompetitionInfo(league: League(id: 1, name: "liga", logo: "logo"), country: Country(name: "strana", flag: "flag"), seasons: [Season(year: 2001, current: true)])])
+        CompetitionsList(response: [CompetitionInfo(league: League(id: 1, name: "liga", logo: "logo"), country: Country(name: "strana"), seasons: [Season(year: 2001, current: true)])])
     }
 }
 
 extension CompetitionInfo {
     static func fetchPsevdoCompetitionInfo() -> CompetitionInfo {
-        CompetitionInfo(league: League(id: 1, name: "liga1", logo: "logo1"), country: Country(name: "Strana1", flag: "net flaga"), seasons: [Season(year: 2022, current: true)])
+        CompetitionInfo(league: League(id: 1, name: "liga1", logo: "logo1"), country: Country(name: "Strana1"), seasons: [Season(year: 2022, current: true)])
     }
 }
 

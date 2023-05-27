@@ -12,11 +12,11 @@ struct CompetitionImage: View {
     let imageSize: CGSize
     let cornerRadius: CGFloat
     let shadowIsOn: Bool
-    
-    
+        
     var body: some View {
-        AsyncImage(url: URL(string: imageURL)) { Image in
-            Image
+        
+        AsyncImage(url: URL(string: imageURL)) { image in
+            image
                 .resizable()
                 .frame(width: imageSize.width, height: imageSize.height)
                 .cornerRadius(cornerRadius)

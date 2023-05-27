@@ -8,7 +8,6 @@
 import SwiftUI
 
 class FixtureViewModel: ObservableObject {
-    
     @Published var statisticsViewModel: [StatisticsViewModel] = []
     @Published var predictionTabViewModel: [PredictionTabViewModel] = []
     @Published var scorePredictionTabViewModel: [ScorePredictionTabView] = []

@@ -29,12 +29,8 @@ class StatisticsViewModel: ObservableObject {
         statisticsInfo.comparison.total
     }
     
-    var poisson_distribution: TeamStats {
-        statisticsInfo.comparison.poisson_distribution
-    }
-    
-    var probabilityWinAndDraw: Percent {
-        statisticsInfo.predictions.percent
+    var poissonDistribution: TeamStats {
+        statisticsInfo.comparison.poissonDistribution
     }
     
     var advice: String {
