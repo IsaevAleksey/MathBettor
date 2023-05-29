@@ -14,7 +14,6 @@ struct CompetitionImage: View {
     let shadowIsOn: Bool
         
     var body: some View {
-        
         AsyncImage(url: URL(string: imageURL)) { image in
             image
                 .resizable()

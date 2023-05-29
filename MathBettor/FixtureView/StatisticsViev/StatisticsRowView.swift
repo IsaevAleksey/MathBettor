@@ -26,10 +26,10 @@ struct StatisticsRowView: View {
         VStack {
             Text(parametr)
                 HStack {
-                    Text("\(Int(roundHomeParametrValue))")
+                    Text("\(Int(roundHomeParametrValue))%")
                     ProgressBarView(parametrValue: roundHomeParametrValue, aligment: .trailing, color: Color(.systemBlue))
                     ProgressBarView(parametrValue: roundAwayParametrValue, aligment: .leading, color: Color(.systemMint))
-                    Text("\(Int(roundAwayParametrValue))")
+                    Text("\(Int(roundAwayParametrValue))%")
                 }
         }
     }

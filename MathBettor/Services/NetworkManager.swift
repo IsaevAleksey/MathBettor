@@ -56,7 +56,7 @@ class NetworkManager {
         return fixturesList
     }
     
-    func fetchStatistics(fixtureID: Int) async throws  -> Statistics {
+    func fetchStatistics(fixtureID: Int) async throws  -> StatisticsData {
         var request = URLRequest(
             url: URL(string: "https://v3.football.api-sports.io/predictions?fixture=\(fixtureID)")!,
             timeoutInterval: 10.0)
@@ -65,7 +65,10 @@ class NetworkManager {
         request.httpMethod = "GET"
         
         let (data, _) = try await URLSession.shared.data(for: request)
-        guard let statistics = try? JSONDecoder().decode(Statistics.self, from: data) else {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        guard let statistics = try? decoder.decode(StatisticsData.self, from: data) else {
+//        guard let statistics = try? JSONDecoder().decode(Statistics.self, from: data) else {
             throw NetworkError.decodingError
         }
         return statistics

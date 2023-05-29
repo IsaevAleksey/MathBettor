@@ -9,27 +9,27 @@ import Foundation
 
 class StatisticsViewModel: ObservableObject {
     
-    var form: TeamStats {
+    var form: TeamComparisonValue {
         statisticsInfo.comparison.form
     }
     
-    var att: TeamStats {
+    var att: TeamComparisonValue {
         statisticsInfo.comparison.att
     }
     
-    var def: TeamStats {
+    var def: TeamComparisonValue {
         statisticsInfo.comparison.def
     }
     
-    var h2h: TeamStats {
+    var h2h: TeamComparisonValue {
         statisticsInfo.comparison.h2h
     }
     
-    var total: TeamStats {
+    var total: TeamComparisonValue {
         statisticsInfo.comparison.total
     }
     
-    var poissonDistribution: TeamStats {
+    var poissonDistribution: TeamComparisonValue {
         statisticsInfo.comparison.poissonDistribution
     }
     
