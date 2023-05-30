@@ -29,8 +29,13 @@ struct Games: Decodable {
 }
         
 struct Goals: Decodable {
-//    let fora: GoalsValue //  переименовать переменную
+    let scored: GoalsValue //  переименовать переменную
     let against: GoalsValue
+    
+    enum CodingKeys: String, CodingKey {
+        case scored = "for"
+        case against = "against"
+    }
 }
             
 struct GoalsValue: Decodable {

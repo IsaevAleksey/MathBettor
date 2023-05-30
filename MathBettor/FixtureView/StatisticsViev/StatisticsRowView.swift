@@ -2,41 +2,38 @@
 //  StatisticsRowView.swift
 //  MathBettor
 //
-//  Created by Алексей Исаев on 20.05.2023.
+//  Created by Алексей Исаев on 30.05.2023.
 //
 
 import SwiftUI
 
 struct StatisticsRowView: View {
     let parametr: String
-    let homeTeamParametrValue: String
-    let awayTeamParametrValue: String
-
-    var roundHomeParametrValue: Float {
-        let roundValue = roundf(NSString(string: homeTeamParametrValue).floatValue)
-        return roundValue
-    }
-    
-    var roundAwayParametrValue: Float {
-        let roundValue = roundf(NSString(string: awayTeamParametrValue).floatValue)
-        return roundValue
-    }
+    let homeValue: Int
+    let awayValue: Int
     
     var body: some View {
-        VStack {
+        HStack {
+            Image(systemName: "figure.soccer")
+                .resizable()
+                .frame(width: 30, height: 30)
+            Text("\(homeValue)")
+                .padding(.leading, 15.0)
+            Spacer()
             Text(parametr)
-                HStack {
-                    Text("\(Int(roundHomeParametrValue))%")
-                    ProgressBarView(parametrValue: roundHomeParametrValue, aligment: .trailing, color: Color(.systemBlue))
-                    ProgressBarView(parametrValue: roundAwayParametrValue, aligment: .leading, color: Color(.systemMint))
-                    Text("\(Int(roundAwayParametrValue))%")
-                }
+            Spacer()
+            Text("\(awayValue)")
+                .padding(.trailing, 15.0)
+            Image(systemName: "figure.soccer")
+                .resizable()
+                .frame(width: 30, height: 30)
         }
     }
 }
 
+
 struct StatisticsRowView_Previews: PreviewProvider {
     static var previews: some View {
-        StatisticsRowView(parametr: "TOTAL", homeTeamParametrValue: "90.933", awayTeamParametrValue: "60")
+        StatisticsRowView(parametr: "GAMES", homeValue: 5, awayValue: 6)
     }
 }

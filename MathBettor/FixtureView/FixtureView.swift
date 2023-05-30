@@ -12,11 +12,12 @@ struct FixtureView: View {
     
     var body: some View {
         VStack(spacing: 16.0) {
-            HStack(spacing: 100.0) {
+            HStack(alignment: .top, spacing: 100.0) {
                 VStack {
                     TeamLogoImage(teamLogoURL: viewModel.homeTeamLogoURL)
                         .frame(height: 50)
                     Text(viewModel.homeTeamName)
+                        .multilineTextAlignment(.center)
                 }
                 VStack {
                     TeamLogoImage(teamLogoURL: viewModel.awayTeamLogoURL)

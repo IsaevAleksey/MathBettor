@@ -37,13 +37,14 @@ class StatisticsViewModel: ObservableObject {
         statisticsInfo.predictions.advice
     }
     
-    var homePlayedMatch: Int {
-        statisticsInfo.teams.home.league.fixtures.played.total
+    var homePlayedMatch: Games {
+        statisticsInfo.teams.home.league.fixtures
     }
     
-    var awayPlayedMatch: Int {
-        statisticsInfo.teams.away.league.fixtures.played.total
+    var awayPlayedMatch: Games {
+        statisticsInfo.teams.away.league.fixtures
     }
+
     
     private let statisticsInfo: StatisticsInfo
 
