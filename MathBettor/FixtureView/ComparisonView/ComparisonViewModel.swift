@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StatisticsViewModel: ObservableObject {
+class ComparisonViewModel: ObservableObject {
     
     var form: TeamComparisonValue {
         statisticsInfo.comparison.form
@@ -36,14 +36,7 @@ class StatisticsViewModel: ObservableObject {
     var advice: String {
         statisticsInfo.predictions.advice
     }
-    
-    var homePlayedMatch: Games {
-        statisticsInfo.teams.home.league.fixtures
-    }
-    
-    var awayPlayedMatch: Games {
-        statisticsInfo.teams.away.league.fixtures
-    }
+
 
     
     private let statisticsInfo: StatisticsInfo

@@ -30,12 +30,20 @@ struct FixtureView: View {
 //            Text(viewModel.currendDate.toApiString)
 //            Text(viewModel.toDate.toApiString)
             TabView {
-                List(viewModel.statisticsViewModel, id: \.advice) { statisticsViewModel in
-                    StatisticsView(viewModel: statisticsViewModel)
+                List(viewModel.comparisonViewModel, id: \.advice) { statisticsViewModel in
+                    ComparisonView(viewModel: statisticsViewModel)
                 }
                     .listStyle(.inset)
                     .tabItem {
                         Image(systemName: "chart.xyaxis.line")
+                        Text("Comparison")
+                    }
+                List(viewModel.statisticsViewModel, id: \.homeTeamId) {statisticsViewModel in
+                    StatisticsView(viewModel: statisticsViewModel)
+                }
+                    .listStyle(.inset)
+                    .tabItem {
+                        Image(systemName: "sportscourt")
                         Text("Statistics")
                     }
                 List(viewModel.predictionTabViewModel, id: \.advice) { predictionTabViewModel in
@@ -46,15 +54,10 @@ struct FixtureView: View {
                         Image(systemName: "percent")
                         Text("Prediction")
                     }
-                ScorePredictionTabView()
-                    .tabItem {
-                        Image(systemName: "soccerball")
-                        Text("Score Prediction")
-                    }
             }
         }
         .task {
-            if viewModel.statisticsViewModel.isEmpty {
+            if viewModel.comparisonViewModel.isEmpty {
                 await viewModel.fetchStatistics(fixtureID: viewModel.fixtureID)
                 print("загражаем прогноз")
             }

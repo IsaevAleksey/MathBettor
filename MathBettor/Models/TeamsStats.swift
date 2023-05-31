@@ -13,6 +13,7 @@ struct TeamsStats: Decodable {
 }
 
 struct TeamStats: Decodable {
+    let id: Int
     let league: Stats
 }
     

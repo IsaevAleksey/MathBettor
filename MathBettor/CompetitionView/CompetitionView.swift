@@ -13,6 +13,7 @@ struct CompetitionView: View {
     var body: some View {
         VStack {
             CompetitionImage(imageURL: viewModel.competitionsLogoURL, imageSize: CGSize(width: 100, height: 100), cornerRadius: 10, shadowIsOn: true)
+                .frame(width: 100, height: 100)
             Text(viewModel.competitionCountry)
             Text(viewModel.name)
                 .font(.largeTitle)
