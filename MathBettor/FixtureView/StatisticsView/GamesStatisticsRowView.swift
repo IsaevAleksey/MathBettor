@@ -18,11 +18,13 @@ struct GamesStatisticsRowView: View {
                 .resizable()
                 .frame(width: 30, height: 30)
             Text("\(homeValue)")
+                .frame(width: 25)
                 .padding(.leading, 15.0)
             Spacer()
             Text(parametr)
             Spacer()
             Text("\(awayValue)")
+                .frame(width: 25)
                 .padding(.trailing, 15.0)
             Image(systemName: "figure.soccer")
                 .resizable()
@@ -33,7 +35,7 @@ struct GamesStatisticsRowView: View {
 
 struct GamesStatisticsRowView_Previews: PreviewProvider {
     static var previews: some View {
-        GamesStatisticsRowView(parametr: "GAMES", homeValue: 5, awayValue: 6)
+        GamesStatisticsRowView(parametr: "GAMES", homeValue: 5, awayValue: 60)
     }
 }
 

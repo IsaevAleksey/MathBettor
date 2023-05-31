@@ -29,16 +29,23 @@ struct PredictionTabView: View {
                     CircularProgressBarView(value: viewModel.probabilityWinAndDraw.away)
                 }
             }
-            Text("Advice: \(viewModel.advice)")
-                .bold()
-                .multilineTextAlignment(.center)
-                .padding(.vertical, 50.0)
+            VStack {
+                Text("Advice: \(viewModel.advice)")
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 50.0)
+                
+                Text("*  -1.5 means that there will be a maximum of 1.5 goals in the fixture, i.e : 1 goal")
+                    .fontWeight(.thin)
+                    .multilineTextAlignment(.center)
+                    .padding(.top)
+            }
         }
     }
 }
 
 struct PredictionTabView_Previews: PreviewProvider {
     static var previews: some View {
-        PredictionTabView(viewModel: PredictionTabViewModel(predictions: Prediction(advice: "noo advice", percent: Percent(home: "30", draw: "20", away: "50"))))
+        PredictionTabView(viewModel: PredictionTabViewModel(predictions: Prediction(advice: "noo advicdddddddddsfasdfasdfasdfasdfasdfasdfasdffe", percent: Percent(home: "30", draw: "20", away: "50"))))
     }
 }

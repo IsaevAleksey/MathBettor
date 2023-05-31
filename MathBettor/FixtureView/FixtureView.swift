@@ -26,9 +26,8 @@ struct FixtureView: View {
                 }
             }
             Text(viewModel.fixtureDate)
+                .fontWeight(.thin)
                 .padding(.bottom)
-//            Text(viewModel.currendDate.toApiString)
-//            Text(viewModel.toDate.toApiString)
             TabView {
                 List(viewModel.comparisonViewModel, id: \.advice) { statisticsViewModel in
                     ComparisonView(viewModel: statisticsViewModel)

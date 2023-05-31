@@ -30,7 +30,7 @@ struct Games: Decodable {
 }
         
 struct Goals: Decodable {
-    let scored: GoalsValue //  переименовать переменную
+    let scored: GoalsValue
     let against: GoalsValue
     
     enum CodingKeys: String, CodingKey {
