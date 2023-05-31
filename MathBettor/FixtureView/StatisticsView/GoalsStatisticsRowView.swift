@@ -16,7 +16,7 @@ struct GoalsStatisticsRowView: View {
         HStack {
             Image(systemName: "soccerball")
                 .resizable()
-                .frame(width: 20, height: 20)
+                .frame(width: 30, height: 30)
             Text("\(homeValue)")
                 .frame(width: 25)
                 .padding(.leading, 15.0)
@@ -28,7 +28,7 @@ struct GoalsStatisticsRowView: View {
                 .padding(.trailing, 15.0)
             Image(systemName: "soccerball")
                 .resizable()
-                .frame(width: 20, height: 20)
+                .frame(width: 30, height: 30)
         }
     }
 }
@@ -42,7 +42,7 @@ struct GoalsAverageStatisticsRowView: View {
         HStack {
             Image(systemName: "soccerball")
                 .resizable()
-                .frame(width: 20, height: 20)
+                .frame(width: 30, height: 30)
             Text(homeValue)
                 .padding(.leading, 15.0)
             Spacer()
@@ -52,7 +52,7 @@ struct GoalsAverageStatisticsRowView: View {
                 .padding(.trailing, 15.0)
             Image(systemName: "soccerball")
                 .resizable()
-                .frame(width: 20, height: 20)
+                .frame(width: 30, height: 30)
         }
     }
 }
