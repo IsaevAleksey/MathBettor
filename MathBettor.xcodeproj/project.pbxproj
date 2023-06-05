@@ -18,7 +18,7 @@
 		930AB2AF2A043FA200BFF3FA /* CompetitionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930AB2AE2A043FA200BFF3FA /* CompetitionRow.swift */; };
 		932F0E3D2A1D3AFA0005F994 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E3C2A1D3AFA0005F994 /* ProgressBarView.swift */; };
 		932F0E3F2A1E87700005F994 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E3E2A1E87700005F994 /* CircularProgressBarView.swift */; };
-		932F0E412A1FC3280005F994 /* PredictionTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E402A1FC3280005F994 /* PredictionTabView.swift */; };
+		932F0E412A1FC3280005F994 /* PredictionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E402A1FC3280005F994 /* PredictionView.swift */; };
 		932F0E442A1FC37C0005F994 /* PredictionTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E432A1FC37C0005F994 /* PredictionTabViewModel.swift */; };
 		9359C95C2A26558F000308F5 /* ComparisonAndPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359C95B2A26558F000308F5 /* ComparisonAndPrediction.swift */; };
 		9359C9602A265E86000308F5 /* GamesStatisticsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359C95F2A265E86000308F5 /* GamesStatisticsRowView.swift */; };
@@ -38,6 +38,9 @@
 		939A5DD129F6ED62005DDA83 /* CompetitionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A5DD029F6ED62005DDA83 /* CompetitionsListView.swift */; };
 		939A5DD329F6EE72005DDA83 /* CompetitionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A5DD229F6EE72005DDA83 /* CompetitionsList.swift */; };
 		939A5DD529F6EEC5005DDA83 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A5DD429F6EEC5005DDA83 /* NetworkManager.swift */; };
+		93E631B32A2E4BAC00E3F90B /* GridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E631B22A2E4BAC00E3F90B /* GridItemView.swift */; };
+		93E631B52A2E58AA00E3F90B /* FixtureInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E631B42A2E58AA00E3F90B /* FixtureInfoView.swift */; };
+		93E631B72A2E5F5A00E3F90B /* CompetitionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E631B62A2E5F5A00E3F90B /* CompetitionInfoView.swift */; };
 		93EAFA5629FFFC10006315F7 /* HelloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EAFA5529FFFC10006315F7 /* HelloView.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +56,7 @@
 		930AB2AE2A043FA200BFF3FA /* CompetitionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionRow.swift; sourceTree = "<group>"; };
 		932F0E3C2A1D3AFA0005F994 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		932F0E3E2A1E87700005F994 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
-		932F0E402A1FC3280005F994 /* PredictionTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionTabView.swift; sourceTree = "<group>"; };
+		932F0E402A1FC3280005F994 /* PredictionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionView.swift; sourceTree = "<group>"; };
 		932F0E432A1FC37C0005F994 /* PredictionTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionTabViewModel.swift; sourceTree = "<group>"; };
 		9359C95B2A26558F000308F5 /* ComparisonAndPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonAndPrediction.swift; sourceTree = "<group>"; };
 		9359C95F2A265E86000308F5 /* GamesStatisticsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesStatisticsRowView.swift; sourceTree = "<group>"; };
@@ -74,6 +77,9 @@
 		939A5DD029F6ED62005DDA83 /* CompetitionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsListView.swift; sourceTree = "<group>"; };
 		939A5DD229F6EE72005DDA83 /* CompetitionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsList.swift; sourceTree = "<group>"; };
 		939A5DD429F6EEC5005DDA83 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		93E631B22A2E4BAC00E3F90B /* GridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItemView.swift; sourceTree = "<group>"; };
+		93E631B42A2E58AA00E3F90B /* FixtureInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureInfoView.swift; sourceTree = "<group>"; };
+		93E631B62A2E5F5A00E3F90B /* CompetitionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionInfoView.swift; sourceTree = "<group>"; };
 		93EAFA5529FFFC10006315F7 /* HelloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				930AB2A52A0414B900BFF3FA /* CompetitionView.swift */,
+				93E631B62A2E5F5A00E3F90B /* CompetitionInfoView.swift */,
 				930AB2A82A0414F500BFF3FA /* CompetitionViewModel.swift */,
 				938D6C412A0D7519002854DC /* FixtureRow.swift */,
 				938D6C432A0D76BB002854DC /* TeamLogoImage.swift */,
@@ -131,14 +138,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		932F0E422A1FC32D0005F994 /* PredictionTabView */ = {
+		932F0E422A1FC32D0005F994 /* PredictionView */ = {
 			isa = PBXGroup;
 			children = (
-				932F0E402A1FC3280005F994 /* PredictionTabView.swift */,
+				932F0E402A1FC3280005F994 /* PredictionView.swift */,
+				93E631B22A2E4BAC00E3F90B /* GridItemView.swift */,
 				932F0E432A1FC37C0005F994 /* PredictionTabViewModel.swift */,
 				932F0E3E2A1E87700005F994 /* CircularProgressBarView.swift */,
 			);
-			path = PredictionTabView;
+			path = PredictionView;
 			sourceTree = "<group>";
 		};
 		9359C9612A27A936000308F5 /* StatisticsView */ = {
@@ -156,10 +164,11 @@
 			isa = PBXGroup;
 			children = (
 				938D6C3C2A0D60ED002854DC /* FixtureView.swift */,
+				93E631B42A2E58AA00E3F90B /* FixtureInfoView.swift */,
 				938D6C3F2A0D613B002854DC /* FixtureViewModel.swift */,
 				938D6C472A18D676002854DC /* ComparisonView */,
 				9359C9612A27A936000308F5 /* StatisticsView */,
-				932F0E422A1FC32D0005F994 /* PredictionTabView */,
+				932F0E422A1FC32D0005F994 /* PredictionView */,
 			);
 			path = FixtureView;
 			sourceTree = "<group>";
@@ -287,7 +296,7 @@
 			files = (
 				939A5DC329F6ED1A005DDA83 /* MathBettorApp.swift in Sources */,
 				9359C9632A27A9B4000308F5 /* StatisticsView.swift in Sources */,
-				932F0E412A1FC3280005F994 /* PredictionTabView.swift in Sources */,
+				932F0E412A1FC3280005F994 /* PredictionView.swift in Sources */,
 				939A5DD529F6EEC5005DDA83 /* NetworkManager.swift in Sources */,
 				9359C9602A265E86000308F5 /* GamesStatisticsRowView.swift in Sources */,
 				938D6C402A0D613B002854DC /* FixtureViewModel.swift in Sources */,
@@ -297,11 +306,13 @@
 				932F0E442A1FC37C0005F994 /* PredictionTabViewModel.swift in Sources */,
 				938D6C422A0D7519002854DC /* FixtureRow.swift in Sources */,
 				932F0E3F2A1E87700005F994 /* CircularProgressBarView.swift in Sources */,
+				93E631B32A2E4BAC00E3F90B /* GridItemView.swift in Sources */,
 				930AB2AD2A04185C00BFF3FA /* StatisticsData.swift in Sources */,
 				9359C95C2A26558F000308F5 /* ComparisonAndPrediction.swift in Sources */,
 				935EE8C32A251E69000D8157 /* TeamsStats.swift in Sources */,
 				930AB2A02A001D0400BFF3FA /* CompetitionsListViewModel.swift in Sources */,
 				932F0E3D2A1D3AFA0005F994 /* ProgressBarView.swift in Sources */,
+				93E631B72A2E5F5A00E3F90B /* CompetitionInfoView.swift in Sources */,
 				939A5DD329F6EE72005DDA83 /* CompetitionsList.swift in Sources */,
 				938D6C462A18D66F002854DC /* ComparisonView.swift in Sources */,
 				930AB2AF2A043FA200BFF3FA /* CompetitionRow.swift in Sources */,
@@ -314,6 +325,7 @@
 				930AB2A62A0414B900BFF3FA /* CompetitionView.swift in Sources */,
 				93082BB92A27AADF003FA9BC /* StatisticsViewModel.swift in Sources */,
 				930AB2A42A02F90200BFF3FA /* CompetitionImage.swift in Sources */,
+				93E631B52A2E58AA00E3F90B /* FixtureInfoView.swift in Sources */,
 				938D6C492A18D854002854DC /* ComparisonViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,8 +461,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,9 +470,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = IsaevAleksey.MathBettor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -478,8 +493,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,9 +502,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = IsaevAleksey.MathBettor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

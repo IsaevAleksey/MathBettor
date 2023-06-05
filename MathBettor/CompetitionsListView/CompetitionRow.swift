@@ -13,8 +13,8 @@ struct CompetitionRow: View {
     
     var body: some View {
         HStack {
-            CompetitionImage(imageURL: competitionImageURL, imageSize: CGSize(width: 50, height: 50), cornerRadius: 10, shadowIsOn: false)
-                .frame(width: 50, height: 50)
+            CompetitionImage(imageURL: competitionImageURL, imageSize: CGSize(width: 40, height: 40), cornerRadius: 10, shadowIsOn: false)
+                .frame(width: 40, height: 40)
             Text(competitionName)
         }
     }

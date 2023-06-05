@@ -29,12 +29,12 @@ class StatisticsViewModel: ObservableObject {
         teamsStats.away.league.goals.scored
     }
     
-    var homeGoalsAgainst: GoalsValue {
-        teamsStats.home.league.goals.against
+    var homeGoalsConceded: GoalsValue {
+        teamsStats.home.league.goals.сonceded
     }
     
-    var awayGoalsAgainst: GoalsValue {
-        teamsStats.away.league.goals.against
+    var awayGoalsConceded: GoalsValue {
+        teamsStats.away.league.goals.сonceded
     }
     
     private let teamsStats: TeamsStats

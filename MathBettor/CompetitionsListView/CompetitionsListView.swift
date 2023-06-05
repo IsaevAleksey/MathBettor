@@ -12,10 +12,10 @@ struct CompetitionsListView: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.rows, id: \.competitionsID) { competitionViewModel in
+            List(viewModel.rows, id: \.competitionsId) { competitionViewModel in
                 Section(header: Text(competitionViewModel.competitionCountry)) {
                     NavigationLink(destination: CompetitionView(viewModel: competitionViewModel)) {
-                        CompetitionRow(competitionName: competitionViewModel.name, competitionImageURL: competitionViewModel.competitionsLogoURL)
+                        CompetitionRow(competitionName: competitionViewModel.competitionName, competitionImageURL: competitionViewModel.competitionsLogoUrl)
                     }
                 }
             }

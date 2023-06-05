@@ -11,56 +11,46 @@ struct FixtureView: View {
     @StateObject var viewModel: FixtureViewModel
     
     var body: some View {
-        VStack(spacing: 16.0) {
-            HStack(alignment: .top, spacing: 100.0) {
-                VStack {
-                    TeamLogoImage(teamLogoURL: viewModel.homeTeamLogoURL)
-                        .frame(height: 50)
-                    Text(viewModel.homeTeamName)
-                        .multilineTextAlignment(.center)
-                }
-                VStack {
-                    TeamLogoImage(teamLogoURL: viewModel.awayTeamLogoURL)
-                        .frame(height: 50)
-                    Text(viewModel.awayTeamName)
+        GeometryReader { geometry in
+            VStack(spacing: 16.0) {
+                FixtureInfoView(homeTeamLogoURL: viewModel.homeTeamLogoURL, awayTeamLogoURL: viewModel.awayTeamLogoURL, homeTeamName: viewModel.homeTeamName, awayTeamName: viewModel.awayTeamName, fixtureDate: viewModel.fixtureDate)
+                    .frame(height: geometry.size.height / 3)
+                    .task {
+                        if viewModel.comparisonViewModel.isEmpty {
+                            await viewModel.fetchStatistics(fixtureID: viewModel.fixtureID)
+                            print("загражуем прогноз")
+                        }
+                    }
+                TabView {
+                    List(viewModel.comparisonViewModel, id: \.advice) { comparisonViewModel in
+                        ComparisonView(viewModel: comparisonViewModel)
+                    }
+                        .listStyle(.inset)
+                        .tabItem {
+                            Image(systemName: "chart.xyaxis.line")
+                            Text("Comparison")
+                        }
+                    List(viewModel.statisticsViewModel, id: \.homeTeamId) {statisticsViewModel in
+                        StatisticsView(viewModel: statisticsViewModel)
+                    }
+                        .listStyle(.inset)
+                        .tabItem {
+                            Image(systemName: "sportscourt")
+                            Text("Statistics")
+                        }
+                    List(viewModel.predictionTabViewModel, id: \.advice) { predictionViewModel in
+                        PredictionView(viewModel: predictionViewModel)
+                    }
+                        .listStyle(.inset)
+                        .tabItem {
+                            Image(systemName: "percent")
+                            Text("Prediction")
+                        }
                 }
             }
-            Text(viewModel.fixtureDate)
-                .fontWeight(.thin)
-                .padding(.bottom)
-            TabView {
-                List(viewModel.comparisonViewModel, id: \.advice) { statisticsViewModel in
-                    ComparisonView(viewModel: statisticsViewModel)
-                }
-                    .listStyle(.inset)
-                    .tabItem {
-                        Image(systemName: "chart.xyaxis.line")
-                        Text("Comparison")
-                    }
-                List(viewModel.statisticsViewModel, id: \.homeTeamId) {statisticsViewModel in
-                    StatisticsView(viewModel: statisticsViewModel)
-                }
-                    .listStyle(.inset)
-                    .tabItem {
-                        Image(systemName: "sportscourt")
-                        Text("Statistics")
-                    }
-                List(viewModel.predictionTabViewModel, id: \.advice) { predictionTabViewModel in
-                    PredictionTabView(viewModel: predictionTabViewModel)
-                }
-                    .listStyle(.inset)
-                    .tabItem {
-                        Image(systemName: "percent")
-                        Text("Prediction")
-                    }
-            }
+//            .ignoresSafeArea()
         }
-        .task {
-            if viewModel.comparisonViewModel.isEmpty {
-                await viewModel.fetchStatistics(fixtureID: viewModel.fixtureID)
-                print("загражаем прогноз")
-            }
-        }
+
     }
 }
 

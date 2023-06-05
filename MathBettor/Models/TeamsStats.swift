@@ -31,11 +31,11 @@ struct Games: Decodable {
         
 struct Goals: Decodable {
     let scored: GoalsValue
-    let against: GoalsValue
+    let сonceded: GoalsValue
     
     enum CodingKeys: String, CodingKey {
         case scored = "for"
-        case against = "against"
+        case сonceded = "against"
     }
 }
             

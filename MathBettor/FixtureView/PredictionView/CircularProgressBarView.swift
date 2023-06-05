@@ -25,10 +25,10 @@ struct CircularProgressBar: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(Color.pink.opacity(0.3), lineWidth: 10)
+                .stroke(Color.mint.opacity(0.3), lineWidth: 10)
             Circle()
                 .trim(from: 0, to: CGFloat(NSString(string: value).floatValue) / 100 )
-                .stroke(Color.pink, style: StrokeStyle(lineWidth: 10, lineCap: .round))
+                .stroke(Color.mint, style: StrokeStyle(lineWidth: 10, lineCap: .round))
                 .rotationEffect(.degrees(-90))
                 .animation(.easeOut, value: value)
         }

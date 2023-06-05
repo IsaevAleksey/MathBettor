@@ -18,15 +18,15 @@ class CompetitionViewModel: ObservableObject {
         return toDate
     }
 
-    var name: String {
+    var competitionName: String {
         competitionInfo.league.name
     }
     
-    var competitionsID: Int {
+    var competitionsId: Int {
         competitionInfo.league.id
     }
     
-    var competitionsLogoURL: String {
+    var competitionsLogoUrl: String {
         competitionInfo.league.logo
     }
 

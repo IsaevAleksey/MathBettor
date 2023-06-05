@@ -10,7 +10,7 @@ import SwiftUI
 class FixtureViewModel: ObservableObject {
     @Published var comparisonViewModel: [ComparisonViewModel] = []
     @Published var statisticsViewModel: [StatisticsViewModel] = []
-    @Published var predictionTabViewModel: [PredictionTabViewModel] = []
+    @Published var predictionTabViewModel: [PredictionViewModel] = []
 //    @Published var scorePredictionTabViewModel: [ScorePredictionTabView] = []
     
     var fixtureID: Int {
@@ -49,7 +49,7 @@ class FixtureViewModel: ObservableObject {
             let statisticsInfo = try await NetworkManager.shared.fetchStatistics(fixtureID: fixtureID).response
             comparisonViewModel = statisticsInfo.map { ComparisonViewModel(statisticsInfo: $0) }
             statisticsViewModel = statisticsInfo.map { StatisticsViewModel(teamsStats: $0.teams) }
-            predictionTabViewModel = statisticsInfo.map { PredictionTabViewModel(predictions: $0.predictions) }
+            predictionTabViewModel = statisticsInfo.map { PredictionViewModel(statisticsInfo: $0) }
         }
         catch {
             print(error)
