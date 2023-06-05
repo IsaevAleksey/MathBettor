@@ -14,10 +14,9 @@ struct GridItemView: View {
     
     var body: some View {
         ZStack {
-            Color(.systemMint)
-                .opacity(0.9)
+            BackgroundColor()
                 .clipShape(Rectangle())
-                .frame(width: 100, height: 50)
+                .frame(width: 110, height: 50)
                 .cornerRadius(10)
             Text("\(score): \(probability, specifier: "%.2f")%")
                 .foregroundColor(.white)

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CompetitionView: View {
     @StateObject var viewModel: CompetitionViewModel
+    let colorOne = Color(cgColor: CGColor(red: 0.263, green: 0.808, blue: 0.635, alpha: 1))
+    let colorTwo = Color(cgColor: CGColor(red: 0.094, green: 0.353, blue: 0.616, alpha: 1))
     
     var body: some View {
         GeometryReader { geometry in

@@ -28,7 +28,7 @@ struct CircularProgressBar: View {
                 .stroke(Color.mint.opacity(0.3), lineWidth: 10)
             Circle()
                 .trim(from: 0, to: CGFloat(NSString(string: value).floatValue) / 100 )
-                .stroke(Color.mint, style: StrokeStyle(lineWidth: 10, lineCap: .round))
+                .stroke(Color(#colorLiteral(red: 0.1323404908, green: 0.5362204909, blue: 0.6370016336, alpha: 1)), style: StrokeStyle(lineWidth: 10, lineCap: .round))
                 .rotationEffect(.degrees(-90))
                 .animation(.easeOut, value: value)
         }

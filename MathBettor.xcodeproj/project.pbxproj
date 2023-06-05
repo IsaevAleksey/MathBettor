@@ -41,6 +41,7 @@
 		93E631B32A2E4BAC00E3F90B /* GridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E631B22A2E4BAC00E3F90B /* GridItemView.swift */; };
 		93E631B52A2E58AA00E3F90B /* FixtureInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E631B42A2E58AA00E3F90B /* FixtureInfoView.swift */; };
 		93E631B72A2E5F5A00E3F90B /* CompetitionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E631B62A2E5F5A00E3F90B /* CompetitionInfoView.swift */; };
+		93E631B92A2E67C700E3F90B /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E631B82A2E67C700E3F90B /* BackgroundColor.swift */; };
 		93EAFA5629FFFC10006315F7 /* HelloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EAFA5529FFFC10006315F7 /* HelloView.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		93E631B22A2E4BAC00E3F90B /* GridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItemView.swift; sourceTree = "<group>"; };
 		93E631B42A2E58AA00E3F90B /* FixtureInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureInfoView.swift; sourceTree = "<group>"; };
 		93E631B62A2E5F5A00E3F90B /* CompetitionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionInfoView.swift; sourceTree = "<group>"; };
+		93E631B82A2E67C700E3F90B /* BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColor.swift; sourceTree = "<group>"; };
 		93EAFA5529FFFC10006315F7 /* HelloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				930AB2A52A0414B900BFF3FA /* CompetitionView.swift */,
+				93E631B82A2E67C700E3F90B /* BackgroundColor.swift */,
 				93E631B62A2E5F5A00E3F90B /* CompetitionInfoView.swift */,
 				930AB2A82A0414F500BFF3FA /* CompetitionViewModel.swift */,
 				938D6C412A0D7519002854DC /* FixtureRow.swift */,
@@ -318,6 +321,7 @@
 				930AB2AF2A043FA200BFF3FA /* CompetitionRow.swift in Sources */,
 				93082BBB2A27B89D003FA9BC /* GoalsStatisticsRowView.swift in Sources */,
 				939A5DD129F6ED62005DDA83 /* CompetitionsListView.swift in Sources */,
+				93E631B92A2E67C700E3F90B /* BackgroundColor.swift in Sources */,
 				935EE8B02A2203C2000D8157 /* ImageCacheManager.swift in Sources */,
 				930AB2A92A0414F500BFF3FA /* CompetitionViewModel.swift in Sources */,
 				938D6C3D2A0D60ED002854DC /* FixtureView.swift in Sources */,

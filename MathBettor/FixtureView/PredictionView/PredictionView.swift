@@ -44,6 +44,7 @@ struct PredictionView: View {
                 .multilineTextAlignment(.center)
                 .padding(.vertical)
             Text("SCORE PROBABILITY")
+                .bold()
             LazyVGrid(columns: column) {
                 ForEach(viewModel.prob.sorted(by: { $0.key < $1.key }), id: \.key) {
                     (score, probability) in

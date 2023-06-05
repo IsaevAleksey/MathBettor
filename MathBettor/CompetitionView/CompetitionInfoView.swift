@@ -14,8 +14,7 @@ struct CompetitionInfoView: View {
     
     var body: some View {
         ZStack {
-            Color(.systemMint)
-                .ignoresSafeArea()
+            BackgroundColor()
             VStack {
                 CompetitionImage(imageURL: imageURL, imageSize: CGSize(width: 100, height: 100), cornerRadius: 10, shadowIsOn: true)
                     .frame(width: 100, height: 100)
@@ -23,6 +22,7 @@ struct CompetitionInfoView: View {
                 Text(competitionName)
                     .font(.largeTitle)
             }
+            .foregroundColor(.white)
         }
         .cornerRadius(20)
         .ignoresSafeArea()

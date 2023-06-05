@@ -17,8 +17,7 @@ struct FixtureInfoView: View {
     
     var body: some View {
         ZStack {
-            Color(.systemMint)
-                .ignoresSafeArea()
+            BackgroundColor()
             VStack(spacing: 16.0) {
                 HStack(alignment: .top, spacing: 100.0) {
                     VStack {
