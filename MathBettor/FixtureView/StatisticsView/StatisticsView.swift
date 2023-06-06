@@ -17,7 +17,7 @@ struct StatisticsView: View {
                     .bold()
                     .padding(.vertical)
                 Text("GAMES")
-                    .fontWeight(.thin)
+//                    .fontWeight(.thin)
                 GamesStatisticsRowView(parametr: "PLAYED", homeValue: viewModel.homePlayedMatch.played.total, awayValue: viewModel.awayPlayedMatch.played.total)
                 GamesStatisticsRowView(parametr: "WIN", homeValue: viewModel.homePlayedMatch.wins.total, awayValue: viewModel.awayPlayedMatch.wins.total)
                 GamesStatisticsRowView(parametr: "DRAW", homeValue: viewModel.homePlayedMatch.draws.total, awayValue: viewModel.awayPlayedMatch.draws.total)
@@ -25,17 +25,21 @@ struct StatisticsView: View {
             }
             VStack {
                 Text("GOALS SCORED")
-                    .fontWeight(.thin)
+//                    .fontWeight(.thin)
                     .padding(.top)
-                GoalsStatisticsRowView(parametr: "TOTAL", homeValue: viewModel.homeGoalsScored.total.total, awayValue: viewModel.awayGoalsScored.total.total)
-                GoalsAverageStatisticsRowView(parametr: "AVERAGE", homeValue: viewModel.homeGoalsScored.average.total, awayValue: viewModel.awayGoalsScored.average.total)
+//                GoalsStatisticsRowView(parametr: "TOTAL", homeValue: viewModel.homeGoalsScored.total.total, awayValue: viewModel.awayGoalsScored.total.total)
+//                GoalsAverageStatisticsRowView(parametr: "AVERAGE", homeValue: viewModel.homeGoalsScored.average.total, awayValue: viewModel.awayGoalsScored.average.total)
+                GamesStatisticsRowView(parametr: "TOTAL", homeValue: viewModel.homeGoalsScored.total.total, awayValue: viewModel.awayGoalsScored.total.total)
+                GamesStatisticsRowView(parametr: "AVERAGE", homeValue: viewModel.homeGoalsScored.total.total, awayValue: viewModel.awayGoalsScored.total.total)
             }
             VStack {
                 Text("GOALS CONCEDED")
-                    .fontWeight(.thin)
+//                    .fontWeight(.thin)
                     .padding(.top)
-                GoalsStatisticsRowView(parametr: "TOTAL", homeValue: viewModel.homeGoalsConceded.total.total, awayValue: viewModel.awayGoalsConceded.total.total)
-                GoalsAverageStatisticsRowView(parametr: "AVERAGE", homeValue: viewModel.homeGoalsConceded.average.total, awayValue: viewModel.awayGoalsConceded.average.total)
+//                GoalsStatisticsRowView(parametr: "TOTAL", homeValue: viewModel.homeGoalsConceded.total.total, awayValue: viewModel.awayGoalsConceded.total.total)
+//                GoalsAverageStatisticsRowView(parametr: "AVERAGE", homeValue: viewModel.homeGoalsConceded.average.total, awayValue: viewModel.awayGoalsConceded.average.total)
+                GamesStatisticsRowView(parametr: "TOTAL", homeValue: viewModel.homeGoalsConceded.total.total, awayValue: viewModel.awayGoalsConceded.total.total)
+                GamesStatisticsRowView(parametr: "AVERAGE", homeValue: viewModel.homeGoalsConceded.total.total, awayValue: viewModel.awayGoalsConceded.total.total)
             }
         }
     }

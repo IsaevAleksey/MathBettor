@@ -19,6 +19,7 @@ struct FixtureInfoView: View {
         ZStack {
             BackgroundColor()
             VStack(spacing: 16.0) {
+                Spacer()
                 HStack(alignment: .top, spacing: 100.0) {
                     VStack {
                         TeamLogoImage(teamLogoURL: homeTeamLogoURL)
@@ -36,7 +37,6 @@ struct FixtureInfoView: View {
                     .fontWeight(.thin)
                     .padding(.bottom)
             }
-//            Spacer()
         }
         .cornerRadius(20)
         .ignoresSafeArea()

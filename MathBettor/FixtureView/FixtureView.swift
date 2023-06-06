@@ -12,12 +12,12 @@ struct FixtureView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            VStack(spacing: 16.0) {
+            VStack {
                 FixtureInfoView(homeTeamLogoURL: viewModel.homeTeamLogoURL, awayTeamLogoURL: viewModel.awayTeamLogoURL, homeTeamName: viewModel.homeTeamName, awayTeamName: viewModel.awayTeamName, fixtureDate: viewModel.fixtureDate)
                     .frame(height: geometry.size.height / 3)
                     .task {
                         if viewModel.comparisonViewModel.isEmpty {
-                            await viewModel.fetchStatistics(fixtureID: viewModel.fixtureID)
+//                            await viewModel.fetchStatistics(fixtureID: viewModel.fixtureID)
                             print("загражуем прогноз")
                         }
                     }
@@ -47,8 +47,9 @@ struct FixtureView: View {
                             Text("Prediction")
                         }
                 }
+                .background(BackgroundColor())
             }
-//            .ignoresSafeArea()
+            .ignoresSafeArea()
         }
 
     }

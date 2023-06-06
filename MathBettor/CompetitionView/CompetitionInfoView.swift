@@ -16,11 +16,13 @@ struct CompetitionInfoView: View {
         ZStack {
             BackgroundColor()
             VStack {
+                Spacer()
                 CompetitionImage(imageURL: imageURL, imageSize: CGSize(width: 100, height: 100), cornerRadius: 10, shadowIsOn: true)
                     .frame(width: 100, height: 100)
                 Text(competitionCountry)
                 Text(competitionName)
                     .font(.largeTitle)
+                    .padding(.bottom)
             }
             .foregroundColor(.white)
         }

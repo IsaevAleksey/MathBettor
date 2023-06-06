@@ -18,8 +18,12 @@ struct GridItemView: View {
                 .clipShape(Rectangle())
                 .frame(width: 110, height: 50)
                 .cornerRadius(10)
-            Text("\(score): \(probability, specifier: "%.2f")%")
-                .foregroundColor(.white)
+            VStack(alignment: .center) {
+                Text(score)
+                    .bold()
+                Text("\(probability, specifier: "%.2f")%")
+            }
+            .foregroundColor(.white)
         }
     }
 }

@@ -14,22 +14,28 @@ struct GamesStatisticsRowView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "figure.soccer")
-                .resizable()
-                .frame(width: 30, height: 30)
+//            Image(systemName: "figure.soccer")
+//                .resizable()
+//                .frame(width: 30, height: 30)
             Text("\(homeValue)")
+                .bold()
                 .frame(width: 25)
                 .padding(.leading, 15.0)
             Spacer()
             Text(parametr)
             Spacer()
             Text("\(awayValue)")
+                .bold()
                 .frame(width: 25)
                 .padding(.trailing, 15.0)
-            Image(systemName: "figure.soccer")
-                .resizable()
-                .frame(width: 30, height: 30)
+//            Image(systemName: "figure.soccer")
+//                .resizable()
+//                .frame(width: 30, height: 30)
         }
+        .foregroundColor(.white)
+            .frame(height: 40)
+            .background(BackgroundColor())
+            .cornerRadius(20)
     }
 }
 
