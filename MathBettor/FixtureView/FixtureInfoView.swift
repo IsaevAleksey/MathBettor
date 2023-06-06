@@ -37,6 +37,7 @@ struct FixtureInfoView: View {
                     .fontWeight(.thin)
                     .padding(.bottom)
             }
+            .foregroundColor(.white)
         }
         .cornerRadius(20)
         .ignoresSafeArea()
