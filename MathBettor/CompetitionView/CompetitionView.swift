@@ -24,15 +24,12 @@ struct CompetitionView: View {
                         Section(header: Text(fixtureViewModel.fixtureDate)) {
                             NavigationLink(destination: FixtureView(viewModel: fixtureViewModel)) {
                                 FixtureRow(homeTeamLogoURL: fixtureViewModel.homeTeamLogoURL, awayTeamLogoURL: fixtureViewModel.awayTeamLogoURL, homeTeamName: fixtureViewModel.homeTeamName, awayTeamName: fixtureViewModel.awayTeamName)
-//                                    .border(.black)
                             }
                         }
                     }
-//                    .scrollContentBackground(.hidden)
                     .listStyle(.automatic)
                 }
             }
-            .background(Color(.systemGray5))
             .task {
                 if viewModel.rows.isEmpty {
                     await viewModel.fetchFixturesList(leagueID: viewModel.competitionsId, currentSeason: viewModel.currentSeason.year, fromDate: viewModel.fromDate.toApiString, toDate: viewModel.toDate.toApiString)

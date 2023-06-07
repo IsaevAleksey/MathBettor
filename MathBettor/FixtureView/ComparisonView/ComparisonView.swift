@@ -12,9 +12,14 @@ struct ComparisonView: View {
     
     var body: some View {
         VStack {
-            Text("COMPARISON")
-                .bold()
-                .padding(.bottom)
+            Section {
+                Text("COMPARISON")
+                    .bold()
+                    .padding(.bottom)
+            }
+//            Text("COMPARISON")
+//                .bold()
+//                .padding(.bottom)
             ComparisonRowView(parametr: "FORM", homeTeamParametrValue: viewModel.form.home, awayTeamParametrValue: viewModel.form.away)
             ComparisonRowView(parametr: "ATT", homeTeamParametrValue: viewModel.att.home, awayTeamParametrValue: viewModel.att.away)
             ComparisonRowView(parametr: "DEF", homeTeamParametrValue: viewModel.def.home, awayTeamParametrValue: viewModel.def.away)

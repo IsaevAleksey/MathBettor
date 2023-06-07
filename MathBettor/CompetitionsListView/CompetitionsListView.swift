@@ -11,29 +11,41 @@ struct CompetitionsListView: View {
     @StateObject var viewModel: CompetitionsListViewModel
     
     var body: some View {
-        NavigationView {
-            List(viewModel.rows, id: \.competitionsId) { competitionViewModel in
-                Section(header: Text(competitionViewModel.competitionCountry)) {
-                    NavigationLink(destination: CompetitionView(viewModel: competitionViewModel)) {
-                        CompetitionRow(competitionName: competitionViewModel.competitionName, competitionImageURL: competitionViewModel.competitionsLogoUrl)
+        if viewModel.rows.isEmpty {
+            VStack(spacing: 20.0) {
+                ProgressView()
+                Text("Download...")
+            }
+            .task {
+                await viewModel.fetchCompetitionsList()
+                print("загружается список лиг")
+            }
+        } else {
+            NavigationView {
+                List(viewModel.rows, id: \.competitionsId) { competitionViewModel in
+                    Section(header: Text(competitionViewModel.competitionCountry)) {
+                        NavigationLink(destination: CompetitionView(viewModel: competitionViewModel)) {
+                            CompetitionRow(competitionName: competitionViewModel.competitionName, competitionImageURL: competitionViewModel.competitionsLogoUrl)
+                        }
                     }
                 }
+                .navigationTitle("Select competition")
+                .listStyle(.plain)
             }
-            .navigationTitle("Select competition")
-            .listStyle(.plain)
-        }
-        .task {
-            if viewModel.rows.isEmpty {
-                await viewModel.fetchCompetitionsList()
-                print("загражается список лиг")
-            }
+            .accentColor(.white)
+//            .task {
+//                if viewModel.rows.isEmpty {
+//                    await viewModel.fetchCompetitionsList()
+//                    print("загружается список лиг")
+//                }
+//            }
         }
     }
 }
 
 struct LeagueListView_Previews: PreviewProvider {
     static var previews: some View {
-        CompetitionsListView(viewModel: CompetitionsListViewModel())
+            CompetitionsListView(viewModel: CompetitionsListViewModel())
     }
 }
 

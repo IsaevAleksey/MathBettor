@@ -17,7 +17,7 @@ struct FixtureView: View {
                     .frame(height: geometry.size.height / 3)
                     .task {
                         if viewModel.comparisonViewModel.isEmpty {
-//                            await viewModel.fetchStatistics(fixtureID: viewModel.fixtureID)
+                            await viewModel.fetchStatistics(fixtureID: viewModel.fixtureID)
                             print("загражуем прогноз")
                         }
                     }
