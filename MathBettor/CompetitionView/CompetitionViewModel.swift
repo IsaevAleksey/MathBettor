@@ -61,6 +61,15 @@ class CompetitionViewModel: ObservableObject {
             print(error)
         }
     }
+    
+    func fetchImageData() {
+        do {
+            let imageData = try NetworkManager.shared.fetchImage(from: competitionsLogoUrl)
+        }
+        catch {
+            print(error)
+        }
+    }
 }
 
 extension Date {

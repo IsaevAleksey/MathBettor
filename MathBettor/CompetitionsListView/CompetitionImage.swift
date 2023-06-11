@@ -8,12 +8,25 @@
 import SwiftUI
 
 struct CompetitionImage: View {
+//    let imageData: Data
     let imageURL: String
     let imageSize: CGSize
     let cornerRadius: CGFloat
     let shadowIsOn: Bool
         
     var body: some View {
+        
+//        if let uiImage = UIImage(data: imageData) {
+//            Image(uiImage: uiImage)
+//                .resizable()
+//                .resizable()
+//                .frame(width: imageSize.width, height: imageSize.height)
+//                .cornerRadius(cornerRadius)
+//                .shadow(radius: shadowIsOn ? 10 : 0)
+//        } else {
+//            ProgressView()
+//        }
+        
         AsyncImage(url: URL(string: imageURL)) { image in
             image
                 .resizable()

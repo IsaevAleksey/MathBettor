@@ -30,6 +30,7 @@ struct CompetitionView: View {
                     .listStyle(.automatic)
                 }
             }
+            .background(Color(.systemGroupedBackground))
             .task {
                 if viewModel.rows.isEmpty {
                     await viewModel.fetchFixturesList(leagueID: viewModel.competitionsId, currentSeason: viewModel.currentSeason.year, fromDate: viewModel.fromDate.toApiString, toDate: viewModel.toDate.toApiString)

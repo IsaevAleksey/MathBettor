@@ -29,3 +29,12 @@ struct TeamLogoImage_Previews: PreviewProvider {
         TeamLogoImage(teamLogoURL: "")
     }
 }
+
+//NetworkManager.shared.fetchImage(from: course.imageUrl) { [weak self] result in
+//    switch result {
+//    case .success(let imageDate):
+//        self?.courseImage.image = UIImage(data: imageDate)
+//    case .failure(let error):
+//        print(error)
+//    }
+//}

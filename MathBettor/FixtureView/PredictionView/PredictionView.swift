@@ -17,9 +17,11 @@ struct PredictionView: View {
 
     var body: some View {
         VStack {
-            Text("PREDICTION")
-                .bold()
-                .padding(.bottom)
+            Section {
+                Text("PREDICTION")
+                    .bold()
+                    .padding(.bottom)
+            }
             HStack(spacing: 30.0) {
                 VStack {
                     Text("WIN HOME")
@@ -43,8 +45,10 @@ struct PredictionView: View {
                 .fontWeight(.thin)
                 .multilineTextAlignment(.center)
                 .padding(.vertical)
-            Text("SCORE PROBABILITY")
-                .bold()
+            Section {
+                Text("SCORE PROBABILITY")
+                    .bold()
+            }
             LazyVGrid(columns: column) {
                 ForEach(viewModel.prob.sorted(by: { $0.key < $1.key }), id: \.key) {
                     (score, probability) in

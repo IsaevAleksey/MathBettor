@@ -19,12 +19,35 @@ class NetworkManager {
     
     private init () {}
     
+    
+//    func fetchImage(from url: String, completion: @escaping(Result<Data, NetworkError>) -> Void ) {
+//        guard let url = URL(string: url) else {
+//            completion(.failure(.invalidURL))
+//            return
+//        }
+//
+//        DispatchQueue.global().async {
+//            guard let imageData = try? Data(contentsOf: url) else {
+//                completion(.failure(.noData))
+//                return
+//            }
+//            DispatchQueue.main.async {
+//                completion(.success(imageData))
+//            }
+//        }
+//    }
     // скорее всего надо будет убрать, не пригодится
 //    func fetchImage(from url: String) async throws -> Data {
 //        guard let imageUrl = URL(string: url) else { throw NetworkError.invalidURL}
 //        guard let imageData = try? Data(contentsOf: imageUrl) else { throw NetworkError.noData }
 //        return imageData
 //    }
+    
+    func fetchImage(from url: String) throws -> Data {
+        guard let imageUrl = URL(string: url) else { throw NetworkError.invalidURL}
+        guard let imageData = try? Data(contentsOf: imageUrl) else { return Data() }
+        return imageData
+    }
     
     func fetchCompetitionsList() async throws -> CompetitionsList {
         var request = URLRequest(
@@ -73,31 +96,6 @@ class NetworkManager {
         }
         return statistics
     }
-    
-    
-//    func fetchResponse<T: Decodable>(_ type: T.Type, completion: @escaping(Result<T, NetworkError>) -> Void) {
-//        var request = URLRequest(
-//            url: URL(string: "https://v3.football.api-sports.io/leagues")!,
-//            timeoutInterval: 10.0)
-//        request.addValue("2d3297ddd732374c7f607d900b0d9c69", forHTTPHeaderField: "x-rapidapi-key")
-//        request.addValue("v3.football.api-sports.io", forHTTPHeaderField: "x-rapidapi-host")
-//        request.httpMethod = "GET"
-//
-//        URLSession.shared.dataTask(with: request) { data, _, error in
-//            guard let data = data else {
-//                completion(.failure(.noData))
-//                return
-//            }
-//            do {
-//                let type = try JSONDecoder().decode(T.self, from: data)
-//                DispatchQueue.main.async {
-//                    completion(.success(type))
-//                }
-//            } catch {
-//                completion(.failure(.decodingError))
-//            }
-//        }.resume()
-//    }
 }
 
 
