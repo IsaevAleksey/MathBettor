@@ -19,7 +19,7 @@ class PredictionViewModel: ObservableObject {
         statisticsInfo.predictions.advice
     }
     
-    // calculation of probabilities
+    //MARK: property for calculation of probabilities
     
     private var homePlayedGames: Int {
         statisticsInfo.teams.home.league.fixtures.played.total

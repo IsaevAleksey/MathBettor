@@ -15,7 +15,6 @@ struct CompetitionImage: View {
     let shadowIsOn: Bool
         
     var body: some View {
-        
 //        if let uiImage = UIImage(data: imageData) {
 //            Image(uiImage: uiImage)
 //                .resizable()
@@ -26,16 +25,32 @@ struct CompetitionImage: View {
 //        } else {
 //            ProgressView()
 //        }
-        
-        AsyncImage(url: URL(string: imageURL)) { image in
-            image
-                .resizable()
-                .frame(width: imageSize.width, height: imageSize.height)
-                .cornerRadius(cornerRadius)
-                .shadow(radius: shadowIsOn ? 10 : 0)
-        } placeholder: {
-            ProgressView()
+        CacheAsyncImage(imageURL: imageURL) { phase in
+            switch phase {
+            case .success(let image):
+                image
+                    .resizable()
+                    .frame(width: imageSize.width, height: imageSize.height)
+                    .cornerRadius(cornerRadius)
+                    .shadow(radius: shadowIsOn ? 10 : 0)
+            case .empty:
+                ProgressView()
+            case .failure:
+                Image(systemName: "xmark.shield")
+            @unknown default:
+                Image(systemName: "xmark.shield")
+            }
         }
+
+//        AsyncImage(url: URL(string: imageURL)) { image in
+//            image
+//                .resizable()
+//                .frame(width: imageSize.width, height: imageSize.height)
+//                .cornerRadius(cornerRadius)
+//                .shadow(radius: shadowIsOn ? 10 : 0)
+//        } placeholder: {
+//            ProgressView()
+//        }
     }
 }
 

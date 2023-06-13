@@ -14,9 +14,6 @@ struct GamesStatisticsRowView: View {
     
     var body: some View {
         HStack {
-//            Image(systemName: "figure.soccer")
-//                .resizable()
-//                .frame(width: 30, height: 30)
             Text("\(homeValue)")
                 .bold()
                 .frame(width: 25)
@@ -28,11 +25,34 @@ struct GamesStatisticsRowView: View {
                 .bold()
                 .frame(width: 25)
                 .padding(.trailing, 15.0)
-//            Image(systemName: "figure.soccer")
-//                .resizable()
-//                .frame(width: 30, height: 30)
         }
-        .foregroundColor(.white)
+            .foregroundColor(.white)
+            .frame(height: 40)
+            .background(BackgroundColor())
+            .cornerRadius(20)
+    }
+}
+
+struct GamesAverageStatisticsRowView: View {
+    let parametr: String
+    let homeValue: String
+    let awayValue: String
+    
+    var body: some View {
+        HStack {
+            Text(homeValue)
+                .bold()
+                .frame(width: 35)
+                .padding(.leading, 15.0)
+            Spacer()
+            Text(parametr)
+            Spacer()
+            Text(awayValue)
+                .bold()
+                .frame(width: 35)
+                .padding(.trailing, 15.0)
+        }
+            .foregroundColor(.white)
             .frame(height: 40)
             .background(BackgroundColor())
             .cornerRadius(20)

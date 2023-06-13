@@ -23,11 +23,11 @@ struct CompetitionsListView: View {
         } else {
             NavigationView {
                 List(viewModel.rows, id: \.competitionsId) { competitionViewModel in
-                    Section(header: Text(competitionViewModel.competitionCountry)) {
+//                    Section(header: Text(competitionViewModel.competitionCountry)) {
                         NavigationLink(destination: CompetitionView(viewModel: competitionViewModel)) {
-                            CompetitionRow(competitionName: competitionViewModel.competitionName, competitionImageURL: competitionViewModel.competitionsLogoUrl)
+                            CompetitionRow(competitionName: competitionViewModel.competitionName, competitionCountry: competitionViewModel.competitionCountry, competitionImageURL: competitionViewModel.competitionsLogoUrl)
                         }
-                    }
+//                    }
                 }
                 .navigationTitle("Select competition")
                 .listStyle(.plain)

@@ -19,6 +19,7 @@ struct CompetitionInfoView: View {
 //                Spacer()
                 CompetitionImage(imageURL: imageURL, imageSize: CGSize(width: 100, height: 100), cornerRadius: 10, shadowIsOn: true)
                     .frame(width: 100, height: 100)
+                    .padding(.top)
                 Text(competitionCountry)
                 Text(competitionName)
                     .font(.largeTitle)
