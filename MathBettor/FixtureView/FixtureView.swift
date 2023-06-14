@@ -48,6 +48,7 @@ struct FixtureView: View {
                         }
                 }
                 .accentColor(Color(#colorLiteral(red: 0.0941176488995552, green: 0.3529411852359772, blue: 0.615686297416687, alpha: 1)))
+//                .background(BackgroundColor())
             }
             .ignoresSafeArea()
         }

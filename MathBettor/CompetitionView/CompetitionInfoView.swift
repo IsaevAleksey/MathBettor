@@ -13,27 +13,31 @@ struct CompetitionInfoView: View {
     let competitionName: String
     
     var body: some View {
-        ZStack {
-            BackgroundColor()
-            VStack {
-//                Spacer()
-                CompetitionImage(imageURL: imageURL, imageSize: CGSize(width: 100, height: 100), cornerRadius: 10, shadowIsOn: true)
-                    .frame(width: 100, height: 100)
-                    .padding(.top)
-                Text(competitionCountry)
-                Text(competitionName)
-                    .font(.largeTitle)
-//                    .padding(.bottom)
+        GeometryReader { geometry in
+            ZStack {
+                BackgroundColor()
+                VStack {
+    //                Spacer()
+                    CompetitionImage(imageURL: imageURL, imageSize: CGSize(width: 100, height: 100), cornerRadius: 10, shadowIsOn: true)
+                        .frame(width: 100, height: 100)
+                        .padding(.top)
+                    Text(competitionCountry)
+                    Text(competitionName)
+                        .font(.largeTitle)
+                        .multilineTextAlignment(.center)
+                        .frame(width: geometry.size.width - 32)
+//                        .padding(.top)
+                }
+                .foregroundColor(.white)
             }
-            .foregroundColor(.white)
-        }
-        .cornerRadius(20)
+            .cornerRadius(20)
         .ignoresSafeArea()
+        }
     }
 }
 
 struct CompetitionInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        CompetitionInfoView(imageURL: "", competitionCountry: "name Country", competitionName: "competition name")
+        CompetitionInfoView(imageURL: "", competitionCountry: "name Country", competitionName: "competition n444ffaffffffffffffffme")
     }
 }

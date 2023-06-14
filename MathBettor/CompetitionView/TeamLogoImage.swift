@@ -14,13 +14,12 @@ struct TeamLogoImage: View {
         AsyncImage(url: URL(string: teamLogoURL)) { image in
             image
                 .resizable()
-                .frame(width: 50, height: 50)
+                .frame(width: 40, height: 40)
                 .cornerRadius(10)
                 .shadow(radius: 10)
         } placeholder: {
             ProgressView()
         }
-
     }
 }
 
@@ -29,6 +28,7 @@ struct TeamLogoImage_Previews: PreviewProvider {
         TeamLogoImage(teamLogoURL: "")
     }
 }
+
 
 //NetworkManager.shared.fetchImage(from: course.imageUrl) { [weak self] result in
 //    switch result {

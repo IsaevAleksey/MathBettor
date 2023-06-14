@@ -15,16 +15,6 @@ struct CompetitionImage: View {
     let shadowIsOn: Bool
         
     var body: some View {
-//        if let uiImage = UIImage(data: imageData) {
-//            Image(uiImage: uiImage)
-//                .resizable()
-//                .resizable()
-//                .frame(width: imageSize.width, height: imageSize.height)
-//                .cornerRadius(cornerRadius)
-//                .shadow(radius: shadowIsOn ? 10 : 0)
-//        } else {
-//            ProgressView()
-//        }
         CacheAsyncImage(imageURL: imageURL) { phase in
             switch phase {
             case .success(let image):
