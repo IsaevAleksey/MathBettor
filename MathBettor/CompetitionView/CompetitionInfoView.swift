@@ -17,7 +17,6 @@ struct CompetitionInfoView: View {
             ZStack {
                 BackgroundColor()
                 VStack {
-    //                Spacer()
                     CompetitionImage(imageURL: imageURL, imageSize: CGSize(width: 100, height: 100), cornerRadius: 10, shadowIsOn: true)
                         .frame(width: 100, height: 100)
                         .padding(.top)
@@ -26,7 +25,6 @@ struct CompetitionInfoView: View {
                         .font(.largeTitle)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width - 32)
-//                        .padding(.top)
                 }
                 .foregroundColor(.white)
             }
@@ -38,6 +36,6 @@ struct CompetitionInfoView: View {
 
 struct CompetitionInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        CompetitionInfoView(imageURL: "", competitionCountry: "name Country", competitionName: "competition n444ffaffffffffffffffme")
+        CompetitionInfoView(imageURL: "", competitionCountry: "name Country", competitionName: "competition nme")
     }
 }

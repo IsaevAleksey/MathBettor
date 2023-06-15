@@ -42,4 +42,8 @@ extension FixtureInfo {
     static func fetchPsevdoFixtureInfo() -> FixtureInfo {
         FixtureInfo(fixture: Fixture(id: 10, date: "2022-10-10 123123123"), teams: Teams(home: Team(id: 15, name: "team1", logo: "logo1"), away: Team(id: 16, name: "team2", logo: "logo2")))
     }
+    
+    static func createEmptyModel() -> FixtureInfo {
+        FixtureInfo(fixture: Fixture(id: 00, date: "В ближайшее время матчи отсутствуют"), teams: Teams(home: Team(id: 00, name: "", logo: ""), away: Team(id: 000, name: "", logo: "")))
+    }
 }

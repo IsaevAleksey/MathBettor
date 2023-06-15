@@ -19,36 +19,6 @@ class NetworkManager {
     
     private init () {}
     
-    
-//    func fetchImage(from url: String, completion: @escaping(Result<Data, NetworkError>) -> Void ) {
-//        guard let url = URL(string: url) else {
-//            completion(.failure(.invalidURL))
-//            return
-//        }
-//
-//        DispatchQueue.global().async {
-//            guard let imageData = try? Data(contentsOf: url) else {
-//                completion(.failure(.noData))
-//                return
-//            }
-//            DispatchQueue.main.async {
-//                completion(.success(imageData))
-//            }
-//        }
-//    }
-    // скорее всего надо будет убрать, не пригодится
-//    func fetchImage(from url: String) async throws -> Data {
-//        guard let imageUrl = URL(string: url) else { throw NetworkError.invalidURL}
-//        guard let imageData = try? Data(contentsOf: imageUrl) else { throw NetworkError.noData }
-//        return imageData
-//    }
-    
-    func fetchImage(from url: String) throws -> Data {
-        guard let imageUrl = URL(string: url) else { throw NetworkError.invalidURL}
-        guard let imageData = try? Data(contentsOf: imageUrl) else { return Data() }
-        return imageData
-    }
-    
     func fetchCompetitionsList() async throws -> CompetitionsList {
         var request = URLRequest(
             url: URL(string: "https://v3.football.api-sports.io/leagues")!,
@@ -57,7 +27,11 @@ class NetworkManager {
         request.addValue("v3.football.api-sports.io", forHTTPHeaderField: "x-rapidapi-host")
         request.httpMethod = "GET"
 
-        let (data, _) = try await URLSession.shared.data(for: request)
+        guard let (data, _) = try? await URLSession.shared.data(for: request) else {
+            throw NetworkError.noData
+        }
+
+//        let (data, _) = try await URLSession.shared.data(for: request)
         guard let competitionsList = try? JSONDecoder().decode(CompetitionsList.self, from: data) else {
             throw NetworkError.decodingError
         }
@@ -72,7 +46,11 @@ class NetworkManager {
         request.addValue("v3.football.api-sports.io", forHTTPHeaderField: "x-rapidapi-host")
         request.httpMethod = "GET"
 
-        let (data, _) = try await URLSession.shared.data(for: request)
+        guard let (data, _) = try? await URLSession.shared.data(for: request) else {
+            throw NetworkError.noData
+        }
+
+//        let (data, _) = try await URLSession.shared.data(for: request)
         guard let fixturesList = try? JSONDecoder().decode(FixturesList.self, from: data) else {
             throw NetworkError.decodingError
         }
@@ -91,7 +69,6 @@ class NetworkManager {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         guard let statistics = try? decoder.decode(StatisticsData.self, from: data) else {
-//        guard let statistics = try? JSONDecoder().decode(Statistics.self, from: data) else {
             throw NetworkError.decodingError
         }
         return statistics

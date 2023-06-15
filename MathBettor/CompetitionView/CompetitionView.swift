@@ -15,9 +15,15 @@ struct CompetitionView: View {
             VStack {
                 CompetitionInfoView(imageURL: viewModel.competitionsLogoUrl, competitionCountry: viewModel.competitionCountry, competitionName: viewModel.competitionName)
                     .frame(height: geometry.size.height / 3)
+//сделать свойство в модели CompetitionViewModel по которому проверять, если пустое, то игр нет
+//и загрузить пустую модель и изменить счетчик. Если выберет дату, по которой есть игры
+//то счетчик
                 if viewModel.rows.isEmpty {
                     Text ("В ближайшее время матчи отсутствуют")
                         .padding(.top, 200.0)
+                        .onAppear {
+                            viewModel.fetchEmptyFixtureViewModel()
+                        }
                     Spacer()
                 } else {
                     List(viewModel.rows, id: \.fixtureID) { fixtureViewModel in

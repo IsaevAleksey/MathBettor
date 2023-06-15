@@ -61,6 +61,11 @@ class CompetitionViewModel: ObservableObject {
             print(error)
         }
     }
+    
+    func fetchEmptyFixtureViewModel() {
+        let emptyFixtureViewModel = FixtureViewModel(fixtureInfo: FixtureInfo.createEmptyModel())
+        rows.append(emptyFixtureViewModel)
+    }
 }
 
 extension Date {
