@@ -23,13 +23,18 @@ struct CompetitionsListView: View {
             }
         } else {
             NavigationView {
-                List(searchResults, id: \.competitionsId) { competitionViewModel in
-                    NavigationLink(destination: CompetitionView(viewModel: competitionViewModel)) {
-                        CompetitionRow(competitionName: competitionViewModel.competitionName, competitionCountry: competitionViewModel.competitionCountry, competitionImageURL: competitionViewModel.competitionsLogoUrl)
+                ZStack {
+                    Color(#colorLiteral(red: 0.2093037367, green: 0.7082021832, blue: 0.6400974393, alpha: 1))
+                        .ignoresSafeArea()
+                    List(searchResults, id: \.competitionsId) { competitionViewModel in
+                        NavigationLink(destination: CompetitionView(viewModel: competitionViewModel)) {
+                            CompetitionRow(competitionName: competitionViewModel.competitionName, competitionCountry: competitionViewModel.competitionCountry, competitionImageURL: competitionViewModel.competitionsLogoUrl)
+                        }
                     }
+                    .navigationTitle("Select competition")
+                    .toolbarBackground(Color(#colorLiteral(red: 0.2093037367, green: 0.7082021832, blue: 0.6400974393, alpha: 1)), for: .navigationBar)
+                    .listStyle(.plain)
                 }
-                .navigationTitle("Select competition")
-                .listStyle(.plain)
             }
             .searchable(text: $searchText, prompt: "search by country")
             .accentColor(.white)
