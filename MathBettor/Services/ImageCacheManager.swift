@@ -20,18 +20,3 @@ class ImageCacheManager {
         }
     }
 }
-
-class ImageCacheM {
-    static let shared = NSCache<NSString, UIImage>()
-    
-    private init() {}
-}
-
-class URLImageCache {
-    static let cache = URLCache.init(memoryCapacity: 50_000_000, diskCapacity: 1_000_000_000)
-    
-    private init() {}
-//    let cache2 = URLCache.shared
-//    cache.memoryCapacity = 50_000_000
-//    cache.diskCapacity = 1_000_000_000
-}

@@ -35,7 +35,6 @@ struct CacheAsyncImage<Content>: View where Content: View {
         if case .success(let image) = phase {
             ImageCacheManager[imageURL] = image
         }
-
         return content(phase)
     }
 }

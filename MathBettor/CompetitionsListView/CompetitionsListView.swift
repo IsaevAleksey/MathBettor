@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CompetitionsListView: View {
     @StateObject var viewModel: CompetitionsListViewModel
+    @State private var searchText = ""
     
     var body: some View {
         if viewModel.rows.isEmpty {
@@ -22,23 +23,24 @@ struct CompetitionsListView: View {
             }
         } else {
             NavigationView {
-                List(viewModel.rows, id: \.competitionsId) { competitionViewModel in
-//                    Section(header: Text(competitionViewModel.competitionCountry)) {
-                        NavigationLink(destination: CompetitionView(viewModel: competitionViewModel)) {
-                            CompetitionRow(competitionName: competitionViewModel.competitionName, competitionCountry: competitionViewModel.competitionCountry, competitionImageURL: competitionViewModel.competitionsLogoUrl)
-                        }
-//                    }
+                List(searchResults, id: \.competitionsId) { competitionViewModel in
+                    NavigationLink(destination: CompetitionView(viewModel: competitionViewModel)) {
+                        CompetitionRow(competitionName: competitionViewModel.competitionName, competitionCountry: competitionViewModel.competitionCountry, competitionImageURL: competitionViewModel.competitionsLogoUrl)
+                    }
                 }
                 .navigationTitle("Select competition")
                 .listStyle(.plain)
             }
+            .searchable(text: $searchText, prompt: "search by country")
             .accentColor(.white)
-//            .task {
-//                if viewModel.rows.isEmpty {
-//                    await viewModel.fetchCompetitionsList()
-//                    print("загружается список лиг")
-//                }
-//            }
+        }
+    }
+    
+    var searchResults: [CompetitionViewModel] {
+        if searchText.isEmpty {
+            return viewModel.rows
+        } else {
+            return viewModel.rows.filter { $0.competitionCountry.contains(searchText) }
         }
     }
 }
@@ -48,4 +50,3 @@ struct LeagueListView_Previews: PreviewProvider {
             CompetitionsListView(viewModel: CompetitionsListViewModel())
     }
 }
-

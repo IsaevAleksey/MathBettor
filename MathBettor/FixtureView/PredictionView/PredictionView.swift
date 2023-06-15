@@ -56,12 +56,9 @@ struct PredictionView: View {
 //        .onAppear {
 //            viewModel.fetchScoreProbabilities()
 //        }
-        
-        
     }
 }
-// для проверки гита ываываываываываываыва
-//ваваываываываыва
+
 
 
 struct PredictionTabView_Previews: PreviewProvider {
