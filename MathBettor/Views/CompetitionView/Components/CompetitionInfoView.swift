@@ -15,17 +15,20 @@ struct CompetitionInfoView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                BackgroundColor()
+                Color.backgroundGradient
                 VStack {
+                    Spacer()
                     CompetitionImage(imageURL: imageURL, imageSize: CGSize(width: 100, height: 100), cornerRadius: 10, shadowIsOn: true)
-                        .frame(width: 100, height: 100)
+//                        .frame(width: 100, height: 100)
                         .padding(.top)
                     Text(competitionCountry)
                     Text(competitionName)
                         .font(.largeTitle)
                         .multilineTextAlignment(.center)
                         .frame(width: geometry.size.width - 32)
+                        .padding(.bottom, 16.0)
                 }
+                .bold()
                 .foregroundColor(.white)
             }
             .cornerRadius(20)

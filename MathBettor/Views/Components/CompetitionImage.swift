@@ -25,10 +25,13 @@ struct CompetitionImage: View {
                     .shadow(radius: shadowIsOn ? 10 : 0)
             case .empty:
                 ProgressView()
+                    .frame(width: imageSize.width, height: imageSize.height)
             case .failure:
                 Image(systemName: "xmark.shield")
+                    .frame(width: imageSize.width, height: imageSize.height)
             @unknown default:
                 Image(systemName: "xmark.shield")
+                    .frame(width: imageSize.width, height: imageSize.height)
             }
         }
 

@@ -47,7 +47,7 @@ struct FixtureView: View {
                             Text("Prediction")
                         }
                 }
-                .accentColor(Color(#colorLiteral(red: 0.0941176488995552, green: 0.3529411852359772, blue: 0.615686297416687, alpha: 1)))
+                .accentColor(Color("TabBarColor"))
 //                .background(BackgroundColor())
             }
             .ignoresSafeArea()

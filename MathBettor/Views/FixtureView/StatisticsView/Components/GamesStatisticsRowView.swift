@@ -28,7 +28,7 @@ struct GamesStatisticsRowView: View {
         }
             .foregroundColor(.white)
             .frame(height: 40)
-            .background(BackgroundColor())
+            .background(Color.backgroundGradient)
             .cornerRadius(20)
     }
 }
@@ -54,7 +54,7 @@ struct GamesAverageStatisticsRowView: View {
         }
             .foregroundColor(.white)
             .frame(height: 40)
-            .background(BackgroundColor())
+            .background(Color.backgroundGradient)
             .cornerRadius(20)
     }
 }

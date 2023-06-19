@@ -21,9 +21,9 @@ struct CompetitionView: View {
                 if viewModel.rows.isEmpty {
                     Text ("В ближайшее время матчи отсутствуют")
                         .padding(.top, 200.0)
-                        .onAppear {
-                            viewModel.fetchEmptyFixtureViewModel()
-                        }
+//                        .onAppear {
+//                            viewModel.fetchEmptyFixtureViewModel()
+//                        }
                     Spacer()
                 } else {
                     List(viewModel.rows, id: \.fixtureID) { fixtureViewModel in

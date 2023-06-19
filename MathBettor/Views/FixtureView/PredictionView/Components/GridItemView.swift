@@ -14,7 +14,7 @@ struct GridItemView: View {
     
     var body: some View {
         ZStack {
-            BackgroundColor()
+            Color.backgroundGradient
                 .clipShape(Rectangle())
                 .frame(width: 110, height: 50)
                 .cornerRadius(10)

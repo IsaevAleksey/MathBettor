@@ -17,19 +17,19 @@ struct FixtureInfoView: View {
     
     var body: some View {
         ZStack {
-            BackgroundColor()
+            Color.backgroundGradient
             VStack(spacing: 16.0) {
                 Spacer()
                 HStack(alignment: .top, spacing: 100.0) {
                     VStack {
                         TeamLogoImage(teamLogoURL: homeTeamLogoURL)
-                            .frame(height: 50)
+//                            .frame(height: 50)
                         Text(homeTeamName)
 //                            .multilineTextAlignment(.center)
                     }
                     VStack {
                         TeamLogoImage(teamLogoURL: awayTeamLogoURL)
-                            .frame(height: 50)
+//                            .frame(height: 50)
                         Text(awayTeamName)
                     }
                 }

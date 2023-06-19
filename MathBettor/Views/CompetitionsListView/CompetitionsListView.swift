@@ -24,7 +24,7 @@ struct CompetitionsListView: View {
         } else {
             NavigationView {
                 ZStack {
-                    Color(#colorLiteral(red: 0.2093037367, green: 0.7082021832, blue: 0.6400974393, alpha: 1))
+                    Color("NavigationViewBackground")
                         .ignoresSafeArea()
                     List(searchResults, id: \.competitionsId) { competitionViewModel in
                         NavigationLink(destination: CompetitionView(viewModel: competitionViewModel)) {
@@ -32,7 +32,7 @@ struct CompetitionsListView: View {
                         }
                     }
                     .navigationTitle("Select competition")
-                    .toolbarBackground(Color(#colorLiteral(red: 0.2093037367, green: 0.7082021832, blue: 0.6400974393, alpha: 1)), for: .navigationBar)
+                    .toolbarBackground(Color("NavigationViewBackground"), for: .navigationBar)
                     .listStyle(.plain)
                 }
             }
