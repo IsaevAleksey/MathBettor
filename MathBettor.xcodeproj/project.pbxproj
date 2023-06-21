@@ -18,9 +18,9 @@
 		932F0E3D2A1D3AFA0005F994 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E3C2A1D3AFA0005F994 /* ProgressBarView.swift */; };
 		932F0E3F2A1E87700005F994 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E3E2A1E87700005F994 /* CircularProgressBarView.swift */; };
 		932F0E412A1FC3280005F994 /* PredictionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E402A1FC3280005F994 /* PredictionView.swift */; };
-		932F0E442A1FC37C0005F994 /* PredictionTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E432A1FC37C0005F994 /* PredictionTabViewModel.swift */; };
+		932F0E442A1FC37C0005F994 /* PredictionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932F0E432A1FC37C0005F994 /* PredictionViewModel.swift */; };
 		9359C95C2A26558F000308F5 /* ComparisonAndPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359C95B2A26558F000308F5 /* ComparisonAndPrediction.swift */; };
-		9359C9602A265E86000308F5 /* GamesStatisticsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359C95F2A265E86000308F5 /* GamesStatisticsRowView.swift */; };
+		9359C9602A265E86000308F5 /* GamesStatisticsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359C95F2A265E86000308F5 /* GamesStatisticsRow.swift */; };
 		9359C9632A27A9B4000308F5 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9359C9622A27A9B4000308F5 /* StatisticsView.swift */; };
 		935EE8B02A2203C2000D8157 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935EE8AF2A2203C2000D8157 /* ImageCacheManager.swift */; };
 		935EE8C32A251E69000D8157 /* TeamsStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935EE8C22A251E69000D8157 /* TeamsStats.swift */; };
@@ -30,7 +30,7 @@
 		938D6C442A0D76BB002854DC /* TeamLogoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C432A0D76BB002854DC /* TeamLogoImage.swift */; };
 		938D6C462A18D66F002854DC /* ComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C452A18D66F002854DC /* ComparisonView.swift */; };
 		938D6C492A18D854002854DC /* ComparisonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C482A18D854002854DC /* ComparisonViewModel.swift */; };
-		938D6C4B2A1900A0002854DC /* ComparisonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C4A2A1900A0002854DC /* ComparisonRowView.swift */; };
+		938D6C4B2A1900A0002854DC /* ComparisonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D6C4A2A1900A0002854DC /* ComparisonRow.swift */; };
 		939A5DC329F6ED1A005DDA83 /* MathBettorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939A5DC229F6ED1A005DDA83 /* MathBettorApp.swift */; };
 		939A5DC729F6ED1C005DDA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 939A5DC629F6ED1C005DDA83 /* Assets.xcassets */; };
 		939A5DCA29F6ED1C005DDA83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 939A5DC929F6ED1C005DDA83 /* Preview Assets.xcassets */; };
@@ -43,7 +43,6 @@
 		93E631B72A2E5F5A00E3F90B /* CompetitionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E631B62A2E5F5A00E3F90B /* CompetitionInfoView.swift */; };
 		93EAFA5629FFFC10006315F7 /* HelloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EAFA5529FFFC10006315F7 /* HelloView.swift */; };
 		93FF36C72A40B55800F24B09 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FF36C62A40B55800F24B09 /* BackgroundGradient.swift */; };
-		93FF36C92A40B82200F24B09 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FF36C82A40B82200F24B09 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,9 +57,9 @@
 		932F0E3C2A1D3AFA0005F994 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		932F0E3E2A1E87700005F994 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
 		932F0E402A1FC3280005F994 /* PredictionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionView.swift; sourceTree = "<group>"; };
-		932F0E432A1FC37C0005F994 /* PredictionTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionTabViewModel.swift; sourceTree = "<group>"; };
+		932F0E432A1FC37C0005F994 /* PredictionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionViewModel.swift; sourceTree = "<group>"; };
 		9359C95B2A26558F000308F5 /* ComparisonAndPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonAndPrediction.swift; sourceTree = "<group>"; };
-		9359C95F2A265E86000308F5 /* GamesStatisticsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesStatisticsRowView.swift; sourceTree = "<group>"; };
+		9359C95F2A265E86000308F5 /* GamesStatisticsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesStatisticsRow.swift; sourceTree = "<group>"; };
 		9359C9622A27A9B4000308F5 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		935EE8AF2A2203C2000D8157 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		935EE8C22A251E69000D8157 /* TeamsStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsStats.swift; sourceTree = "<group>"; };
@@ -70,7 +69,7 @@
 		938D6C432A0D76BB002854DC /* TeamLogoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamLogoImage.swift; sourceTree = "<group>"; };
 		938D6C452A18D66F002854DC /* ComparisonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonView.swift; sourceTree = "<group>"; };
 		938D6C482A18D854002854DC /* ComparisonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonViewModel.swift; sourceTree = "<group>"; };
-		938D6C4A2A1900A0002854DC /* ComparisonRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonRowView.swift; sourceTree = "<group>"; };
+		938D6C4A2A1900A0002854DC /* ComparisonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonRow.swift; sourceTree = "<group>"; };
 		939A5DBF29F6ED1A005DDA83 /* MathBettor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathBettor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		939A5DC229F6ED1A005DDA83 /* MathBettorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathBettorApp.swift; sourceTree = "<group>"; };
 		939A5DC629F6ED1C005DDA83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,7 +83,6 @@
 		93E631B62A2E5F5A00E3F90B /* CompetitionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionInfoView.swift; sourceTree = "<group>"; };
 		93EAFA5529FFFC10006315F7 /* HelloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloView.swift; sourceTree = "<group>"; };
 		93FF36C62A40B55800F24B09 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
-		93FF36C82A40B82200F24B09 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +131,8 @@
 		930AB2B02A0595F500BFF3FA /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				935EE8AF2A2203C2000D8157 /* ImageCacheManager.swift */,
 				939A5DD429F6EEC5005DDA83 /* NetworkManager.swift */,
+				935EE8AF2A2203C2000D8157 /* ImageCacheManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -143,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				932F0E402A1FC3280005F994 /* PredictionView.swift */,
-				932F0E432A1FC37C0005F994 /* PredictionTabViewModel.swift */,
+				932F0E432A1FC37C0005F994 /* PredictionViewModel.swift */,
 				93FF36CF2A40BD5E00F24B09 /* Components */,
 			);
 			path = PredictionView;
@@ -254,7 +252,6 @@
 			children = (
 				93E36BEC2A38D45000914717 /* CacheAsyncImage.swift */,
 				93FF36C62A40B55800F24B09 /* BackgroundGradient.swift */,
-				93FF36C82A40B82200F24B09 /* SwiftUIView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -288,7 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				932F0E3C2A1D3AFA0005F994 /* ProgressBarView.swift */,
-				938D6C4A2A1900A0002854DC /* ComparisonRowView.swift */,
+				938D6C4A2A1900A0002854DC /* ComparisonRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -296,7 +293,7 @@
 		93FF36CE2A40BD3600F24B09 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				9359C95F2A265E86000308F5 /* GamesStatisticsRowView.swift */,
+				9359C95F2A265E86000308F5 /* GamesStatisticsRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -382,16 +379,15 @@
 			files = (
 				939A5DC329F6ED1A005DDA83 /* MathBettorApp.swift in Sources */,
 				9359C9632A27A9B4000308F5 /* StatisticsView.swift in Sources */,
-				93FF36C92A40B82200F24B09 /* SwiftUIView.swift in Sources */,
 				932F0E412A1FC3280005F994 /* PredictionView.swift in Sources */,
 				93E36BED2A38D45000914717 /* CacheAsyncImage.swift in Sources */,
 				939A5DD529F6EEC5005DDA83 /* NetworkManager.swift in Sources */,
-				9359C9602A265E86000308F5 /* GamesStatisticsRowView.swift in Sources */,
+				9359C9602A265E86000308F5 /* GamesStatisticsRow.swift in Sources */,
 				938D6C402A0D613B002854DC /* FixtureViewModel.swift in Sources */,
-				938D6C4B2A1900A0002854DC /* ComparisonRowView.swift in Sources */,
+				938D6C4B2A1900A0002854DC /* ComparisonRow.swift in Sources */,
 				93EAFA5629FFFC10006315F7 /* HelloView.swift in Sources */,
 				938D6C442A0D76BB002854DC /* TeamLogoImage.swift in Sources */,
-				932F0E442A1FC37C0005F994 /* PredictionTabViewModel.swift in Sources */,
+				932F0E442A1FC37C0005F994 /* PredictionViewModel.swift in Sources */,
 				938D6C422A0D7519002854DC /* FixtureRow.swift in Sources */,
 				932F0E3F2A1E87700005F994 /* CircularProgressBarView.swift in Sources */,
 				93E631B32A2E4BAC00E3F90B /* GridItemView.swift in Sources */,
@@ -549,8 +545,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -581,8 +579,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

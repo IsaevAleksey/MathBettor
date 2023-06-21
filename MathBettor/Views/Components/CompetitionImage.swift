@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CompetitionImage: View {
-//    let imageData: Data
     let imageURL: String
     let imageSize: CGSize
     let cornerRadius: CGFloat
@@ -34,16 +33,6 @@ struct CompetitionImage: View {
                     .frame(width: imageSize.width, height: imageSize.height)
             }
         }
-
-//        AsyncImage(url: URL(string: imageURL)) { image in
-//            image
-//                .resizable()
-//                .frame(width: imageSize.width, height: imageSize.height)
-//                .cornerRadius(cornerRadius)
-//                .shadow(radius: shadowIsOn ? 10 : 0)
-//        } placeholder: {
-//            ProgressView()
-//        }
     }
 }
 

@@ -36,8 +36,6 @@ class ComparisonViewModel: ObservableObject {
     var advice: String {
         statisticsInfo.predictions.advice
     }
-
-
     
     private let statisticsInfo: StatisticsInfo
 

@@ -13,14 +13,19 @@ struct FixtureView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                FixtureInfoView(homeTeamLogoURL: viewModel.homeTeamLogoURL, awayTeamLogoURL: viewModel.awayTeamLogoURL, homeTeamName: viewModel.homeTeamName, awayTeamName: viewModel.awayTeamName, fixtureDate: viewModel.fixtureDate)
-                    .frame(height: geometry.size.height / 3)
-                    .task {
-                        if viewModel.comparisonViewModel.isEmpty {
-                            await viewModel.fetchStatistics(fixtureID: viewModel.fixtureID)
-                            print("загражуем прогноз")
+                FixtureInfoView(
+                    homeTeamLogoURL: viewModel.homeTeamLogoURL,
+                    awayTeamLogoURL: viewModel.awayTeamLogoURL,
+                    homeTeamName: viewModel.homeTeamName,
+                    awayTeamName: viewModel.awayTeamName,
+                    fixtureDate: viewModel.fixtureDate)
+                        .frame(height: geometry.size.height / 3)
+                        .task {
+                            if viewModel.comparisonViewModel.isEmpty {
+                                await viewModel.fetchStatistics(fixtureID: viewModel.fixtureID)
+                                print("загражуем прогноз")
+                            }
                         }
-                    }
                 TabView {
                     List(viewModel.comparisonViewModel, id: \.advice) { comparisonViewModel in
                         ComparisonView(viewModel: comparisonViewModel)
@@ -47,12 +52,10 @@ struct FixtureView: View {
                             Text("Prediction")
                         }
                 }
-                .accentColor(Color("TabBarColor"))
-//                .background(BackgroundColor())
+                    .accentColor(Color("TabBarColor"))
             }
-            .ignoresSafeArea()
+                .ignoresSafeArea()
         }
-
     }
 }
 

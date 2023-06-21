@@ -18,8 +18,12 @@ struct CompetitionInfoView: View {
                 Color.backgroundGradient
                 VStack {
                     Spacer()
-                    CompetitionImage(imageURL: imageURL, imageSize: CGSize(width: 100, height: 100), cornerRadius: 10, shadowIsOn: true)
-//                        .frame(width: 100, height: 100)
+                    CompetitionImage(
+                        imageURL: imageURL,
+                        imageSize: CGSize(width: 100, height: 100),
+                        cornerRadius: 10,
+                        shadowIsOn: true
+                    )
                         .padding(.top)
                     Text(competitionCountry)
                     Text(competitionName)
@@ -28,11 +32,11 @@ struct CompetitionInfoView: View {
                         .frame(width: geometry.size.width - 32)
                         .padding(.bottom, 16.0)
                 }
-                .bold()
-                .foregroundColor(.white)
+                    .bold()
+                    .foregroundColor(.white)
             }
             .cornerRadius(20)
-        .ignoresSafeArea()
+            .ignoresSafeArea()
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GamesStatisticsRowView: View {
+struct GamesStatisticsRow: View {
     let parametr: String
     let homeValue: Int
     let awayValue: Int
@@ -33,7 +33,7 @@ struct GamesStatisticsRowView: View {
     }
 }
 
-struct GamesAverageStatisticsRowView: View {
+struct GamesAverageStatisticsRow: View {
     let parametr: String
     let homeValue: String
     let awayValue: String
@@ -61,7 +61,7 @@ struct GamesAverageStatisticsRowView: View {
 
 struct GamesStatisticsRowView_Previews: PreviewProvider {
     static var previews: some View {
-        GamesStatisticsRowView(parametr: "GAMES", homeValue: 5, awayValue: 60)
+        GamesStatisticsRow(parametr: "GAMES", homeValue: 5, awayValue: 60)
     }
 }
 

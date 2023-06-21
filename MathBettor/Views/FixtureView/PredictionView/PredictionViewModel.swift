@@ -8,9 +8,7 @@
 import Foundation
 
 class PredictionViewModel: ObservableObject {
-    
-//    @Published var probabilityScore: [String: Double] = [:]
-    
+        
     var probabilityWinAndDraw: Percent {
         statisticsInfo.predictions.percent
     }
@@ -20,6 +18,9 @@ class PredictionViewModel: ObservableObject {
     }
     
     //MARK: property for calculation of probabilities
+    var prob: [String: Double] {
+        fetchScoreProbabilities()
+    }
     
     private var homePlayedGames: Int {
         statisticsInfo.teams.home.league.fixtures.played.total
@@ -46,29 +47,32 @@ class PredictionViewModel: ObservableObject {
     }
     
     private var homeForm: Double {
-        NSString(string: statisticsInfo.comparison.total.home).doubleValue
+        NSString(string: statisticsInfo.comparison.att.home).doubleValue
     }
     
     private var awayForm: Double {
-        NSString(string: statisticsInfo.comparison.total.away).doubleValue
+        NSString(string: statisticsInfo.comparison.att.away).doubleValue
     }
     
-    var prob: [String: Double] {
-        fetchScoreProbabilities()
-    }
-    
+    //MARK: init
     private let statisticsInfo: StatisticsInfo
 
     init(statisticsInfo: StatisticsInfo) {
         self.statisticsInfo = statisticsInfo
     }
     
-    
-    private func teamGoalExpectancy(averageGoalsScored: Double, averageGoalsConceded: Double, firstTeamForm: Double, opponentTeamForm: Double) -> Double {
+    // MARK: calculation of probabilities
+    private func teamGoalExpectancy(
+        averageGoalsScored: Double,
+        averageGoalsConceded: Double,
+        firstTeamForm: Double,
+        opponentTeamForm: Double
+        ) -> Double {
+            
         let teamFormFactor = firstTeamForm / 100
-        let opponentStrengthFactor = opponentTeamForm / 100
+        let opponentFormFactor = opponentTeamForm / 100
         
-        let expectancy = averageGoalsScored * averageGoalsConceded * teamFormFactor * opponentStrengthFactor// добавить фактор оппонента?
+        let expectancy = averageGoalsScored * averageGoalsConceded * teamFormFactor * opponentFormFactor
         return expectancy
     }
     
@@ -82,13 +86,22 @@ class PredictionViewModel: ObservableObject {
                 probabilities[key] = probability
             }
         }
-//        probabilityScore = probabilities
         return probabilities
     }
     
     private func poissonProbability(for homeGoals: Int, and awayGoals: Int) -> Double {
-        let lambdaHome = teamGoalExpectancy(averageGoalsScored: homeGoalsScored, averageGoalsConceded: awayGoalsConceded, firstTeamForm: homeForm, opponentTeamForm: awayForm)
-        let lambdaAway = teamGoalExpectancy(averageGoalsScored: awayGoalsScored, averageGoalsConceded: homeGoalsConceded, firstTeamForm: awayForm, opponentTeamForm: homeForm)
+        let lambdaHome = teamGoalExpectancy(
+            averageGoalsScored: homeGoalsScored,
+            averageGoalsConceded: awayGoalsConceded,
+            firstTeamForm: homeForm,
+            opponentTeamForm: awayForm
+        )
+        let lambdaAway = teamGoalExpectancy(
+            averageGoalsScored: awayGoalsScored,
+            averageGoalsConceded: homeGoalsConceded,
+            firstTeamForm: awayForm,
+            opponentTeamForm: homeForm
+        )
         
         let probHome = exp(-lambdaHome) * pow(lambdaHome, Double(homeGoals)) / factorial(homeGoals)
         let probAway = exp(-lambdaAway) * pow(lambdaAway, Double(awayGoals)) / factorial(awayGoals)

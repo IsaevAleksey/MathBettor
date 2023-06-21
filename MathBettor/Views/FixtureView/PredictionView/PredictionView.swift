@@ -53,9 +53,6 @@ struct PredictionView: View {
                 }
             }
         }
-//        .onAppear {
-//            viewModel.fetchScoreProbabilities()
-//        }
     }
 }
 

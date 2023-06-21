@@ -11,16 +11,24 @@ struct CompetitionsListView: View {
     @StateObject var viewModel: CompetitionsListViewModel
     @State private var searchText = ""
     
+    var searchResults: [CompetitionViewModel] {
+        if searchText.isEmpty {
+            return viewModel.rows
+        } else {
+            return viewModel.rows.filter { $0.competitionCountry.contains(searchText) }
+        }
+    }
+    
     var body: some View {
         if viewModel.rows.isEmpty {
             VStack(spacing: 20.0) {
                 ProgressView()
                 Text("Download...")
             }
-            .task {
-                await viewModel.fetchCompetitionsList()
-                print("загружается список лиг")
-            }
+                .task {
+                    await viewModel.fetchCompetitionsList()
+                    print("загружается список лиг")
+                }
         } else {
             NavigationView {
                 ZStack {
@@ -28,24 +36,25 @@ struct CompetitionsListView: View {
                         .ignoresSafeArea()
                     List(searchResults, id: \.competitionsId) { competitionViewModel in
                         NavigationLink(destination: CompetitionView(viewModel: competitionViewModel)) {
-                            CompetitionRow(competitionName: competitionViewModel.competitionName, competitionCountry: competitionViewModel.competitionCountry, competitionImageURL: competitionViewModel.competitionsLogoUrl)
+                            CompetitionRow(
+                                competitionName: competitionViewModel.competitionName,
+                                competitionCountry: competitionViewModel.competitionCountry,
+                                competitionImageURL: competitionViewModel.competitionsLogoUrl
+                            )
                         }
                     }
-                    .navigationTitle("Select competition")
-                    .toolbarBackground(Color("NavigationViewBackground"), for: .navigationBar)
-                    .listStyle(.plain)
+                        .navigationTitle("Select competition")
+                        .toolbarBackground(Color("NavigationViewBackground"), for: .navigationBar)
+                        .listStyle(.plain)
                 }
             }
-            .searchable(text: $searchText, prompt: "search by country")
-            .accentColor(.white)
-        }
-    }
-    
-    var searchResults: [CompetitionViewModel] {
-        if searchText.isEmpty {
-            return viewModel.rows
-        } else {
-            return viewModel.rows.filter { $0.competitionCountry.contains(searchText) }
+                .preferredColorScheme(.light)
+                .searchable(
+                    text: $searchText,
+                    placement: .navigationBarDrawer(displayMode: .always),
+                    prompt: "search by country"
+                    )
+                .accentColor(.white)
         }
     }
 }

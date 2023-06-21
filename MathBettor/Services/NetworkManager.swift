@@ -30,8 +30,6 @@ class NetworkManager {
         guard let (data, _) = try? await URLSession.shared.data(for: request) else {
             throw NetworkError.noData
         }
-
-//        let (data, _) = try await URLSession.shared.data(for: request)
         guard let competitionsList = try? JSONDecoder().decode(CompetitionsList.self, from: data) else {
             throw NetworkError.decodingError
         }
@@ -49,8 +47,6 @@ class NetworkManager {
         guard let (data, _) = try? await URLSession.shared.data(for: request) else {
             throw NetworkError.noData
         }
-
-//        let (data, _) = try await URLSession.shared.data(for: request)
         guard let fixturesList = try? JSONDecoder().decode(FixturesList.self, from: data) else {
             throw NetworkError.decodingError
         }
@@ -65,7 +61,9 @@ class NetworkManager {
         request.addValue("v3.football.api-sports.io", forHTTPHeaderField: "x-rapidapi-host")
         request.httpMethod = "GET"
         
-        let (data, _) = try await URLSession.shared.data(for: request)
+        guard let (data, _) = try? await URLSession.shared.data(for: request) else {
+            throw NetworkError.noData
+        }
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         guard let statistics = try? decoder.decode(StatisticsData.self, from: data) else {

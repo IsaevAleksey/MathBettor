@@ -20,11 +20,12 @@ struct HelloView: View {
                 }) {
                     Text("OK")
                 }
-                .fullScreenCover(isPresented: $showCompetitionsList) {
-                    CompetitionsListView(viewModel: CompetitionsListViewModel())
+                    .fullScreenCover(isPresented: $showCompetitionsList) {
+                        CompetitionsListView(viewModel: CompetitionsListViewModel())
                 }
             }
         }
+            .preferredColorScheme(.light)
     }
 }
 

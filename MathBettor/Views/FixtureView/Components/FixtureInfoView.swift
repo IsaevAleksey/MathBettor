@@ -23,25 +23,25 @@ struct FixtureInfoView: View {
                 HStack(alignment: .top, spacing: 100.0) {
                     VStack {
                         TeamLogoImage(teamLogoURL: homeTeamLogoURL)
-//                            .frame(height: 50)
                         Text(homeTeamName)
-//                            .multilineTextAlignment(.center)
+                            .multilineTextAlignment(.center)
                     }
                     VStack {
                         TeamLogoImage(teamLogoURL: awayTeamLogoURL)
-//                            .frame(height: 50)
                         Text(awayTeamName)
+                            .multilineTextAlignment(.center)
                     }
                 }
+                    .padding(.horizontal, 16.0)
                 Text(fixtureDate)
                     .fontWeight(.thin)
                     .padding(.bottom)
             }
-            .bold()
-            .foregroundColor(.white)
+                .bold()
+                .foregroundColor(.white)
         }
-        .cornerRadius(20)
-        .ignoresSafeArea()
+            .cornerRadius(20)
+            .ignoresSafeArea()
     }
 }
 

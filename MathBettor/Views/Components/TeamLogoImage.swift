@@ -30,18 +30,6 @@ struct TeamLogoImage: View {
                     .frame(width: 40, height: 40)
             }
         }
-        
-        
-        
-//        AsyncImage(url: URL(string: teamLogoURL)) { image in
-//            image
-//                .resizable()
-//                .frame(width: 40, height: 40)
-//                .cornerRadius(10)
-//                .shadow(radius: 10)
-//        } placeholder: {
-//            ProgressView()
-//        }
     }
 }
 
@@ -50,13 +38,3 @@ struct TeamLogoImage_Previews: PreviewProvider {
         TeamLogoImage(teamLogoURL: "")
     }
 }
-
-
-//NetworkManager.shared.fetchImage(from: course.imageUrl) { [weak self] result in
-//    switch result {
-//    case .success(let imageDate):
-//        self?.courseImage.image = UIImage(data: imageDate)
-//    case .failure(let error):
-//        print(error)
-//    }
-//}

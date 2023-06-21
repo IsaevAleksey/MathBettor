@@ -17,22 +17,53 @@ struct StatisticsView: View {
                     .bold()
                     .padding(.vertical)
                 Text("GAMES")
-                GamesStatisticsRowView(parametr: "PLAYED", homeValue: viewModel.homePlayedMatch.played.total, awayValue: viewModel.awayPlayedMatch.played.total)
-                GamesStatisticsRowView(parametr: "WIN", homeValue: viewModel.homePlayedMatch.wins.total, awayValue: viewModel.awayPlayedMatch.wins.total)
-                GamesStatisticsRowView(parametr: "DRAW", homeValue: viewModel.homePlayedMatch.draws.total, awayValue: viewModel.awayPlayedMatch.draws.total)
-                GamesStatisticsRowView(parametr: "LOSES", homeValue: viewModel.homePlayedMatch.loses.total, awayValue: viewModel.awayPlayedMatch.loses.total)
+                GamesStatisticsRow(
+                    parametr: "PLAYED",
+                    homeValue: viewModel.homePlayedMatch.played.total,
+                    awayValue: viewModel.awayPlayedMatch.played.total
+                )
+                GamesStatisticsRow(
+                    parametr: "WIN",
+                    homeValue: viewModel.homePlayedMatch.wins.total,
+                    awayValue: viewModel.awayPlayedMatch.wins.total
+                )
+                GamesStatisticsRow(
+                    parametr: "DRAW",
+                    homeValue: viewModel.homePlayedMatch.draws.total,
+                    awayValue: viewModel.awayPlayedMatch.draws.total
+                )
+                GamesStatisticsRow(
+                    parametr: "LOSES",
+                    homeValue: viewModel.homePlayedMatch.loses.total,
+                    awayValue: viewModel.awayPlayedMatch.loses.total
+                )
             }
             VStack {
                 Text("GOALS SCORED")
                     .padding(.top)
-                GamesStatisticsRowView(parametr: "TOTAL", homeValue: viewModel.homeGoalsScored.total.total, awayValue: viewModel.awayGoalsScored.total.total)
-                GamesAverageStatisticsRowView(parametr: "AVERAGE", homeValue: viewModel.homeGoalsScored.average.total, awayValue: viewModel.awayGoalsScored.average.total)
+                GamesStatisticsRow(
+                    parametr: "TOTAL",
+                    homeValue: viewModel.homeGoalsScored.total.total,
+                    awayValue: viewModel.awayGoalsScored.total.total
+                )
+                GamesAverageStatisticsRow(
+                    parametr: "AVERAGE",
+                    homeValue: viewModel.homeGoalsScored.average.total,
+                    awayValue: viewModel.awayGoalsScored.average.total
+                )
             }
             VStack {
                 Text("GOALS CONCEDED")
                     .padding(.top)
-                GamesStatisticsRowView(parametr: "TOTAL", homeValue: viewModel.homeGoalsConceded.total.total, awayValue: viewModel.awayGoalsConceded.total.total)
-                GamesAverageStatisticsRowView(parametr: "AVERAGE", homeValue: viewModel.homeGoalsConceded.average.total, awayValue: viewModel.awayGoalsConceded.average.total)
+                GamesStatisticsRow(
+                    parametr: "TOTAL",
+                    homeValue: viewModel.homeGoalsConceded.total.total,
+                    awayValue: viewModel.awayGoalsConceded.total.total
+                )
+                GamesAverageStatisticsRow(
+                    parametr: "AVERAGE",
+                    homeValue: viewModel.homeGoalsConceded.average.total,
+                    awayValue: viewModel.awayGoalsConceded.average.total)
             }
         }
     }

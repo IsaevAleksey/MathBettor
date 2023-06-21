@@ -14,8 +14,11 @@ struct CompetitionRow: View {
     
     var body: some View {
         HStack(spacing: 16.0) {
-            CompetitionImage(imageURL: competitionImageURL, imageSize: CGSize(width: 40, height: 40), cornerRadius: 10, shadowIsOn: false)
-//                .frame(width: 40, height: 40)
+            CompetitionImage(
+                imageURL: competitionImageURL,
+                imageSize: CGSize(width: 40, height: 40),
+                cornerRadius: 10, shadowIsOn: false
+            )
             VStack(alignment: .leading) {
                 Text(competitionCountry)
                     .fontWeight(.ultraLight)

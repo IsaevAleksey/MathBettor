@@ -54,17 +54,17 @@ class CompetitionViewModel: ObservableObject {
     
     @MainActor func fetchFixturesList(leagueID: Int, currentSeason: Int, fromDate: String, toDate: String) async {
         do {
-            let fixturesList = try await NetworkManager.shared.fetchFixturesList(leagueID: leagueID, currentSeason: currentSeason, fromDate: fromDate, toDate: toDate).response
+            let fixturesList = try await NetworkManager.shared.fetchFixturesList(
+                leagueID: leagueID,
+                currentSeason: currentSeason,
+                fromDate: fromDate,
+                toDate: toDate
+            ).response
             rows = fixturesList.map { FixtureViewModel(fixtureInfo: $0) }
         }
         catch {
             print(error)
         }
-    }
-    
-    func fetchEmptyFixtureViewModel() {
-        let emptyFixtureViewModel = FixtureViewModel(fixtureInfo: FixtureInfo.createEmptyModel())
-        rows.append(emptyFixtureViewModel)
     }
 }
 

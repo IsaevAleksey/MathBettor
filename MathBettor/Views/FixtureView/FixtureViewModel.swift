@@ -11,7 +11,6 @@ class FixtureViewModel: ObservableObject {
     @Published var comparisonViewModel: [ComparisonViewModel] = []
     @Published var statisticsViewModel: [StatisticsViewModel] = []
     @Published var predictionTabViewModel: [PredictionViewModel] = []
-//    @Published var scorePredictionTabViewModel: [ScorePredictionTabView] = []
     
     var fixtureID: Int {
         fixtureInfo.fixture.id

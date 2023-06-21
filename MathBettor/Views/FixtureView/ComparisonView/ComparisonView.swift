@@ -15,12 +15,36 @@ struct ComparisonView: View {
             Text("COMPARISON")
                 .bold()
                 .padding(.bottom)
-            ComparisonRowView(parametr: "FORM", homeTeamParametrValue: viewModel.form.home, awayTeamParametrValue: viewModel.form.away)
-            ComparisonRowView(parametr: "ATT", homeTeamParametrValue: viewModel.att.home, awayTeamParametrValue: viewModel.att.away)
-            ComparisonRowView(parametr: "DEF", homeTeamParametrValue: viewModel.def.home, awayTeamParametrValue: viewModel.def.away)
-            ComparisonRowView(parametr: "H2H", homeTeamParametrValue: viewModel.h2h.home, awayTeamParametrValue: viewModel.h2h.away)
-            ComparisonRowView(parametr: "TOTAL", homeTeamParametrValue: viewModel.total.home, awayTeamParametrValue: viewModel.total.away)
-            ComparisonRowView(parametr: "POISSON DISTRIBUTION", homeTeamParametrValue: viewModel.poissonDistribution.home, awayTeamParametrValue: viewModel.poissonDistribution.away)
+            ComparisonRow(
+                parametr: "FORM",
+                homeTeamParametrValue: viewModel.form.home,
+                awayTeamParametrValue: viewModel.form.away
+            )
+            ComparisonRow(
+                parametr: "ATT",
+                homeTeamParametrValue: viewModel.att.home,
+                awayTeamParametrValue: viewModel.att.away
+            )
+            ComparisonRow(
+                parametr: "DEF",
+                homeTeamParametrValue: viewModel.def.home,
+                awayTeamParametrValue: viewModel.def.away
+            )
+            ComparisonRow(
+                parametr: "H2H",
+                homeTeamParametrValue: viewModel.h2h.home,
+                awayTeamParametrValue: viewModel.h2h.away
+            )
+            ComparisonRow(
+                parametr: "TOTAL",
+                homeTeamParametrValue: viewModel.total.home,
+                awayTeamParametrValue: viewModel.total.away
+            )
+            ComparisonRow(
+                parametr: "POISSON DISTRIBUTION",
+                homeTeamParametrValue: viewModel.poissonDistribution.home,
+                awayTeamParametrValue: viewModel.poissonDistribution.away
+            )
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ComparisonRowView: View {
+struct ComparisonRow: View {
     let parametr: String
     let homeTeamParametrValue: String
     let awayTeamParametrValue: String
@@ -27,8 +27,16 @@ struct ComparisonRowView: View {
             Text(parametr)
                 HStack {
                     Text("\(Int(roundHomeParametrValue))%")
-                    ProgressBarView(parametrValue: roundHomeParametrValue, aligment: .trailing, color: Color("ProgressBarHome"))
-                    ProgressBarView(parametrValue: roundAwayParametrValue, aligment: .leading, color: Color("ProgressBarAway"))
+                    ProgressBarView(
+                        parametrValue: roundHomeParametrValue,
+                        aligment: .trailing,
+                        color: Color("ProgressBarHome")
+                    )
+                    ProgressBarView(
+                        parametrValue: roundAwayParametrValue,
+                        aligment: .leading,
+                        color: Color("ProgressBarAway")
+                    )
                     Text("\(Int(roundAwayParametrValue))%")
                 }
         }
@@ -37,6 +45,6 @@ struct ComparisonRowView: View {
 
 struct ComparisonRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ComparisonRowView(parametr: "TOTAL", homeTeamParametrValue: "90.933", awayTeamParametrValue: "60")
+        ComparisonRow(parametr: "TOTAL", homeTeamParametrValue: "90.933", awayTeamParametrValue: "60")
     }
 }
