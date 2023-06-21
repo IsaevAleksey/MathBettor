@@ -47,11 +47,11 @@ class PredictionViewModel: ObservableObject {
     }
     
     private var homeForm: Double {
-        NSString(string: statisticsInfo.comparison.att.home).doubleValue
+        NSString(string: statisticsInfo.comparison.form.home).doubleValue
     }
     
     private var awayForm: Double {
-        NSString(string: statisticsInfo.comparison.att.away).doubleValue
+        NSString(string: statisticsInfo.comparison.form.away).doubleValue
     }
     
     //MARK: init
@@ -69,10 +69,10 @@ class PredictionViewModel: ObservableObject {
         opponentTeamForm: Double
         ) -> Double {
             
-        let teamFormFactor = firstTeamForm / 100
-        let opponentFormFactor = opponentTeamForm / 100
+//        let teamFormFactor = firstTeamForm / 100
+//        let opponentFormFactor = opponentTeamForm / 100
         
-        let expectancy = averageGoalsScored * averageGoalsConceded * teamFormFactor * opponentFormFactor
+        let expectancy = averageGoalsScored * averageGoalsConceded //* teamFormFactor * opponentFormFactor
         return expectancy
     }
     

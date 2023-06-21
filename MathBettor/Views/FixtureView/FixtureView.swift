@@ -27,7 +27,7 @@ struct FixtureView: View {
                             }
                         }
                 TabView {
-                    List(viewModel.comparisonViewModel, id: \.advice) { comparisonViewModel in
+                    List(viewModel.comparisonViewModel, id: \.id) { comparisonViewModel in
                         ComparisonView(viewModel: comparisonViewModel)
                     }
                         .listStyle(.inset)

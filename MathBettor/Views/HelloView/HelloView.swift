@@ -12,9 +12,11 @@ struct HelloView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 5.0) {
-                Text("Здесь будет предупреждение о разумном подходе")
-                    .multilineTextAlignment(.center)
+            VStack(spacing: 20.0) {
+                Text(
+                    "The predictions are only based on statistics and do not take into account other factors (e.g. weather, game strategy, physical condition of the players etc.)"
+                )
+                .multilineTextAlignment(.center)
                 Button(action: {
                     self.showCompetitionsList.toggle()
                 }) {
@@ -24,6 +26,7 @@ struct HelloView: View {
                         CompetitionsListView(viewModel: CompetitionsListViewModel())
                 }
             }
+                .padding(16)
         }
             .preferredColorScheme(.light)
     }

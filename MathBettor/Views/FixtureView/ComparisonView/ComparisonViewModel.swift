@@ -33,13 +33,16 @@ class ComparisonViewModel: ObservableObject {
         statisticsInfo.comparison.poissonDistribution
     }
     
-    var advice: String {
-        statisticsInfo.predictions.advice
-    }
+//    var advice: String {
+//        statisticsInfo.predictions.advice
+//    }
+    
+    let id: UUID
     
     private let statisticsInfo: StatisticsInfo
 
-    init(statisticsInfo: StatisticsInfo) {
+    init(statisticsInfo: StatisticsInfo, id: UUID) {
         self.statisticsInfo = statisticsInfo
+        self.id = id
     } 
 }

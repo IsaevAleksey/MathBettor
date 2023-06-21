@@ -16,7 +16,8 @@ struct CompetitionView: View {
                 CompetitionInfoView(imageURL: viewModel.competitionsLogoUrl, competitionCountry: viewModel.competitionCountry, competitionName: viewModel.competitionName)
                     .frame(height: geometry.size.height / 3)
                 if viewModel.rows.isEmpty {
-                    Text ("В ближайшее время матчи отсутствуют")
+                    Text ("There are no upcoming games for the next 7 days")
+                        .multilineTextAlignment(.center)
                         .padding(.top, 200.0)
                     Spacer()
                 } else {

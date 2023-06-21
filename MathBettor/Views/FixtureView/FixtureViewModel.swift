@@ -46,7 +46,7 @@ class FixtureViewModel: ObservableObject {
     @MainActor func fetchStatistics(fixtureID: Int) async {
         do {
             let statisticsInfo = try await NetworkManager.shared.fetchStatistics(fixtureID: fixtureID).response
-            comparisonViewModel = statisticsInfo.map { ComparisonViewModel(statisticsInfo: $0) }
+            comparisonViewModel = statisticsInfo.map { ComparisonViewModel(statisticsInfo: $0, id: UUID()) }
             statisticsViewModel = statisticsInfo.map { StatisticsViewModel(teamsStats: $0.teams) }
             predictionTabViewModel = statisticsInfo.map { PredictionViewModel(statisticsInfo: $0) }
         }
