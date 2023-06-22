@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class ImageCacheManager {
+final class ImageCacheManager {
 
     static private var cache: [String: Image] = [:]
 

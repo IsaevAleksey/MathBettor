@@ -26,33 +26,38 @@ struct FixtureView: View {
                                 print("загражуем прогноз")
                             }
                         }
-                TabView {
-                    List(viewModel.comparisonViewModel, id: \.id) { comparisonViewModel in
-                        ComparisonView(viewModel: comparisonViewModel)
-                    }
-                        .listStyle(.inset)
-                        .tabItem {
-                            Image(systemName: "chart.xyaxis.line")
-                            Text("Comparison")
+                if viewModel.comparisonViewModel.isEmpty {
+                    ProgressView()
+                        .padding(100)
+                } else {
+                    TabView {
+                        List(viewModel.comparisonViewModel, id: \.id) { comparisonViewModel in
+                            ComparisonView(viewModel: comparisonViewModel)
                         }
-                    List(viewModel.statisticsViewModel, id: \.homeTeamId) {statisticsViewModel in
-                        StatisticsView(viewModel: statisticsViewModel)
-                    }
-                        .listStyle(.inset)
-                        .tabItem {
-                            Image(systemName: "sportscourt")
-                            Text("Statistics")
+                            .listStyle(.inset)
+                            .tabItem {
+                                Image(systemName: "chart.xyaxis.line")
+                                Text("Comparison")
+                            }
+                        List(viewModel.statisticsViewModel, id: \.homeTeamId) {statisticsViewModel in
+                            StatisticsView(viewModel: statisticsViewModel)
                         }
-                    List(viewModel.predictionTabViewModel, id: \.advice) { predictionViewModel in
-                        PredictionView(viewModel: predictionViewModel)
-                    }
-                        .listStyle(.inset)
-                        .tabItem {
-                            Image(systemName: "percent")
-                            Text("Prediction")
+                            .listStyle(.inset)
+                            .tabItem {
+                                Image(systemName: "sportscourt")
+                                Text("Statistics")
+                            }
+                        List(viewModel.predictionTabViewModel, id: \.advice) { predictionViewModel in
+                            PredictionView(viewModel: predictionViewModel)
                         }
+                            .listStyle(.inset)
+                            .tabItem {
+                                Image(systemName: "percent")
+                                Text("Prediction")
+                            }
+                    }
+                        .accentColor(Color("TabBarColor"))
                 }
-                    .accentColor(Color("TabBarColor"))
             }
                 .ignoresSafeArea()
         }

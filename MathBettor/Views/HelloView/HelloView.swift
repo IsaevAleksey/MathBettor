@@ -8,25 +8,32 @@
 import SwiftUI
 
 struct HelloView: View {
-    @State private var showCompetitionsList = false
+    @State var showCompetitionsList = false
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 20.0) {
-                Text(
-                    "The predictions are only based on statistics and do not take into account other factors (e.g. weather, game strategy, physical condition of the players etc.)"
-                )
-                .multilineTextAlignment(.center)
-                Button(action: {
-                    self.showCompetitionsList.toggle()
-                }) {
-                    Text("OK")
+            ZStack {
+                Color.backgroundGradient
+                    .ignoresSafeArea()
+                VStack(spacing: 20.0) {
+                    Text(
+                        "The predictions are only based on statistics and do not take into account other factors (e.g. weather, game strategy, physical condition of the players etc.)"
+                    )
+                    .fontWeight(.heavy)
+                        .multilineTextAlignment(.center)
+                    Button(action: {
+                        self.showCompetitionsList.toggle()
+                    }) {
+                        Text("OK")
+                            .fontWeight(.heavy)
+                            .foregroundColor(.white)
+                    }
+                        .fullScreenCover(isPresented: $showCompetitionsList) {
+                            CompetitionsListView(viewModel: CompetitionsListViewModel())
+                    }
                 }
-                    .fullScreenCover(isPresented: $showCompetitionsList) {
-                        CompetitionsListView(viewModel: CompetitionsListViewModel())
-                }
-            }
                 .padding(16)
+            }
         }
             .preferredColorScheme(.light)
     }

@@ -35,8 +35,8 @@ struct CompetitionInfoView: View {
                     .bold()
                     .foregroundColor(.white)
             }
-            .cornerRadius(20)
-            .ignoresSafeArea()
+                .cornerRadius(20)
+                .ignoresSafeArea()
         }
     }
 }

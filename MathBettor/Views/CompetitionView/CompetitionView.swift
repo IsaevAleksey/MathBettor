@@ -13,11 +13,16 @@ struct CompetitionView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                CompetitionInfoView(imageURL: viewModel.competitionsLogoUrl, competitionCountry: viewModel.competitionCountry, competitionName: viewModel.competitionName)
+                CompetitionInfoView(
+                    imageURL: viewModel.competitionsLogoUrl,
+                    competitionCountry: viewModel.competitionCountry,
+                    competitionName: viewModel.competitionName
+                )
                     .frame(height: geometry.size.height / 3)
                 if viewModel.rows.isEmpty {
                     Text ("There are no upcoming games for the next 7 days")
                         .multilineTextAlignment(.center)
+                        .padding()
                         .padding(.top, 200.0)
                     Spacer()
                 } else {
