@@ -20,7 +20,7 @@ struct CompetitionInfoView: View {
                     Spacer()
                     CompetitionImage(
                         imageURL: imageURL,
-                        imageSize: CGSize(width: 100, height: 100),
+                        imageSize: CGSize(width: 180, height: 180),
                         cornerRadius: 10,
                         shadowIsOn: true
                     )
