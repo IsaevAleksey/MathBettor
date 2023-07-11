@@ -25,10 +25,10 @@ struct CompetitionsListView: View {
                 ProgressView()
                 Text("Download...")
             }
-                .task {
-                    await viewModel.fetchCompetitionsList()
-                    print("загружается список лиг")
-                }
+            .task {
+                await viewModel.fetchCompetitionsList()
+                print("загружается список лиг")
+            }
         } else {
             NavigationView {
                 ZStack {
@@ -43,18 +43,18 @@ struct CompetitionsListView: View {
                             )
                         }
                     }
-                        .navigationTitle("Select competition")
-                        .toolbarBackground(Color("NavigationViewBackground"), for: .navigationBar)
-                        .listStyle(.plain)
+                    .navigationTitle("Select competition")
+                    .toolbarBackground(Color("NavigationViewBackground"), for: .navigationBar)
+                    .listStyle(.plain)
                 }
             }
-                .preferredColorScheme(.light)
-                .searchable(
-                    text: $searchText,
-                    placement: .navigationBarDrawer(displayMode: .always),
-                    prompt: "search by country"
-                    )
-                .accentColor(.white)
+            .preferredColorScheme(.light)
+            .accentColor(.white)
+            .searchable(
+                text: $searchText,
+                placement: .navigationBarDrawer(displayMode: .always),
+                prompt: "search by country"
+                )
         }
     }
 }

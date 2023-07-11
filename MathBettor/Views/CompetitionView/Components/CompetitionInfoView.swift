@@ -24,7 +24,7 @@ struct CompetitionInfoView: View {
                         cornerRadius: 10,
                         shadowIsOn: true
                     )
-                        .padding(.top)
+                    .padding(.top)
                     Text(competitionCountry)
                     Text(competitionName)
                         .font(.largeTitle)
@@ -32,11 +32,11 @@ struct CompetitionInfoView: View {
                         .frame(width: geometry.size.width - 32)
                         .padding(.bottom, 16.0)
                 }
-                    .bold()
-                    .foregroundColor(.white)
+                .bold()
+                .foregroundColor(.white)
             }
-                .cornerRadius(20)
-                .ignoresSafeArea()
+            .cornerRadius(20)
+            .ignoresSafeArea()
         }
     }
 }

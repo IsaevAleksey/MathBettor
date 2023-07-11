@@ -24,42 +24,42 @@ struct FixtureView: View {
                             if viewModel.comparisonViewModel.isEmpty {
                                 await viewModel.fetchStatistics(fixtureID: viewModel.fixtureID)
                                 print("загражуем прогноз")
+                                }
                             }
-                        }
                 if viewModel.comparisonViewModel.isEmpty {
                     ProgressView()
                         .padding(100)
-                } else {
-                    TabView {
-                        List(viewModel.comparisonViewModel, id: \.id) { comparisonViewModel in
-                            ComparisonView(viewModel: comparisonViewModel)
-                        }
+                    } else {
+                        TabView {
+                            List(viewModel.comparisonViewModel, id: \.id) { comparisonViewModel in
+                                ComparisonView(viewModel: comparisonViewModel)
+                            }
                             .listStyle(.inset)
                             .tabItem {
                                 Image(systemName: "chart.xyaxis.line")
                                 Text("Comparison")
+                                }
+                            List(viewModel.statisticsViewModel, id: \.homeTeamId) {statisticsViewModel in
+                                StatisticsView(viewModel: statisticsViewModel)
                             }
-                        List(viewModel.statisticsViewModel, id: \.homeTeamId) {statisticsViewModel in
-                            StatisticsView(viewModel: statisticsViewModel)
-                        }
                             .listStyle(.inset)
                             .tabItem {
                                 Image(systemName: "sportscourt")
                                 Text("Statistics")
+                                }
+                            List(viewModel.predictionTabViewModel, id: \.advice) { predictionViewModel in
+                                PredictionView(viewModel: predictionViewModel)
                             }
-                        List(viewModel.predictionTabViewModel, id: \.advice) { predictionViewModel in
-                            PredictionView(viewModel: predictionViewModel)
-                        }
                             .listStyle(.inset)
                             .tabItem {
                                 Image(systemName: "percent")
                                 Text("Prediction")
+                                }
                             }
-                    }
-                        .accentColor(Color("TabBarColor"))
-                }
+                            .accentColor(Color("TabBarColor"))
+                        }
             }
-                .ignoresSafeArea()
+            .ignoresSafeArea()
         }
     }
 }

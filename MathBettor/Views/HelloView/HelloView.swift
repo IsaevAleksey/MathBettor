@@ -16,26 +16,28 @@ struct HelloView: View {
                 Color.backgroundGradient
                     .ignoresSafeArea()
                 VStack(spacing: 20.0) {
-                    Text(
-                        "The predictions are only based on statistics and do not take into account other factors (e.g. weather, game strategy, physical condition of the players etc.)"
-                    )
-                    .fontWeight(.heavy)
-                        .multilineTextAlignment(.center)
+                    Image("warning_img")
+//                        .resizable()
+//                        .frame(width: 550, height: 900)
                     Button(action: {
                         self.showCompetitionsList.toggle()
                     }) {
                         Text("OK")
                             .fontWeight(.heavy)
                             .foregroundColor(.white)
+//                            .frame(width: 50)
+//                            .border(.white)
                     }
-                        .fullScreenCover(isPresented: $showCompetitionsList) {
+                    .frame(width: 50)
+                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.white, lineWidth: 2))
+                    .fullScreenCover(isPresented: $showCompetitionsList) {
                             CompetitionsListView(viewModel: CompetitionsListViewModel())
                     }
                 }
                 .padding(16)
             }
         }
-            .preferredColorScheme(.light)
+        .preferredColorScheme(.light)
     }
 }
 

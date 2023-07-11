@@ -69,10 +69,10 @@ class PredictionViewModel: ObservableObject {
         opponentTeamForm: Double
         ) -> Double {
             
-//        let teamFormFactor = firstTeamForm / 100
+        let teamFormFactor = firstTeamForm / 100
 //        let opponentFormFactor = opponentTeamForm / 100
         
-        let expectancy = averageGoalsScored * averageGoalsConceded //* teamFormFactor * opponentFormFactor
+        let expectancy = averageGoalsScored * averageGoalsConceded * teamFormFactor // * opponentFormFactor
         return expectancy
     }
     

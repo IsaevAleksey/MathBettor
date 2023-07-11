@@ -18,7 +18,7 @@ struct CompetitionView: View {
                     competitionCountry: viewModel.competitionCountry,
                     competitionName: viewModel.competitionName
                 )
-                    .frame(height: geometry.size.height / 3)
+                .frame(height: geometry.size.height / 3)
                 if viewModel.rows.isEmpty {
                     Text ("There are no upcoming games for the next 7 days")
                         .multilineTextAlignment(.center)

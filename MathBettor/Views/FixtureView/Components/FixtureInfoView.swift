@@ -18,7 +18,7 @@ struct FixtureInfoView: View {
     var body: some View {
         ZStack {
             Color.backgroundGradient
-            VStack(spacing: 16.0) {
+            VStack(spacing: 8.0) {
                 Spacer()
                 HStack(alignment: .top, spacing: 100.0) {
                     VStack {
@@ -32,16 +32,16 @@ struct FixtureInfoView: View {
                             .multilineTextAlignment(.center)
                     }
                 }
-                    .padding(.horizontal, 16.0)
+                .padding(.horizontal, 16.0)
                 Text(fixtureDate)
                     .fontWeight(.thin)
                     .padding(.bottom)
             }
-                .bold()
-                .foregroundColor(.white)
+            .bold()
+            .foregroundColor(.white)
         }
-            .cornerRadius(20)
-            .ignoresSafeArea()
+        .cornerRadius(20)
+        .ignoresSafeArea()
     }
 }
 

@@ -26,10 +26,10 @@ struct GamesStatisticsRow: View {
                 .frame(width: 25)
                 .padding(.trailing, 15.0)
         }
-            .foregroundColor(.white)
-            .frame(height: 40)
-            .background(Color.backgroundGradient)
-            .cornerRadius(20)
+        .foregroundColor(.white)
+        .frame(height: 40)
+        .background(Color.backgroundGradient)
+        .cornerRadius(20)
     }
 }
 
@@ -52,10 +52,10 @@ struct GamesAverageStatisticsRow: View {
                 .frame(width: 35)
                 .padding(.trailing, 15.0)
         }
-            .foregroundColor(.white)
-            .frame(height: 40)
-            .background(Color.backgroundGradient)
-            .cornerRadius(20)
+        .foregroundColor(.white)
+        .frame(height: 40)
+        .background(Color.backgroundGradient)
+        .cornerRadius(20)
     }
 }
 
