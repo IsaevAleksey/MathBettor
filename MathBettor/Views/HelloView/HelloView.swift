@@ -16,7 +16,7 @@ struct HelloView: View {
                 Color.backgroundGradient
                     .ignoresSafeArea()
                 VStack(spacing: 20.0) {
-                    Image("warning_img")
+                    Image("warningText")
 //                        .resizable()
 //                        .frame(width: 550, height: 900)
                     Button(action: {
